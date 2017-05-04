@@ -1,0 +1,13 @@
+{
+    "name": "CSIS-iLab/defense360_wp",
+    "description": "WordPress theme for Defense360",
+    "repositories":[
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org"
+        }
+    ],
+    "require": {
+        "wpackagist-plugin/akismet":"dev-trunk",
+    }
+}
