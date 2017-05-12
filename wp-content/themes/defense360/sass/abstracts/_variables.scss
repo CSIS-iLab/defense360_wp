@@ -1,17 +1,28 @@
-$color__background-body: #fff;
-$color__background-screen: #f1f1f1;
-$color__background-hr: #ccc;
+/*==============================
+=            Colors            =
+==============================*/
+$black: #000;
+$white: #fff;
+$dark-green: #36605a;
+$bright-green: #008e9d;
+$light-gray: #F1F1F1;
+$dark-gray: #4A4A4A;
+
+
+$color__background-body: $white;
+$color__background-screen: $white;
+$color__background-hr: $light-gray;
 $color__background-button: #e6e6e6;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
-$color__text-screen: #21759b;
-$color__text-input: #666;
+$color__text-screen: $dark-gray;
+$color__text-input: $dark-gray;
 $color__text-input-focus: #111;
-$color__link: royalblue;
-$color__link-visited: purple;
-$color__link-hover: midnightblue;
-$color__text-main: #404040;
+$color__link: $bright-green;
+$color__link-visited: $dark-green;
+$color__link-hover: $dark-green;
+$color__text-main: $dark-gray;
 
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
@@ -22,8 +33,13 @@ $color__border-abbr: #666;
 /*==================================
 =            Typography            =
 ==================================*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Source+Serif+Pro');
 
-$font__main: sans-serif;
+$font__OpenSans: 'Open Sans', sans-serif;
+$font__SourceSans: 'Source Serif Pro', serif;
+
+
+$font__main: $font__OpenSans;
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.5;
