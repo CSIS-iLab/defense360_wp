@@ -106,6 +106,8 @@ Thumbs.db
 !wp-content/mu-plugins/example-mu-plugin/
 !wp-content/plugins/example-plugin/
 !wp-content/themes/defense360
+!.travis.yml
+!test
 
 wp-content/themes/defense360/.sass-cache
 **/.DS_Store
