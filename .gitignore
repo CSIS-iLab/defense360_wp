@@ -43,6 +43,7 @@ wp-content/themes/*
 .*
 ~*
 **/.DS_Store
+.DS_Store
 
 # ignore node dependency directories (used by grunt)
 node_modules/
@@ -107,3 +108,4 @@ Thumbs.db
 !wp-content/themes/defense360
 
 wp-content/themes/defense360/.sass-cache
+**/.DS_Store
