@@ -1,7 +1,7 @@
 language: ruby
 script:
+- cd wp-content/themes/defense360
 - compass compile --production
 
 before_install:
 - gem install compass
-- cd wp-content/themes/defense360
