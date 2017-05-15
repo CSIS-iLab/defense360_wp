@@ -14,11 +14,11 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'defense360' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'defense360' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'defense360' ), 'defense360', '<a href="https://automattic.com/" rel="designer">CSIS iDeas Lab</a>' ); ?>
-		</div><!-- .site-info -->
+		<div class="footer-copyright">
+			<div class="content-wrapper">
+				&copy; <?php echo date('Y'); ?> by the Center for Strategic and International Studies. All rights reserved.
+			</div> <!-- .content-wrapper -->
+		</div><!-- .footer-copyright -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

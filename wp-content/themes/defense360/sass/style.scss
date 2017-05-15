@@ -44,6 +44,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Media
 	## Tables
 # Layout
+	## Header
+	## Footer
 	## Comments
 	## Menus
 	## Posts and Pages
@@ -82,6 +84,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 /*----------  Layout  ----------*/
 @import
+  'layout/header',
+  'layout/footer',
   'layout/comments',
   'layout/menus',
   'layout/posts-and-pages',
@@ -90,4 +94,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*----------  Pages  ----------*/
 
 /*----------  Vendors  ----------*/
-
+@import
+  'vendors/flexbox/flexbox-main',
+  'vendors/flexbox/flexbox-helpers';
