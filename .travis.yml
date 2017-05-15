@@ -1,7 +1,7 @@
 language: ruby
 script:
-- "test/travis.rb"
+- compass compile --production
 
 before_install:
-- chmod +x test/travis.rb
-- gem install sass
+- gem install compass
+- cd wp-content/themes/defense360
