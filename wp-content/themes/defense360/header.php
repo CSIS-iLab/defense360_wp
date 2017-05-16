@@ -36,7 +36,8 @@
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<div class="content-wrapper row">
 				<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu',
-					'container_class' => 'menu-main-container col-xs-12 col-md-11' ) ); ?>
+					'container_class' => 'menu-main-container col-xs-12 col-md-11',
+					'walker' => new Nav_Main_Walker() ) ); ?>
 				<div class="nav-social col-xs-12 col-md-1">
 					<?php if(get_theme_mod('contact-twitter')) {
 						echo '<a href="https://twitter.com/'.get_theme_mod('contact-twitter').'" target="_blank"><i class="icon icon-twitter"></i></a>';

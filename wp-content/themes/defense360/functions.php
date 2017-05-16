@@ -142,3 +142,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load custom walker for main navigation
+ */
+require get_template_directory() . '/inc/nav-main-walker.php';

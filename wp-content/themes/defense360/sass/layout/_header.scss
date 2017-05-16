@@ -46,6 +46,12 @@ header.site-header {
 					margin-right: 3%;
 				}
 
+				.menu-description {
+					text-transform: uppercase;
+					color: $dark-gray;
+					letter-spacing: 0.5px;
+				}
+
 				a {
 					font-weight: bold;
 					text-decoration: none;
