@@ -29,13 +29,12 @@
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="/wp-content/themes/defense360/img/defense360-logo.svg" title="<?php bloginfo( 'name' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="site-logo" /></a>
 			</div><!-- .site-branding -->
 			<div class="header-ttIndex col-xs-12 col-md-6">
-				Global Go to Think Tank Index
+				<?php echo get_theme_mod('header-ttIndex'); ?>
 			</div>
 		</div><!-- .content-wrapper -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<div class="content-wrapper">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'defense360' ); ?></button>
 				<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 			</div><!-- .content-wrapper -->
 		</nav><!-- #site-navigation -->

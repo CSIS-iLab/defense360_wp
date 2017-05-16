@@ -39,4 +39,13 @@
 			}
 		} );
 	} );
+
+	// Think Tank Description
+	wp.customize( 'header-ttIndex', function( value ) {
+		value.bind( function( to ) {
+			console.log(to);
+			$( '.header-ttIndex' ).text( to );
+		} );
+	} );
+
 } )( jQuery );
