@@ -7,7 +7,7 @@ footer.site-footer {
 
 	.footer-logoContainer {
 		margin-bottom: 0.5rem;
-		
+
 		img {
 			max-width: 50%;
 		}
@@ -29,6 +29,15 @@ footer.site-footer {
 		address {
 			font-style: normal;
 			margin: 0;
+		}
+
+		a {
+			text-decoration: none;
+			color: $dark-gray;
+
+			&:hover {
+				color: $bright-green;
+			}
 		}
 
 		i.icon {

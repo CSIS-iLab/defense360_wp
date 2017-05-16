@@ -30,10 +30,10 @@
 						echo '<address>'.get_theme_mod('contact-address').'</address>';
 					} ?>
 					<?php if(get_theme_mod('contact-email')) {
-						echo '<i class="icon icon-mail"></i> '.get_theme_mod('contact-email').'<br />';
+						echo '<a href="mailto:'.get_theme_mod('contact-email').'"><i class="icon icon-mail"></i> '.get_theme_mod('contact-email').'</a><br />';
 					} ?>
 					<?php if(get_theme_mod('contact-twitter')) {
-						echo '<i class="icon icon-twitter"></i> @'.get_theme_mod('contact-twitter');
+						echo '<a href="https://twitter.com/'.get_theme_mod('contact-twitter').'" target="_blank"><i class="icon icon-twitter"></i> @'.get_theme_mod('contact-twitter').'</a>';
 					} ?>
 				</div>
 			</div>
