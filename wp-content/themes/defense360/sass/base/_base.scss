@@ -15,4 +15,8 @@ body {
 .content-wrapper {
 	max-width: $size__max-width;
 	margin: 0 auto;
+
+	&.row {
+		margin: 0 auto;
+	}
 }
