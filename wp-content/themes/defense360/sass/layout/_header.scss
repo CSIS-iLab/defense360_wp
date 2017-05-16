@@ -28,6 +28,10 @@ header.site-header {
 		padding-top: 2rem;
 		padding-bottom: 1rem;
 
+		.menu-main-container {
+			padding: 0;
+		}
+
 		ul#primary-menu {
 			display: block;
 			list-style: none;
@@ -38,13 +42,38 @@ header.site-header {
 				display: inline-block;
 				margin-right: 5%;
 
+				&.home {
+					margin-right: 3%;
+				}
+
 				a {
 					font-weight: bold;
 					text-decoration: none;
 					color: $dark-gray;
 					text-transform: uppercase;
 					letter-spacing: 0.5px;
+
+					&:hover {
+						color: $bright-green;
+					}
 				}
+			}
+		}
+
+		.nav-social {
+			padding: 0;
+			text-align: right;
+
+			a {
+				color: $dark-gray;
+
+				&:hover {
+					color: $bright-green;
+				}
+			}
+
+			i.icon {
+				@include fontSize(16px);
 			}
 		}
 	}
@@ -52,6 +81,10 @@ header.site-header {
 	nav.secondary-navigation {
 		background-color: $light-gray;
 		padding: 0.8rem;
+
+		.menu-categories-menu-container {
+			padding: 0;
+		}
 
 		ul#secondary-menu {
 			display: block;
@@ -71,6 +104,11 @@ header.site-header {
 					@include fontSize(13px);
 				}
 			}
+		}
+
+		.nav-searchIconContainer {
+			text-align: right;
+			padding: 0;
 		}
 	}
 }

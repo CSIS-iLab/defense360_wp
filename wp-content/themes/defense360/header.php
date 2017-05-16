@@ -34,15 +34,28 @@
 		</div><!-- .content-wrapper -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<div class="content-wrapper">
-				<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
+			<div class="content-wrapper row">
+				<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu',
+					'container_class' => 'menu-main-container col-xs-12 col-md-11' ) ); ?>
+				<div class="nav-social col-xs-12 col-md-1">
+					<?php if(get_theme_mod('contact-twitter')) {
+						echo '<a href="https://twitter.com/'.get_theme_mod('contact-twitter').'" target="_blank"><i class="icon icon-twitter"></i></a>';
+					} ?>
+					<?php if(get_theme_mod('contact-email')) {
+						echo '<a href="mailto:'.get_theme_mod('contact-email').'"><i class="icon icon-mail"></i></a>';
+					} ?>
+				</div><!-- .nav-social -->
 			</div><!-- .content-wrapper -->
 		</nav><!-- #site-navigation -->
 		<nav class="secondary-navigation" role="navigation">
-			<div class="content-wrapper">
-				<?php wp_nav_menu( array( 'theme_location' => 'categories-menu', 'menu_id' => 'secondary-menu' ) ); ?>
+			<div class="content-wrapper row">
+				<?php wp_nav_menu( array( 'theme_location' => 'categories-menu', 'menu_id' => 'secondary-menu',
+					'container_class' => 'menu-categories-menu-container col-xs-12 col-md-11' ) ); ?>
+				<div class="nav-searchIconContainer col-xs-12 col-md-1">
+					<i class="icon icon-search"></i>
+				</div>
 			</div><!-- .content-wrapper -->
-		</nav><!-- #site-navigation -->
+		</nav><!-- .secondary-navigation -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="content-wrapper">
