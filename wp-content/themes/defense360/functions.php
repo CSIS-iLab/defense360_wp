@@ -42,9 +42,10 @@ function defense360_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
+	// Theme Menus
 	register_nav_menus( array(
 		'menu-1' => esc_html__( 'Primary', 'defense360' ),
+		'categories-menu' => esc_html__( 'Secondary', 'defense360' ),
 	) );
 
 	/*

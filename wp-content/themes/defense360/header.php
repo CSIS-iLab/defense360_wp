@@ -38,6 +38,11 @@
 				<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 			</div><!-- .content-wrapper -->
 		</nav><!-- #site-navigation -->
+		<nav class="secondary-navigation" role="navigation">
+			<div class="content-wrapper">
+				<?php wp_nav_menu( array( 'theme_location' => 'categories-menu', 'menu_id' => 'secondary-menu' ) ); ?>
+			</div><!-- .content-wrapper -->
+		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="content-wrapper">
