@@ -3,7 +3,10 @@
 ==============================*/
 
 header.site-header {
+	padding-top: 2rem;
+
 	.site-branding {
+		padding: 0;
 
 		img.site-logo {
 			max-width: 90%;
@@ -13,6 +16,37 @@ header.site-header {
 	.header-ttIndex {
 		align-self: flex-end;
 		text-align: right;
+		@include fontSize(12px);
+		line-height: 1.5;
+		color: $gray;
+		padding-left: 10%;
+	}
+
+	/*----------  Navigation: Main Menu  ----------*/
+	
+	nav.main-navigation {
+		padding-top: 2rem;
+
+		ul#primary-menu {
+			display: block;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				float: left;
+				position: relative;
+				margin-right: 5%;
+
+				a {
+					font-weight: bold;
+					text-decoration: none;
+					color: $dark-gray;
+					text-transform: uppercase;
+					letter-spacing: 0.5px;
+				}
+			}
+		}
 	}
 }
 
