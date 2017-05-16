@@ -8,6 +8,8 @@
 
 ( function( $ ) {
 
+	console.log("this is a test");
+
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
@@ -45,6 +47,14 @@
 		value.bind( function( to ) {
 			console.log(to);
 			$( '.header-ttIndex' ).text( to );
+		} );
+	} );
+
+	// ISP Description
+	wp.customize( 'footer-isp', function( value ) {
+		value.bind( function( to ) {
+			console.log("foobar");
+			$( '.footer-infoContainer p' ).text( to );
 		} );
 	} );
 

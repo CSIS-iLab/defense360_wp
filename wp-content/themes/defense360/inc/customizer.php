@@ -35,6 +35,66 @@ function defense360_customize_register( $wp_customize ) {
 			'type'     => 'textarea'
 		)
 	);
+
+	// ISP Description
+	$wp_customize->add_setting( 'footer-isp' , array(
+	    'transport' => 'postMessage',
+	) );
+
+	$wp_customize->add_control(
+		'footer-isp', 
+		array(
+			'label'    => __( 'ISP Description', 'defense360' ),
+			'section'  => 'defense360-theme-settings',
+			'settings' => 'footer-isp',
+			'type'     => 'textarea'
+		)
+	);
+
+	// Contact: Email
+	$wp_customize->add_setting( 'contact-address' , array(
+	    'transport' => 'postMessage',
+	) );
+
+	$wp_customize->add_control(
+		'contact-address', 
+		array(
+			'label'    => __( 'Contact: Address', 'defense360' ),
+			'section'  => 'defense360-theme-settings',
+			'settings' => 'contact-address',
+			'type'     => 'textarea'
+		)
+	);
+
+	// Contact: Email
+	$wp_customize->add_setting( 'contact-email' , array(
+	    'transport' => 'postMessage',
+	) );
+
+	$wp_customize->add_control(
+		'contact-email', 
+		array(
+			'label'    => __( 'Contact: Email', 'defense360' ),
+			'section'  => 'defense360-theme-settings',
+			'settings' => 'contact-email',
+			'type'     => 'email'
+		)
+	);
+
+	// Contact: Twitter
+	$wp_customize->add_setting( 'contact-twitter' , array(
+	    'transport' => 'postMessage',
+	) );
+
+	$wp_customize->add_control(
+		'contact-twitter', 
+		array(
+			'label'    => __( 'Contact: Twitter Handle', 'defense360' ),
+			'section'  => 'defense360-theme-settings',
+			'settings' => 'contact-twitter',
+			'type'     => 'text'
+		)
+	);
 }
 add_action( 'customize_register', 'defense360_customize_register' );
 

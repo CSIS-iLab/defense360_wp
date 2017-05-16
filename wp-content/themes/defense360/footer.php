@@ -14,6 +14,30 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="content-wrapper">
+			<div class="footer-logoContainer">
+				<a href="https://www.csis.org/programs/international-security-program" target="_blank">
+					<img src="/wp-content/themes/defense360/img/ISP.svg" alt="Center for Strategic and International Studies" title="Center for Strategic and International Studies" />
+				</a>
+			</div>
+			<div class="footer-infoContainer row">
+				<div class="col-xs-12 col-md-6">
+					<p><?php echo get_theme_mod('footer-isp'); ?></p>
+				</div>
+				<div class="footer-contactInfo col-xs-12 col-md-6">
+					<h3><?php _e('Connect with Us', 'defense360'); ?></h3>
+					<?php if(get_theme_mod('contact-address')) {
+						echo '<address>'.get_theme_mod('contact-address').'</address>';
+					} ?>
+					<?php if(get_theme_mod('contact-email')) {
+						echo '<i class="icon icon-mail"></i> '.get_theme_mod('contact-email').'<br />';
+					} ?>
+					<?php if(get_theme_mod('contact-twitter')) {
+						echo '<i class="icon icon-twitter"></i> @'.get_theme_mod('contact-twitter');
+					} ?>
+				</div>
+			</div>
+		</div>
 		<div class="footer-copyright">
 			<div class="content-wrapper">
 				&copy; <?php echo date('Y'); ?> by the Center for Strategic and International Studies. All rights reserved.
