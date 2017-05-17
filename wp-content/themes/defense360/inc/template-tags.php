@@ -60,6 +60,28 @@ function defense360_entry_footer() {
 }
 endif;
 
+if ( ! function_exists( 'defense360_entry_contentType' ) ) :
+/**
+ * Prints HTML with meta information for the categories, tags and comments.
+ */
+function defense360_entry_contentType() {
+	// Hide content type and categories for pages
+	if ( 'post' === get_post_type() ) {
+		// Get the post's content type
+		$categories_list = get_the_category_list( esc_html__( ', ', 'defense360' ) );
+		if ( $categories_list && defense360_categorized_blog() ) {
+			printf( '<span class="post-contentType">' . esc_html__( '%1$s', 'defense360' ) . ' / </span>', $categories_list ); // WPCS: XSS OK.
+		}
+
+		/* translators: used between list items, there is a space after the comma */
+		$categories_list = get_the_category_list( esc_html__( ', ', 'defense360' ) );
+		if ( $categories_list && defense360_categorized_blog() ) {
+			printf( '<span class="post-categories">' . esc_html__( '%1$s', 'defense360' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+		}
+	}
+}
+endif;
+
 /**
  * Returns true if a blog has more than 1 category.
  *
