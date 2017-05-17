@@ -86,10 +86,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   'layout/header',
   'layout/footer',
   'layout/comments',
-  'layout/posts-and-pages',
   'layout/widgets';
 
 /*----------  Pages  ----------*/
+@import
+  'pages/posts';
 
 /*----------  Vendors  ----------*/
 @import

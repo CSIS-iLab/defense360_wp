@@ -13,10 +13,21 @@ body {
 }
 
 .content-wrapper {
-	max-width: $size__max-width;
+	max-width: $size__container-max-width;
 	margin: 0 auto;
 
 	&.row {
 		margin: 0 auto;
+	}
+}
+
+.content-wrapper-narrow {
+	@media screen and (min-width: $size__content-max-width) {
+		max-width: $size__content-max-width;
+		margin: 0 auto;
+
+		&.row {
+			margin: 0 auto;
+		}
 	}
 }

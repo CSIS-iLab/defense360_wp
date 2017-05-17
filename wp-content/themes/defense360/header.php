@@ -59,4 +59,4 @@
 		</nav><!-- .secondary-navigation -->
 	</header><!-- #masthead -->
 
-	<div id="content" class="content-wrapper">
+	<div id="content">
