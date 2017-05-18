@@ -17,28 +17,33 @@ article.post {
 	/*----------  Post Header  ----------*/
 	header.entry-header {
 
-		.post-contentType {
+		.post-contentCategoriesContainer {
 			text-transform: uppercase;
+			@include fontSize(12px);
 			color: $gray;
 
-			a {
-				text-decoration: none;
-				color: $gray;
+			.post-contentType {
+				a {
+					text-decoration: none;
+					color: $gray;
+				}
 			}
-		}
 
-		.post-categories {
-			text-transform: uppercase;
-
-			a {
-				text-decoration: none;
-				color: $bright-green;
+			.post-categories {
+				a {
+					text-decoration: none;
+					color: $bright-green;
+				}
 			}
 		}
 
 		.entry-title {
 			font-family: $font__SourceSans;
-			margin: 0;
+			@include fontSize(28px);
+			font-weight: 600;
+			line-height: 1.18;
+			color: $black;
+			margin: 0.25rem 0 0 0;
 		}
 
 		img {
@@ -49,6 +54,8 @@ article.post {
 
 		.post-series {
 			color: $gray;
+			@include fontSize(20px);
+
 			a {
 				color: $gray;
 				text-decoration: none;
@@ -58,10 +65,12 @@ article.post {
 
 	/*----------  Post Meta  ----------*/
 	.entry-meta {
-		margin-top: 1rem;
+		margin-top: 0.5rem;
+		@include fontSize(12px);
 
 		a {
 			text-decoration: none;
+			color: $gray;
 		}
 
 		.posted-on {

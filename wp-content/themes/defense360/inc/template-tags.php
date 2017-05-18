@@ -67,6 +67,7 @@ if ( ! function_exists( 'defense360_entry_contentType' ) ) :
 function defense360_entry_contentType() {
 	// Hide content type and categories for pages
 	if ( 'post' === get_post_type() ) {
+		print "<div class='post-contentCategoriesContainer'>";
 		// Get the post's content type
 		$taxonomy = 'content-type';
 		$terms = get_the_terms(get_the_ID(), $taxonomy);
@@ -84,6 +85,7 @@ function defense360_entry_contentType() {
 		if ( $categories_list && defense360_categorized_blog() ) {
 			printf( '<span class="post-categories">' . esc_html__( '%1$s', 'defense360' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
+		print "</div>";
 	}
 }
 endif;

@@ -1,0 +1,32 @@
+/*====================================
+=            Social Share            =
+====================================*/
+
+.sharedaddy {
+	.sd-title {
+		display: inline-block;
+		color: $gray;
+		@include fontSize(12px);
+		text-transform: uppercase !important;
+		font-weight: normal !important;
+
+		&::before {
+			border: 0 !important;
+		}
+	}
+
+	.sd-content {
+		display: inline-block;
+		margin-left: 0.5rem;
+
+		// Facebook
+		.share-facebook {
+			background-color: transparent !important;
+
+			a::before {
+				color: $dark-gray;
+			}
+		}
+	}
+}
+
