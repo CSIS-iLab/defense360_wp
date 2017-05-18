@@ -62,21 +62,49 @@ endif;
 
 if ( ! function_exists( 'defense360_entry_contentType' ) ) :
 /**
- * Prints HTML with meta information for the categories, tags and comments.
+ * Prints HTML with meta information for the content type and categories.
  */
 function defense360_entry_contentType() {
 	// Hide content type and categories for pages
 	if ( 'post' === get_post_type() ) {
 		// Get the post's content type
-		$categories_list = get_the_category_list( esc_html__( ', ', 'defense360' ) );
-		if ( $categories_list && defense360_categorized_blog() ) {
-			printf( '<span class="post-contentType">' . esc_html__( '%1$s', 'defense360' ) . ' / </span>', $categories_list ); // WPCS: XSS OK.
+		$taxonomy = 'content-type';
+		$terms = get_the_terms(get_the_ID(), $taxonomy);
+		if (! empty($terms)) {
+			print "<span class='post-contentType'>";
+			foreach ($terms as $term) {
+				$url = get_term_link($term->slug, $taxonomy);
+				print "<a href='$url'>{$term->name}</a>";
+			}
+			print " / </span>";
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'defense360' ) );
 		if ( $categories_list && defense360_categorized_blog() ) {
 			printf( '<span class="post-categories">' . esc_html__( '%1$s', 'defense360' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+		}
+	}
+}
+endif;
+
+if ( ! function_exists( 'defense360_entry_series' ) ) :
+/**
+ * Prints HTML with series information
+ */
+function defense360_entry_series() {
+	// Hide content type and categories for pages
+	if ( 'post' === get_post_type() ) {
+		// Get the post's content type
+		$taxonomy = 'series';
+		$terms = get_the_terms(get_the_ID(), $taxonomy);
+		if (! empty($terms)) {
+			print "<span class='post-series'>";
+			foreach ($terms as $term) {
+				$url = get_term_link($term->slug, $taxonomy);
+				print "<a href='$url'>{$term->name}</a>";
+			}
+			print " Series</span>";
 		}
 	}
 }
