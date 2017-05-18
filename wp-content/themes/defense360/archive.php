@@ -12,6 +12,8 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main content-wrapper" role="main">
 
+		<?php echo do_shortcode( '[searchandfilter taxonomies="category,post_tag,content-type,series"]' ); ?>
+
 		<?php
 		if ( have_posts() ) : ?>
 

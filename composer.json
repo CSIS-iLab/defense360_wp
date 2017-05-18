@@ -18,6 +18,7 @@
         "wpackagist-plugin/wp-user-avatar": "*",
         "wpackagist-plugin/wpfront-user-role-editor": "*",
         "wpackagist-plugin/wordpress-seo": "*",
-        "wpackagist-plugin/jetpack": "*"
+        "wpackagist-plugin/jetpack": "*",
+        "wpackagist-plugin/search-filter": "*"
     }
 }
