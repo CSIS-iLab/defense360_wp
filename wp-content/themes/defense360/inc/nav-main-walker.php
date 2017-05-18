@@ -21,12 +21,11 @@ class Nav_Main_Walker extends Walker_Nav_Menu {
 		$output .= $indent . '';
 
 		// Item Description
-		$description = $item->description;
-		if(!empty($description)) {
-			$description_output = "<span class='menu-description'>".$description.":</span> ";
+		if($item->type_label == "Series") {
+			$series_output = "<span class='menu-description'>Series:</span> ";
 		}
 		else {
-			$description_output = null;
+			$series_output = null;
 		}
 
 		$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
@@ -35,7 +34,7 @@ class Nav_Main_Walker extends Walker_Nav_Menu {
 		$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
 		$item_output = $args->before;
 		$item_output .= '<li' . $id . $class_names .'>';
-		$item_output .= $description_output;
+		$item_output .= $series_output;
 		$item_output .= '<a'. $attributes .'>';
 		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 		$item_output .= '</a></li>';
