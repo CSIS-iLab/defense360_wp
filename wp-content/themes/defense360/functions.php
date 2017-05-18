@@ -129,3 +129,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load custom walker for main navigation
  */
 require get_template_directory() . '/inc/nav-main-walker.php';
+
+/**
+ * Register custom taxonomies
+ */
+require get_template_directory() . '/inc/custom-taxonomies.php';
