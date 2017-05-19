@@ -29,9 +29,32 @@ $browser-context: 16px;
 	clear: both;
 }
 
-// Breakpoint
-@mixin breakpoint($size) {
-	@media screen and (min-width: $size) {
-		@content;
+// Breakpoints
+$breakpoint-xlarge: 90em;
+$breakpoint-large: 64em;
+$breakpoing-medium: 48em;
+$breakpoing-small: 35em;
+$breakpoint-xsmall: 25em;
+
+@mixin breakpoint($break) {
+	@if $break == xlarge {
+		@media screen and (min-width:$breakpoint-xlarge) { @content; }
 	}
+	@else if $break == large {
+		@media screen and (min-width:$breakpoint-large) { @content; }
+	}
+	@else if $break == medium {
+		@media screen and (min-width: $breakpoing-medium) { @content; }
+	}
+	@else if $break == small {
+		@media screen and (max-width: $breakpoing-small) { @content; }
+	}
+	@else if $break == xsmall {
+		@media screen and (max-width: $breakpoint-xsmall) { @content; }
+	}@else {
+		@media screen and (min-width: $break) {
+			@content;
+		}
+	}
+
 }

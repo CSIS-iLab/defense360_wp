@@ -94,9 +94,9 @@ function defense360_scripts() {
 
 	wp_enqueue_script( 'defense360-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	wp_enqueue_script( 'defense360-mobile-menu', get_template_directory_uri() . '/js/mobile-menu.js', array(), '20151215', true );
+
+
 }
 add_action( 'wp_enqueue_scripts', 'defense360_scripts' );
 

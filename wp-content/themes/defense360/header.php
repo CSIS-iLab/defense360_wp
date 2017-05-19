@@ -25,38 +25,54 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="content-wrapper row">
-			<div class="site-branding col-xs-12 col-md-6">
+			<div class="header-mobileContainer col-xs-2 visible-xs">
+				<i class="icon icon-menu"></i>
+				<span class="close-icon"></span>
+			</div>
+			<div class="site-branding col-xs-8 col-md-6">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="/wp-content/themes/defense360/img/defense360-logo.svg" title="<?php bloginfo( 'name' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="site-logo" /></a>
 			</div><!-- .site-branding -->
-			<div class="header-ttIndex col-xs-12 col-md-6">
+			<div class="header-ttIndex hidden-xs col-md-6">
 				<?php echo get_theme_mod('header-ttIndex'); ?>
 			</div>
+			<div class="header-searchContainer col-xs-2 visible-xs">
+				<i class="icon icon-search"></i>
+			</div>
 		</div><!-- .content-wrapper -->
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<div class="content-wrapper row">
-				<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu',
-					'container_class' => 'menu-main-container col-xs-12 col-md-11',
-					'walker' => new Nav_Main_Walker() ) ); ?>
-				<div class="nav-social col-xs-12 col-md-1">
-					<?php if(get_theme_mod('contact-twitter')) {
-						echo '<a href="https://twitter.com/'.get_theme_mod('contact-twitter').'" target="_blank"><i class="icon icon-twitter"></i></a>';
-					} ?>
-					<?php if(get_theme_mod('contact-email')) {
-						echo '<a href="mailto:'.get_theme_mod('contact-email').'"><i class="icon icon-mail"></i></a>';
-					} ?>
-				</div><!-- .nav-social -->
-			</div><!-- .content-wrapper -->
-		</nav><!-- #site-navigation -->
-		<nav class="secondary-navigation" role="navigation">
-			<div class="content-wrapper row">
-				<?php wp_nav_menu( array( 'theme_location' => 'categories-menu', 'menu_id' => 'secondary-menu',
-					'container_class' => 'menu-categories-menu-container col-xs-12 col-md-11' ) ); ?>
-				<div class="nav-searchIconContainer col-xs-12 col-md-1">
-					<i class="icon icon-search"></i>
-				</div>
-			</div><!-- .content-wrapper -->
-		</nav><!-- .secondary-navigation -->
+		<div class="navigation-container">
+			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<div class="content-wrapper row">
+					<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu',
+						'container_class' => 'menu-main-container col-xs-12 col-md-11',
+						'walker' => new Nav_Main_Walker() ) ); ?>
+					<div class="nav-social hidden-xs col-md-1">
+						<?php if(get_theme_mod('contact-twitter')) {
+							echo '<a href="https://twitter.com/'.get_theme_mod('contact-twitter').'" target="_blank"><i class="icon icon-twitter"></i></a>';
+						} ?>
+						<?php if(get_theme_mod('contact-email')) {
+							echo '<a href="mailto:'.get_theme_mod('contact-email').'"><i class="icon icon-mail"></i></a>';
+						} ?>
+					</div><!-- .nav-social -->
+				</div><!-- .content-wrapper -->
+			</nav><!-- #site-navigation -->
+			<nav class="secondary-navigation" role="navigation">
+				<div class="content-wrapper row">
+					<?php wp_nav_menu( array( 'theme_location' => 'categories-menu', 'menu_id' => 'secondary-menu',
+						'container_class' => 'menu-categories-menu-container col-xs-12 col-md-11' ) ); ?>
+					<div class="nav-searchIconContainer hidden-xs col-md-1">
+						<i class="icon icon-search"></i>
+					</div>
+				</div><!-- .content-wrapper -->
+			</nav><!-- .secondary-navigation -->
+			<div class="nav-social visible-xs-block">
+				<?php if(get_theme_mod('contact-twitter')) {
+					echo '<a href="https://twitter.com/'.get_theme_mod('contact-twitter').'" target="_blank"><i class="icon icon-twitter"></i></a>';
+				} ?>
+				<?php if(get_theme_mod('contact-email')) {
+					echo '<a href="mailto:'.get_theme_mod('contact-email').'"><i class="icon icon-mail"></i></a>';
+				} ?>
+			</div><!-- .nav-social -->
+		</div><!-- .navigation-container -->
 	</header><!-- #masthead -->
 
 	<div id="content">

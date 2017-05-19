@@ -8,6 +8,11 @@ header.site-header {
 
 	.site-branding {
 		padding: 0;
+		text-align: center;
+
+		@include breakpoint("medium") {
+			text-align: left;
+		}
 
 		img.site-logo {
 			max-width: 90%;
@@ -23,11 +28,45 @@ header.site-header {
 		padding-left: 10%;
 	}
 
+	.header-mobileContainer, .header-searchContainer {
+		justify-content: center;
+		align-self: center;
+		@include fontSize(25px);
+		cursor: pointer;
+
+	}
+
+	/*----------  Navigation  ----------*/
+	.navigation-container {
+		display: none;
+
+		@include breakpoint("medium") {
+			display: block;
+		}
+	}
+
+
 	/*----------  Navigation: Main Menu  ----------*/
 	
 	nav.main-navigation {
 		padding-top: 2rem;
 		padding-bottom: 1rem;
+
+		.content-wrapper {
+			max-width: 100%;
+			width: 100%;
+			padding: 0;
+
+			@include breakpoint("medium") {
+				max-width: $size__container-max-width;
+				margin: 0 auto;
+				padding: 0 1rem;
+			}
+
+			@include breakpoint($size__container-max-width) {
+				padding: 0;
+			}
+		}
 
 		.menu-main-container {
 			padding: 0;
@@ -40,11 +79,48 @@ header.site-header {
 			padding: 0;
 
 			li {
-				display: inline-block;
-				margin-right: 5%;
+				text-align: center;
+
+				// Apply styles to all list items at medium breakpoint
+				@include breakpoint("medium") {
+					text-align: left !important;
+					margin-right: 5% !important;
+					display: inline-block !important;
+					width: auto !important;
+					border: 0 !important;
+					top: 0 !important;
+				}
 
 				&.home {
-					margin-right: 3%;
+					display: none;
+
+					@include breakpoint("medium") {
+						margin-right: 3%;
+						display: inline;
+					}
+				}
+
+				// First 4 Menu Items
+				&:nth-child(-n+4):not(.home) {
+					display: inline-block;
+					width: 32%;
+					margin: 0;
+					border-left: 1px solid $color__navigation-border;
+					padding: 0.25rem 0;
+				}
+
+				// Second Menu Item
+				&:nth-child(2) {
+					border:0 !important;
+				}
+
+				// All Other Menu Items
+				&:not(:nth-child(-n+4)) {
+					display: block;
+					border-bottom: 1px solid $color__navigation-border;
+					padding: 0.5rem 0;
+					position: relative;
+					top: 205px;
 				}
 
 				.menu-description {
@@ -66,28 +142,35 @@ header.site-header {
 				}
 			}
 		}
-
-		.nav-social {
-			padding: 0;
-			text-align: right;
-
-			a {
-				color: $dark-gray;
-
-				&:hover {
-					color: $bright-green;
-				}
-			}
-
-			i.icon {
-				@include fontSize(16px);
-			}
-		}
 	}
 
+	/*----------  Navigation: Secondary Menu  ----------*/
+	
 	nav.secondary-navigation {
 		background-color: $light-gray;
-		padding: 0.8rem;
+		position: relative;
+		top: -115px;
+
+		@include breakpoint("medium") {
+			padding: 0.8rem;
+			top: 0;
+			padding: 0.5rem 1rem;
+		}
+
+		.content-wrapper {
+			max-width: 100%;
+			width: 100%;
+			padding: 0;
+
+			@include breakpoint("medium") {
+				max-width: $size__container-max-width;
+				margin: 0 auto;
+			}
+
+			@include breakpoint($size__container-max-width) {
+				padding: 0;
+			}
+		}
 
 		.menu-categories-menu-container {
 			padding: 0;
@@ -100,15 +183,26 @@ header.site-header {
 			padding: 0;
 
 			li {
-				display: inline-block;
-				margin-right: 5%;
+				display: block;
+				background-color: $light-gray;
+				border-bottom: 1px solid $color__navigation-border;
+				padding: 0.5rem 0;
+				text-align: center;
 
 				a {
-					text-decoration: none;
+					font-weight: normal;
 					color: $dark-gray;
 					text-transform: uppercase;
 					letter-spacing: 0.4px;
 					@include fontSize(13px);
+				}
+
+				@include breakpoint("medium") {
+					display: inline-block;
+					margin-right: 5%;
+					text-align: left;
+					border: 0;
+					padding: 0;
 				}
 			}
 		}
@@ -116,6 +210,38 @@ header.site-header {
 		.nav-searchIconContainer {
 			text-align: right;
 			padding: 0;
+		}
+	}
+
+	/*----------  Mobile Menu Styles  ----------*/
+	&.menu-mobile-active {
+		height: 100vh;
+	}
+
+	.close-icon {
+		display: none;
+	}
+
+	/*----------  Navigation: Social Media  ----------*/
+	.nav-social {
+		padding: 0.5rem 0;
+		text-align: center;
+
+		@include breakpoint("medium") {
+			text-align: right;
+			padding: 0;
+		}
+
+		a {
+			color: $dark-gray;
+
+			&:hover {
+				color: $bright-green;
+			}
+		}
+
+		i.icon {
+			@include fontSize(16px);
 		}
 	}
 }
