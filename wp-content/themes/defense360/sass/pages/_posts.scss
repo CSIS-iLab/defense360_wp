@@ -11,6 +11,10 @@
 
 	.entry-content {
 		margin-bottom: 2rem;
+
+		p {
+			margin-bottom: 1rem;
+		}
 	}
 }
 
@@ -20,6 +24,7 @@ article.post {
 
 	/*----------  Post Header  ----------*/
 	header.entry-header {
+		margin-bottom: 0.5rem;
 
 		.post-contentCategoriesContainer {
 			text-transform: uppercase;
@@ -55,7 +60,7 @@ article.post {
 			margin-right: -1rem;
 			width: 100vw;
 
-			@media screen and (min-width: $size__content-max-width) {
+			@include breakpoint($size__content-max-width) {
 				width: 100%;
 				margin-left: auto;
 				margin-right: auto;
@@ -69,6 +74,13 @@ article.post {
 			a {
 				color: $gray;
 			}
+		}
+	}
+
+	/*----------  Post Body  ----------*/
+	.entry-content {
+		p {
+			margin-bottom: 0.5rem;
 		}
 	}
 
@@ -122,6 +134,16 @@ article.post {
 
 	/*----------  Post Thumbnails  ----------*/
 	.post-thumbnailContainer {
+		max-width: 100%;
+		margin-bottom: 0.5rem;
+
+		@include breakpoint($size__content-max-width) {
+			max-width: 175px;
+			float: left;
+			display: inline-block;
+			margin: 0 1rem  0.5rem 0;
+		}
+
 		img {
 			width: 100%;
 			height: auto;

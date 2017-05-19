@@ -28,3 +28,10 @@ $browser-context: 16px;
 @mixin clearfix-after() {
 	clear: both;
 }
+
+// Breakpoint
+@mixin breakpoint($size) {
+	@media screen and (min-width: $size) {
+		@content;
+	}
+}
