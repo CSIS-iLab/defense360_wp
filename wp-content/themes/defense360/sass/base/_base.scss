@@ -15,6 +15,11 @@ body {
 .content-wrapper {
 	max-width: $size__container-max-width;
 	margin: 0 auto;
+	padding: 0 1rem;
+
+	@media screen and (min-width: $size__container-max-width) {
+		padding: 0;
+	}
 
 	&.row {
 		margin: 0 auto;
@@ -22,9 +27,12 @@ body {
 }
 
 .content-wrapper-narrow {
+	padding: 0 1rem;
+
 	@media screen and (min-width: $size__content-max-width) {
 		max-width: $size__content-max-width;
 		margin: 0 auto;
+		padding: 0;
 
 		&.row {
 			margin: 0 auto;

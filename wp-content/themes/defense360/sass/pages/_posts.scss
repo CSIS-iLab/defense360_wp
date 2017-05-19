@@ -24,14 +24,12 @@ article.post {
 
 			.post-contentType {
 				a {
-					text-decoration: none;
 					color: $gray;
 				}
 			}
 
 			.post-categories {
 				a {
-					text-decoration: none;
 					color: $bright-green;
 				}
 			}
@@ -47,9 +45,17 @@ article.post {
 		}
 
 		img {
-			width: 100%;
 			height: auto;
 			margin-top: 2rem;
+			margin-left: -1rem;
+			margin-right: -1rem;
+			width: 100vw;
+
+			@media screen and (min-width: $size__content-max-width) {
+				width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+			}
 		}
 
 		.post-series {
@@ -58,9 +64,13 @@ article.post {
 
 			a {
 				color: $gray;
-				text-decoration: none;
 			}
 		}
+	}
+
+	/*----------  Post Body  ----------*/
+	.entry-content {
+		margin-bottom: 2rem;
 	}
 
 	/*----------  Post Meta  ----------*/
@@ -69,12 +79,22 @@ article.post {
 		@include fontSize(12px);
 
 		a {
-			text-decoration: none;
 			color: $gray;
 		}
 
 		.posted-on {
 			color: $bright-green;
+		}
+	}
+
+	/*----------  Tags  ----------*/
+	.tags-links {
+		color: $gray;
+		@include fontSize(12px);
+		text-transform: uppercase;
+
+		a {
+			text-transform: none;
 		}
 	}
 
@@ -86,7 +106,18 @@ article.post {
 		img {
 			width: 100%;
 			height: auto;
-			max-width: 100px;
+			max-width: 70px;
+		}
+
+		p {
+			margin: 0;
+		}
+
+		&:first-of-type {
+			padding-top: 2rem;
+		}
+		&:last-of-type {
+			padding-bottom: 2rem;
 		}
 	}
 

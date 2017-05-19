@@ -112,6 +112,28 @@ function defense360_entry_series() {
 }
 endif;
 
+if ( ! function_exists( 'defense360_entry_tags' ) ) :
+/**
+ * Prints HTML with meta information for the categories, tags and comments.
+ */
+function defense360_entry_tags($content) {
+	// Hide category and tag text for pages.
+	if ( 'post' === get_post_type() ) {
+		/* translators: used between list items, there is a space after the comma */
+		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'defense360' ) );
+		if ( $tags_list && is_single() && !is_home() ) {
+			$output = sprintf( '<span class="tags-links">' . esc_html__( 'TAGS: %1$s', 'defense360' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			$content .= $output;
+		}
+	}
+
+	return $content;
+}
+
+add_filter('the_content', 'defense360_entry_tags', 19);
+
+endif;
+
 /**
  * Returns true if a blog has more than 1 category.
  *

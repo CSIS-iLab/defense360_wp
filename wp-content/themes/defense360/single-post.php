@@ -72,10 +72,10 @@ get_header();
 						?>
 					<div class="post-authorContainer">
 						<div class="content-wrapper-narrow row flex-center__y">
-							<div class="col-xs-3">
-								<a href="<?php echo $authorURL; ?>" <?php echo $authorRel." ".$authorTarget; ?>><?php echo coauthors_get_avatar($coauthor, 100); ?></a>
+							<div class="col-xs-2">
+								<a href="<?php echo $authorURL; ?>" <?php echo $authorRel." ".$authorTarget; ?>><?php echo coauthors_get_avatar($coauthor, 70); ?></a>
 							</div>
-							<div class="col-xs-9">
+							<div class="col-xs-10">
 								<p><a href="<?php echo $authorURL; ?>" <?php echo $authorRel." ".$authorTarget; ?>><strong><?php echo $coauthor->display_name; ?></strong></a> <?php echo $coauthor->description; ?></p>
 
 							</div>
