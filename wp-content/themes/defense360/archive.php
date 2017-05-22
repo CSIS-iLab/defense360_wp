@@ -12,16 +12,21 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main content-wrapper" role="main">
 
-		<?php echo do_shortcode( '[searchandfilter taxonomies="category,post_tag,content-type,series"]' ); ?>
-
 		<?php
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
+				<div class="content-wrapper-narrow">
 				<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
 					the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
+				</div>
+				<div class="archive-searchFilter">
+					<?php
+						echo do_shortcode( '[searchandfilter fields="search,content-type,category,post_tag,series" headings="Filter Results:"]' );
+					?>
+				</div>
 			</header><!-- .page-header -->
 
 			<?php

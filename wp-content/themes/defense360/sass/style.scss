@@ -51,6 +51,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Posts and Pages
 	## Widgets
 # Pages
+  ## Posts
+  ## Archives
 # Vendors
 --------------------------------------------------------------*/
 
@@ -92,7 +94,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 /*----------  Pages  ----------*/
 @import
-  'pages/posts';
+  'pages/posts',
+  'pages/archives';
 
 /*----------  Vendors  ----------*/
 @import

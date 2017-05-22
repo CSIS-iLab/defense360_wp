@@ -37,3 +37,26 @@ function defense360_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'defense360_pingback_header' );
+
+/**
+ * Change the_archive_title to use custom text before categories, tags, and other taxonomies.
+ */
+add_filter( 'get_the_archive_title', function ($title) {
+
+    if ( is_category() ) {
+
+    	$title = single_cat_title( '<span class="archive-titleDescription">Topic:</span> ', false );
+
+        } elseif ( is_tag() ) {
+
+            $title = single_tag_title( '', false );
+
+        } elseif ( is_author() ) {
+
+            $title = '<span class="vcard">' . get_the_author() . '</span>' ;
+
+        }
+
+    return $title;
+
+});
