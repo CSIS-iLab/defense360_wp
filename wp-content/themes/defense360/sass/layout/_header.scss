@@ -244,5 +244,73 @@ header.site-header {
 			@include fontSize(16px);
 		}
 	}
+
+	/*----------  Search Form  ----------*/
+	.header-searchFormContainer {
+		background-color: $black;
+		padding: 1rem 0.5rem;
+		position: relative;
+		z-index: 10;
+		display: none;
+		margin-top: 1rem;
+
+		@include breakpoint("medium") {
+			top: -37px;
+			padding: 0.2rem 0.5rem 0.6rem;
+			margin-top: 0;
+		}
+
+		.header-searchForm {
+
+			.header-searchInputContainer {
+				padding: 0;
+			}
+
+			.search-form {
+				border-bottom: 1px solid $search-gray;
+			}
+
+			.search-field {
+				width: 95%;
+				border-radius: 0;
+				background-color: transparent;
+				border: 0;
+				color: $search-gray;
+				text-transform: uppercase;
+
+				&:focus {
+					box-shadow: none;
+					outline: none;
+					color: $light-gray;
+				}
+			}
+
+			.search-submit {
+				width: 4%;
+				border: 0;
+				background-color: transparent;
+				border-radius: 0;
+				color: $light-gray;
+				padding: 0;
+				@include fontSize(14px);
+			}
+
+			.search-closeContainer {
+				text-align: right;
+				padding: 0;
+
+				.close-icon {
+					display: inline-block;
+					width: 15px;
+					height: 15px;
+					top: 3px;
+
+					&::before, &::after {
+						background-color: $light-gray;
+					}
+				}
+			}
+		}
+	}
 }
 
