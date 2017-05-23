@@ -17,9 +17,18 @@ function defense360_customize_register( $wp_customize ) {
 
 	// Create Custom Sections
 	$wp_customize->add_section( 'defense360-theme-settings' , array(
-	    'title'      => __( 'Theme Settings', 'mytheme' ),
+	    'title'      => __( 'Theme Settings', 'defense360' ),
 	    'priority'   => 30,
 	) );
+	$wp_customize->add_section( 'defense360-hp-features' , array(
+	    'title'      => __( 'Home Page: Features', 'defense360' ),
+	    'priority'   => 30,
+	) );
+	$wp_customize->add_section( 'defense360-hp-series' , array(
+	    'title'      => __( 'Home Page: Series', 'defense360' ),
+	    'priority'   => 30,
+	) );
+
 
 	// Think Tank Description
 	$wp_customize->add_setting( 'header-ttIndex' , array(
@@ -95,6 +104,42 @@ function defense360_customize_register( $wp_customize ) {
 			'type'     => 'text'
 		)
 	);
+
+	/*----------  Home Page: Features  ----------*/
+    $featuredPosts_list = array();
+	$args = array('post_type' => 'post', 'numberposts' => '-1');
+	$featuredPosts = get_posts( $args ); 
+	foreach($featuredPosts as $featuredPost) {
+	    $featuredPosts_list[$featuredPost->ID] = $featuredPost->post_title;
+	}
+
+    // Feature 1
+    $wp_customize->add_setting( 'hp_feature_1', array('transport' => 'postMessage'));
+	$wp_customize->add_control( 'hp_feature_1', array('label'    => esc_html__( 'Feature #1', 'defense360' ), 'type'     => 'select', 'section'  => 'defense360-hp-features', 'priority' => 4, 'choices'  => $featuredPosts_list, ));
+
+    // Feature 2
+    $wp_customize->add_setting( 'hp_feature_2', array('transport' => 'postMessage'));
+	$wp_customize->add_control( 'hp_feature_2', array('label'    => esc_html__( 'Feature #2', 'defense360' ), 'type'     => 'select', 'section'  => 'defense360-hp-features', 'priority' => 4, 'choices'  => $featuredPosts_list, ));
+
+    // Feature 3
+    $wp_customize->add_setting( 'hp_feature_3', array('transport' => 'postMessage'));
+	$wp_customize->add_control( 'hp_feature_3', array('label'    => esc_html__( 'Feature #3', 'defense360' ), 'type'     => 'select', 'section'  => 'defense360-hp-features', 'priority' => 4, 'choices'  => $featuredPosts_list, ));
+
+
+    /*----------  Home Page: Series  ----------*/
+    $series_list = array();
+    $terms = get_terms( array(
+	    'taxonomy' => 'series',
+	    'hide_empty' => true,
+	) );
+	foreach($terms as $term) {
+		$series_list[$term->term_id] = $term->name;
+	}
+
+	// Featured Series
+	$wp_customize->add_setting( 'hp_series_1', array('transport' => 'postMessage'));
+	$wp_customize->add_control( 'hp_series_1', array('label'    => esc_html__( 'Featured Series', 'defense360' ), 'type'     => 'select', 'section'  => 'defense360-hp-series', 'priority' => 4, 'choices'  => $series_list, ));
+
 }
 add_action( 'customize_register', 'defense360_customize_register' );
 
