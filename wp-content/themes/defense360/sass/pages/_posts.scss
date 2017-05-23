@@ -138,10 +138,10 @@ article.post {
 		margin-bottom: 0.5rem;
 
 		@include breakpoint($size__content-max-width) {
-			max-width: 175px;
-			float: left;
-			display: inline-block;
-			margin: 0 1rem  0.5rem 0;
+			// max-width: 175px;
+			// float: left;
+			// display: inline-block;
+			// margin: 0 1rem  0.5rem 0;
 		}
 
 		img {
