@@ -80,6 +80,7 @@ header.site-header {
 
 			li {
 				text-align: center;
+				@include fontSize(14px);
 
 				// Apply styles to all list items at medium breakpoint
 				@include breakpoint("medium") {

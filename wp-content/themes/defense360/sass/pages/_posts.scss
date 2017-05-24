@@ -22,6 +22,13 @@
 article.post {
 	margin-bottom: 3rem;
 
+	.post-thumbnail.isHomepage {
+		padding-right: 1rem;
+	}
+	.post-content.isHomepage {
+		padding-left: 1rem;
+	}
+
 	/*----------  Post Header  ----------*/
 	header.entry-header {
 		margin-bottom: 0.5rem;
@@ -48,9 +55,21 @@ article.post {
 			font-family: $font__SourceSans;
 			@include fontSize(28px);
 			font-weight: 600;
-			line-height: 1.18;
+			line-height: 1.25;
 			color: $black;
 			margin: 0.25rem 0 0 0;
+
+			&.isHomepage a {
+				color: $black;
+			}
+
+			&.home-secondaryFeature {
+				@include fontSize(24px);
+
+				a {
+					color: $black;
+				}
+			}
 		}
 
 		img {
@@ -137,16 +156,28 @@ article.post {
 		max-width: 100%;
 		margin-bottom: 0.5rem;
 
-		@include breakpoint($size__content-max-width) {
-			// max-width: 175px;
-			// float: left;
-			// display: inline-block;
-			// margin: 0 1rem  0.5rem 0;
+		&.home-secondaryFeature {
+			max-width: 175px;
+			float: right;
+			display: inline-block;
+			margin: 0 0  0.5rem 1rem;
+
+			img {
+				width: 100%;
+				height: auto;
+			}
 		}
 
 		img {
-			width: 100%;
 			height: auto;
+			width: 100vw;
+			margin-left: -1rem;
+			margin-right: -1rem;
+
+			@include breakpoint("medium") {
+				width: 100%;
+				margin: initial;
+			}
 		}
 	}
 

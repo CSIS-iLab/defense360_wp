@@ -25,11 +25,12 @@ get_header(); ?>
 		?>
 
 		<div class="row">
+			<!-- Most Recent Posts -->
 			<div class="col-xs-12 col-md-4 last-xs first-md">
 				The Latest
 			</div>
+			<!-- Secondary Features -->
 			<div class="col-xs-12 col-md-8">
-				2 Other Featured Posts
 				<?php
 					if(get_theme_mod('hp_feature_2') || get_theme_mod('hp_feature_3')) {
 
@@ -40,6 +41,10 @@ get_header(); ?>
 								)
 						);
 						$featured_posts = get_posts($featuredPostsArgs);
+
+						foreach($featured_posts as $post) : setup_postdata($post);
+							get_template_part( 'template-parts/hp-secondary-features-content', get_post_format() );
+						endforeach;
 					}
 				?>
 			</div>
