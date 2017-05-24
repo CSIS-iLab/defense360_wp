@@ -28,10 +28,24 @@ get_header(); ?>
 			<!-- Most Recent Posts -->
 			<div class="home-latestContainer col-xs-12 col-md-4 last-xs first-md">
 				<h3 class="latest-title"><span>The Latest</span></h3>
-				List of posts here
+				<?php
+					$latest_post_args = array(
+						'numberposts' => 4,
+						'exclude' => array(
+							get_theme_mod('hp_feature_1'),
+							get_theme_mod('hp_feature_2'),
+							get_theme_mod('hp_feature_3')
+							)
+					);
+					$latest_posts = wp_get_recent_posts($latest_post_args, OBJECT);
+					foreach($latest_posts as $post) : setup_postdata($post);
+						get_template_part( 'template-parts/hp-latest-content', get_post_format() );
+					endforeach;
+					wp_reset_postdata();
+				?>
 			</div>
 			<!-- Secondary Features -->
-			<div class="col-xs-12 col-md-8">
+			<div class="home-secondaryFeaturesContainer col-xs-12 col-md-8">
 				<?php
 					if(get_theme_mod('hp_feature_2') || get_theme_mod('hp_feature_3')) {
 
@@ -46,6 +60,7 @@ get_header(); ?>
 						foreach($featured_posts as $post) : setup_postdata($post);
 							get_template_part( 'template-parts/hp-secondary-features-content', get_post_format() );
 						endforeach;
+						wp_reset_postdata();
 					}
 				?>
 			</div>

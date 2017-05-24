@@ -22,11 +22,13 @@
 article.post {
 	margin-bottom: 3rem;
 
-	.post-thumbnail.isHomepage {
-		padding-right: 1rem;
-	}
-	.post-content.isHomepage {
-		padding-left: 1rem;
+	@include breakpoint("medium") {
+		.post-thumbnail.isHomepage {
+			padding-right: 1rem;
+		}
+		.post-content.isHomepage {
+			padding-left: 1rem;
+		}
 	}
 
 	/*----------  Post Header  ----------*/
