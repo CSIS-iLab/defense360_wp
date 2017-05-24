@@ -101,3 +101,6 @@ function d360_series() {
 
 }
 add_action( 'init', 'd360_series', 0 );
+
+// Custom Meta Fields for the Taxonomies
+include('custom-taxonomy-meta.php');

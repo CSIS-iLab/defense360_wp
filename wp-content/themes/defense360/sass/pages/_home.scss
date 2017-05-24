@@ -83,6 +83,10 @@
 	.home-seriesContainer {
 		background-color: $light-gray;
 
+		@include breakpoint("medium") {
+			max-height: $size__home-series-max-height;
+		}
+
 		.home-seriesSpotlight {
 			padding:2rem 1rem 2rem 0;
 
@@ -104,6 +108,7 @@
 
 		.home-seriesAdditional {
 			padding: 2rem 1rem;
+			align-self: center;
 
 			.series-additionalTitle {
 				font-family: $font__SourceSans;
@@ -134,6 +139,29 @@
 
 		}
 
+		.home-seriesFeaturedImage {
+			padding: 0;
+
+			@include breakpoint("medium") {
+				overflow: hidden;
+				padding: initial;
+			}
+
+			img {
+				width: 100vw;
+				height: auto;
+				margin-left: -1rem;
+				margin-right: -1rem;
+
+
+				@include breakpoint("medium") {
+					height: 100%;
+					width: auto;
+					max-height: $size__home-series-max-height;
+				}
+			}
+		}
+
 		.series-sectionTitle, .series-learnMore {
 			color: $dark-green;
 			@include fontSize(14px);
@@ -143,4 +171,9 @@
 		}
 
 	}
+}
+
+/*----------  Footer  ----------*/
+body.home .site-footer {
+	margin-top: 0;
 }

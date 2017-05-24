@@ -10,8 +10,10 @@ footer.site-footer {
 	.footer-logoContainer {
 		margin-bottom: 0.5rem;
 
-		img {
-			max-width: 50%;
+		@include breakpoint("medium") {
+			img {
+				max-width: 50%;
+			}
 		}
 	}
 

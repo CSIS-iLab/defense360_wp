@@ -90,7 +90,7 @@ get_header(); ?>
 					?>
 					
 				</div>
-				<div class="home-seriesAdditional col-xs-12 col-md-4">
+				<div class="home-seriesAdditional col-xs-12 col-md-4 last-xs">
 					<h4 class="series-sectionTitle">Additional Series</h4>
 					<?php
 						$series_category_query = get_transient('series_category_query');
@@ -108,8 +108,11 @@ get_header(); ?>
 					<a href="/series" class="series-exploreMore">Explore More</a>
 					
 				</div>
-				<div class="home-seriesFeaturedImage col-xs-12 col-md-4">
-					Image
+				<div class="home-seriesFeaturedImage col-xs-12 col-md-4 last-md">
+					<?php 
+					$featuredSeriesImageURL = get_term_meta( get_theme_mod('hp_series_1'), 'series_feature_image', true );
+					echo "<img src='".$featuredSeriesImageURL."' alt='".$featuredSeries->name."' />";
+					?>
 				</div>
 			</div>
 		</div>
