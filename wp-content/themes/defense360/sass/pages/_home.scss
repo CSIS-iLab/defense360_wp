@@ -78,4 +78,69 @@
 			padding-left: 1rem;
 		}
 	}
+
+	/*----------  Series  ----------*/
+	.home-seriesContainer {
+		background-color: $light-gray;
+
+		.home-seriesSpotlight {
+			padding:2rem 1rem 2rem 0;
+
+			.series-featuredTitle {
+				font-family: $font__SourceSans;
+				@include fontSize(24px);
+				font-weight: 600;
+				margin: 0.5rem 0 1rem;
+
+				a {
+					color: $black;
+				}
+			}
+
+			p {
+				@include fontSize(14px);
+			}
+		}
+
+		.home-seriesAdditional {
+			padding: 2rem 1rem;
+
+			.series-additionalTitle {
+				font-family: $font__SourceSans;
+				@include fontSize(18px);
+				font-weight: 600;
+				margin: 0.5rem 0 0;
+
+				a {
+					color: $black;
+				}
+			}
+
+			p {
+				color: $dark-gray;
+				@include fontSize(12px);
+				margin-bottom: 1rem;
+			}
+
+			.series-exploreMore {
+				background-color: $dark-green;
+				color: $light-gray;
+				text-transform: uppercase;
+				@include fontSize(13px);
+				padding: 0.5rem 3rem;
+				margin-top: 1rem;
+				display: inline-block;
+			}
+
+		}
+
+		.series-sectionTitle, .series-learnMore {
+			color: $dark-green;
+			@include fontSize(14px);
+			text-transform: uppercase;
+			font-weight: normal;
+			margin: 0;
+		}
+
+	}
 }

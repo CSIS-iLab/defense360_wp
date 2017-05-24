@@ -134,3 +134,20 @@ require get_template_directory() . '/inc/nav-main-walker.php';
  * Register custom taxonomies
  */
 require get_template_directory() . '/inc/custom-taxonomies.php';
+
+/**
+ * Deletes the series_category_query transient if a series post is updated
+ */
+ 
+function series_save_post( $post_id, $post ) {
+
+	// If this is an auto save routine don't do anyting
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
+		return;
+		
+	if ( $post->post_type == 'post' && is_object_in_term( $post_id, 'series') ) {
+		delete_transient( 'series_category_query' );
+	}
+	
+}
+add_action( 'save_post', 'series_save_post', 10, 2 );
