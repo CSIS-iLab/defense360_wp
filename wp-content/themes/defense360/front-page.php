@@ -10,7 +10,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main content-wrapper" role="main">
+		<main id="main" class="site-main home-container content-wrapper" role="main">
 
 		<?php
 			// Featured Item
@@ -26,8 +26,9 @@ get_header(); ?>
 
 		<div class="row">
 			<!-- Most Recent Posts -->
-			<div class="col-xs-12 col-md-4 last-xs first-md">
-				The Latest
+			<div class="home-latestContainer col-xs-12 col-md-4 last-xs first-md">
+				<h3 class="latest-title"><span>The Latest</span></h3>
+				List of posts here
 			</div>
 			<!-- Secondary Features -->
 			<div class="col-xs-12 col-md-8">
