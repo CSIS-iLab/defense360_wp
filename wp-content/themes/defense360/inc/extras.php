@@ -45,17 +45,22 @@ add_filter( 'get_the_archive_title', function ($title) {
 
     if ( is_category() ) {
 
-    	$title = single_cat_title( '<span class="archive-titleDescription">Topic:</span> ', false );
+		$title = single_cat_title( '<span class="archive-titleDescription">Topic:</span> ', false );
 
-        } elseif ( is_tag() ) {
+    } elseif ( is_tag() ) {
 
-            $title = single_tag_title( '', false );
+        $title = single_tag_title( '<span class="archive-titleDescription">Tag:</span> ', false );
 
-        } elseif ( is_author() ) {
+    } elseif ( is_author() ) {
 
-            $title = '<span class="vcard">' . get_the_author() . '</span>' ;
+        $title = '<span class="vcard">' . get_the_author() . '</span>' ;
 
-        }
+    } elseif (is_tax('content-type')) {
+    	$title = str_replace('Content Type:','<span class="archive-titleDescription">Content Type:</span>',$title);
+    } elseif (is_tax('series')) {
+    	$title = str_replace('Series:','<span class="archive-titleDescription">Series:</span>',$title);
+    }
+
 
     return $title;
 
