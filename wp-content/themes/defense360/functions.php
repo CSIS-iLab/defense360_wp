@@ -136,7 +136,7 @@ require get_template_directory() . '/inc/nav-main-walker.php';
 require get_template_directory() . '/inc/custom-taxonomies.php';
 
 /**
- * Deletes the series_category_query transient if a series post is updated
+ * Deletes the series_category_query transient if a series post is updated. This is for the home page.
  */
  
 function series_save_post( $post_id, $post ) {
@@ -151,3 +151,8 @@ function series_save_post( $post_id, $post ) {
 	
 }
 add_action( 'save_post', 'series_save_post', 10, 2 );
+
+/**
+ * Register custom short codes
+ */
+require get_template_directory() . '/inc/shortcodes.php';
