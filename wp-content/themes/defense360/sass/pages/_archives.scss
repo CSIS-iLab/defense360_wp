@@ -93,7 +93,7 @@
 		    	content: " \25BF ";
 		    	position: absolute;
 		    	z-index:5;
-		    	top: 0;
+		    	top: 12%;
 		    	right: 3%;
 		    	pointer-events: none;
 		    }
@@ -130,6 +130,7 @@
 		    		padding: 0.5rem 1rem;
 		    		@include fontSize(14px);
 		    		height: 100%;
+		    		margin: 0;
 		    	}
 		    }
 
@@ -137,7 +138,7 @@
 		    	@include breakpoint("medium") {
 			    	width: 85%;
 			    	align-self: center;
-			    	padding: 5px 0;
+			    	padding: 8px 0;
 			    }
 
 			    h4 {
@@ -165,6 +166,7 @@
 		    	-moz-appearance: none;
 		    	appearance: none;
 		    	cursor: pointer;
+		    	@include fontSize(14px);
 
 		    	@include breakpoint("medium") {
 		    		text-align: center;
