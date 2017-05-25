@@ -40,7 +40,7 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			echo "<div class='pagination-container'>".paginate_links()."</div>";
 
 		else :
 
