@@ -80,6 +80,7 @@
 		    text-align: left;
 		    padding: 0.5rem 1rem;
 		    position: relative;
+		    margin-bottom: 0;
 
 		    @include breakpoint("medium") {
 		    	text-align: center;

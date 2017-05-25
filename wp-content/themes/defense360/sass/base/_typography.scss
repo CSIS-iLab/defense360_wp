@@ -17,6 +17,44 @@ h1, h2, h3, h4, h5, h6 {
 	clear: both;
 }
 
+body.single, body.page {
+
+	h1 {
+		font-family: $font__SourceSans;
+		@include fontSize(28px);
+		font-weight: 600;
+		line-height: 1.25;
+		color: $black;
+		margin: 0.25rem 0 0 0;
+	}
+
+	h2 {
+		font-family: $font__OpenSans;
+		@include fontSize(24px);
+		font-weight: normal;
+		color: $bright-green;
+		margin: 2rem 0 1rem;
+	}
+
+	h3 {
+		font-family: $font__OpenSans;
+		@include fontSize(20px);
+		font-weight: normal;
+		color: $gray;
+		margin: 1.5rem 0 1rem;
+	}
+
+	h4 {
+		font-family: $font__OpenSans;
+		@include fontSize(18px);
+		font-style: italic;
+		font-weight: normal;
+		color: $dark-gray;
+		letter-spacing: 0.7px;
+		margin: 1rem 0;
+	}
+}
+
 /*============================
 =            Copy            =
 ============================*/
