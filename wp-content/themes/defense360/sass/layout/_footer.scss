@@ -12,7 +12,7 @@ footer.site-footer {
 
 		@include breakpoint("medium") {
 			img {
-				max-width: 50%;
+				max-width: 45%;
 			}
 		}
 	}
@@ -20,9 +20,12 @@ footer.site-footer {
 	.footer-infoContainer p {
 		max-width: 90%;
 		margin-top: 0;
+		@include fontSize(14px);
 	}
 
 	.footer-contactInfo {
+		@include fontSize(14px);
+		
 		h3 {
 			margin: 0;
 			text-transform: uppercase;
@@ -33,6 +36,7 @@ footer.site-footer {
 		address {
 			font-style: normal;
 			margin: 0;
+			@include fontSize(14px);
 		}
 
 		a {

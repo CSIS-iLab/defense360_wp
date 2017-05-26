@@ -24,7 +24,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'defense360' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="content-wrapper row">
+		<div class="content-wrapper row flex-center__y">
 			<div class="header-mobileContainer col-xs-2 visible-xs">
 				<i class="icon icon-menu"></i>
 				<span class="close-icon"></span>
@@ -42,7 +42,7 @@
 		</div><!-- .content-wrapper -->
 		<div class="navigation-container">
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<div class="content-wrapper row">
+				<div class="content-wrapper row flex-center__y">
 					<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu',
 						'container_class' => 'menu-main-container col-xs-12 col-md-11',
 						'walker' => new Nav_Main_Walker() ) ); ?>
@@ -57,7 +57,7 @@
 				</div><!-- .content-wrapper -->
 			</nav><!-- #site-navigation -->
 			<nav class="secondary-navigation" role="navigation">
-				<div class="content-wrapper row">
+				<div class="content-wrapper row flex-center__y">
 					<?php wp_nav_menu( array( 'theme_location' => 'categories-menu', 'menu_id' => 'secondary-menu',
 						'container_class' => 'menu-categories-menu-container col-xs-12 col-md-11' ) ); ?>
 					<div class="nav-searchIconContainer hidden-xs col-md-1">

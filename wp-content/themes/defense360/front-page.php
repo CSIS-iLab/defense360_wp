@@ -81,6 +81,7 @@ get_header(); ?>
 					if(get_theme_mod('hp_series_1')) {
 						$featuredSeries = get_term_by('id', get_theme_mod('hp_series_1'), 'series');
 						$featuredSeriesURL = get_term_link($featuredSeries->term_id);
+						$featuredSeriesImageURL = get_term_meta( get_theme_mod('hp_series_1'), 'series_feature_image', true );
 						?>
 						<h2 class="series-featuredTitle"><a href="<?php echo $featuredSeriesURL; ?>"><?php echo $featuredSeries->name; ?></a></h2>
 						<p><?php echo $featuredSeries->description; ?></p>
@@ -108,11 +109,7 @@ get_header(); ?>
 					<a href="/series" class="series-exploreMore">Explore More</a>
 					
 				</div>
-				<div class="home-seriesFeaturedImage col-xs-12 col-md-4 last-md">
-					<?php 
-					$featuredSeriesImageURL = get_term_meta( get_theme_mod('hp_series_1'), 'series_feature_image', true );
-					echo "<img src='".$featuredSeriesImageURL."' alt='".$featuredSeries->name."' />";
-					?>
+				<div class="home-seriesFeaturedImage col-xs-12 col-md-4 last-md" style="background-image:url(<?php echo $featuredSeriesImageURL; ?>);">
 				</div>
 			</div>
 		</div>

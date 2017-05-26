@@ -50,7 +50,7 @@ header.site-header {
 	
 	nav.main-navigation {
 		padding-top: 2rem;
-		padding-bottom: 1rem;
+		padding-bottom: 0.5rem;
 
 		.content-wrapper {
 			max-width: 100%;
@@ -81,6 +81,7 @@ header.site-header {
 			li {
 				text-align: center;
 				@include fontSize(14px);
+				margin-bottom: 0;
 
 				// Apply styles to all list items at medium breakpoint
 				@include breakpoint("medium") {
@@ -153,9 +154,8 @@ header.site-header {
 		top: -115px;
 
 		@include breakpoint("medium") {
-			padding: 0.8rem;
 			top: 0;
-			padding: 0.5rem 1rem;
+			padding: 0.5rem 1rem 0.7rem;
 		}
 
 		.content-wrapper {
@@ -189,6 +189,7 @@ header.site-header {
 				border-bottom: 1px solid $color__navigation-border;
 				padding: 0.5rem 0;
 				text-align: center;
+				margin: 0;
 
 				a {
 					font-weight: normal;
