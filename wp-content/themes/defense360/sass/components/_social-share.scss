@@ -38,6 +38,15 @@
 				color: $dark-gray;
 				font-family: 'fontello' !important;
 			}
+
+			&:hover {
+				opacity: 1 !important;
+			}
+
+			&:hover::before {
+				color: $bright-green;
+			}
+
 		}
 
 		// Twitter

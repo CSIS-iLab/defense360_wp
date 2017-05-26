@@ -21,7 +21,7 @@ else {
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="row flex-center__y">
+	<div class="row">
 		<div class="post-thumbnail col-xs-12 <?php echo $thumbnailContainerSize.$isHomepage; ?>">
 			<div class="post-thumbnailContainer">
 				<?php
