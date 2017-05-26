@@ -250,15 +250,15 @@ header.site-header {
 	/*----------  Search Form  ----------*/
 	.header-searchFormContainer {
 		background-color: $black;
-		padding: 1rem 0.5rem;
+		padding: 0.5rem;
 		position: relative;
 		z-index: 10;
 		display: none;
 		margin-top: 1rem;
 
 		@include breakpoint("medium") {
-			top: -37px;
-			padding: 0.2rem 0.5rem 0.6rem;
+			top: -42px;
+			padding: 0.3rem 0.5rem 0.6rem;
 			margin-top: 0;
 		}
 
@@ -273,12 +273,14 @@ header.site-header {
 			}
 
 			.search-field {
-				width: 95%;
+				width: 94%;
 				border-radius: 0;
 				background-color: transparent;
 				border: 0;
 				color: $search-gray;
 				text-transform: uppercase;
+				@include fontSize(14px);
+				line-height: 0;
 
 				&:focus {
 					box-shadow: none;
@@ -295,6 +297,10 @@ header.site-header {
 				color: $light-gray;
 				padding: 0;
 				@include fontSize(14px);
+				line-height: 1;
+				font-family: "fontello";
+				margin: 0;
+				text-align: right;
 			}
 
 			.search-closeContainer {

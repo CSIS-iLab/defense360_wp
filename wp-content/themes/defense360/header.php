@@ -86,7 +86,7 @@
 					            title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
 					    </label>
 					    <input type="submit" class="search-submit"
-					        value="<?php echo esc_attr_x( '&#8594;', 'submit button' ) ?>" />
+					        value="<?php echo esc_attr_x( '&#xe804;', 'submit button' ) ?>" />
 					</form>
 				</div>
 				<div class="search-closeContainer hidden-xs col-md-1">
