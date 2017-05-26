@@ -116,8 +116,12 @@
 		}
 
 		.home-seriesAdditional {
-			padding: 2rem 1rem;
+			padding: 1rem 1rem 2rem;
 			align-self: center;
+
+			@include breakpoint("medium") {
+				padding: 2rem 1rem;
+			}
 
 			.series-additionalTitle {
 				font-family: $font__SourceSans;
@@ -142,7 +146,6 @@
 				text-transform: uppercase;
 				@include fontSize(13px);
 				padding: 0.5rem 3rem;
-				margin-top: 1rem;
 				display: inline-block;
 			}
 

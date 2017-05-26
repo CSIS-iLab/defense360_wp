@@ -80,7 +80,7 @@ header.site-header {
 
 			li {
 				text-align: center;
-				@include fontSize(14px);
+				@include fontSize(16px);
 				margin-bottom: 0;
 
 				// Apply styles to all list items at medium breakpoint
@@ -91,6 +91,7 @@ header.site-header {
 					width: auto !important;
 					border: 0 !important;
 					top: 0 !important;
+					@include fontSize(14px);
 				}
 
 				&.home {
@@ -122,7 +123,7 @@ header.site-header {
 					border-bottom: 1px solid $color__navigation-border;
 					padding: 0.5rem 0;
 					position: relative;
-					top: 205px;
+					top: 220px;
 				}
 
 				.menu-description {
@@ -196,7 +197,11 @@ header.site-header {
 					color: $dark-gray;
 					text-transform: uppercase;
 					letter-spacing: 0.4px;
-					@include fontSize(13px);
+					@include fontSize(16px);
+
+					@include breakpoint("medium") {
+						@include fontSize(13px);
+					}
 				}
 
 				@include breakpoint("medium") {
@@ -226,7 +231,7 @@ header.site-header {
 
 	/*----------  Navigation: Social Media  ----------*/
 	.nav-social {
-		padding: 0.5rem 0;
+		padding: 1rem 0;
 		text-align: center;
 
 		@include breakpoint("medium") {
@@ -243,7 +248,13 @@ header.site-header {
 		}
 
 		i.icon {
-			@include fontSize(16px);
+			@include fontSize(32px);
+			margin: 0 1rem;
+
+			@include breakpoint("medium") {
+				@include fontSize(16px);
+				margin: initial;
+			}
 		}
 	}
 

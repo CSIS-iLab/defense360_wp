@@ -10,6 +10,11 @@
 			font-weight: 600;
 			color: $black;
 			text-align: center;
+			margin: 0;
+
+			@include breakpoint("medium") {
+				margin-bottom: 0.5rem;
+			}
 
 			.archive-titleDescription {
 				color: $gray;
@@ -23,11 +28,12 @@
 
 	/*----------  Posts  ----------*/
 	article.post {
-		margin-bottom: 2rem;
+		margin-bottom: 3rem;
 
 		@include breakpoint("medium") {
 			border-bottom: 2px solid $archive-filter-gray;
 			padding-bottom: 2rem;
+			margin-bottom: 2rem;
 		}
 
 		&:last-of-type {
