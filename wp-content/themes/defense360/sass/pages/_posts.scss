@@ -144,6 +144,16 @@ article.post {
 				}
 			}
 		}
+
+		.highlightedContent {
+			margin: 1rem auto;
+			padding: 1rem;
+			border:1px solid $bright-green;
+
+			h2 {
+				margin-top: 0;
+			}
+		}
 	}
 
 	/*----------  Post Meta  ----------*/
