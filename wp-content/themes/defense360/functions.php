@@ -96,6 +96,8 @@ function defense360_scripts() {
 
 	wp_enqueue_script( 'defense360-mobile-menu', get_template_directory_uri() . '/js/mobile-menu.js', array(), '20151215', true );
 
+	wp_enqueue_script( 'defense360-hide-header-mobile', get_template_directory_uri() . '/js/hide-header-mobile.js', array(), '20151215', true );
+
 
 }
 add_action( 'wp_enqueue_scripts', 'defense360_scripts' );

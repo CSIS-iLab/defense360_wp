@@ -4,7 +4,35 @@
 
 header.site-header {
 	padding-top: 2rem;
+	padding-bottom: 2rem;
 	margin-bottom: 2rem;
+	width: 100%;
+	background-color: $white;
+
+	@include breakpoint("medium") {
+		padding-bottom: initial;
+	}
+
+	&.nav-down {
+		position: fixed;
+		top: 0;
+		transition: top 0.2s ease-in-out;
+
+		@include breakpoint("medium") {
+			position: relative;
+			top: initial;
+		}
+	}
+
+	&.nav-up {
+		top: -101px;
+		position: fixed;
+
+		@include breakpoint("medium") {
+			top: initial;
+			position: relative;
+		}
+	}
 
 	.site-branding {
 		padding: 0;

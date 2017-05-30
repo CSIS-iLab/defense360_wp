@@ -24,7 +24,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'defense360' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header nav-down" role="banner">
 		<div class="content-wrapper row flex-center__y">
 			<div class="header-mobileContainer col-xs-2 visible-xs">
 				<i class="icon icon-menu"></i>

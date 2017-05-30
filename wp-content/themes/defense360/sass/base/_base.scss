@@ -16,6 +16,14 @@ body {
 	}
 }
 
+#content {
+	margin-top: 70px;
+
+	@include breakpoint("medium") {
+		margin-top: 0;
+	}
+}
+
 .content-wrapper {
 	max-width: $size__container-max-width;
 	margin: 0 auto;
