@@ -104,9 +104,9 @@ function defense360_entry_series() {
 			print "<h3 class='post-series'>";
 			foreach ($terms as $term) {
 				$url = get_term_link($term->slug, $taxonomy);
-				print "<a href='$url'>{$term->name}</a>";
+				print "<a href='$url'>{$term->name} Series</a>";
 			}
-			print " Series</h3>";
+			print "</h3>";
 		}
 	}
 }

@@ -43,12 +43,20 @@ article.post {
 			.post-contentType {
 				a {
 					color: $gray;
+
+					&:hover {
+						color: $bright-green;
+					}
 				}
 			}
 
 			.post-categories {
 				a {
 					color: $bright-green;
+
+					&:hover {
+						color: $dark-green;
+					}
 				}
 			}
 		}
@@ -63,6 +71,10 @@ article.post {
 
 			a {
 				color: $black;
+
+				&:hover {
+					color: $bright-green;
+				}
 			}
 
 			&.home-secondaryFeature {
@@ -70,6 +82,10 @@ article.post {
 
 				a {
 					color: $black;
+
+					&:hover {
+						color: $bright-green;
+					}
 				}
 			}
 		}
@@ -96,6 +112,10 @@ article.post {
 
 			a {
 				color: $gray;
+
+				&:hover {
+					color: $bright-green;
+				}
 			}
 		}
 	}
@@ -118,6 +138,10 @@ article.post {
 
 			a {
 				color: $light-gray;
+
+				&:hover {
+					color: $white;
+				}
 			}
 		}
 	}
@@ -129,6 +153,10 @@ article.post {
 
 		a {
 			color: $gray;
+
+			&:hover {
+				color: $bright-green;
+			}
 		}
 
 		.posted-on {

@@ -66,6 +66,10 @@
 				@include fontSize(18px);
 				a {
 					color: $dark-gray;
+
+					&:hover {
+						color: $bright-green;
+					}
 				}
 			}
 		}
@@ -107,6 +111,10 @@
 
 				a {
 					color: $black;
+
+					&:hover {
+						color: $bright-green;
+					}
 				}
 			}
 
@@ -131,6 +139,10 @@
 
 				a {
 					color: $black;
+
+					&:hover {
+						color: $bright-green;
+					}
 				}
 			}
 
@@ -147,6 +159,10 @@
 				@include fontSize(13px);
 				padding: 0.5rem 3rem;
 				display: inline-block;
+
+				&:hover {
+					color: $white;
+				}
 			}
 
 		}
@@ -166,6 +182,10 @@
 			font-weight: normal;
 			font-style: normal;
 			margin: 0;
+		}
+
+		.series-learnMore:hover {
+			color: $bright-green;
 		}
 
 	}
