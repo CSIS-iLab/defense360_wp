@@ -150,6 +150,10 @@ article.post {
 			padding: 1rem;
 			border:1px solid $bright-green;
 
+			@include breakpoint("medium") {
+				padding: 2rem;
+			}
+
 			h2 {
 				margin-top: 0;
 			}
