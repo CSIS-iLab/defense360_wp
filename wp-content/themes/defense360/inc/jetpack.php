@@ -39,3 +39,38 @@ function defense360_infinite_scroll_render() {
 		endif;
 	}
 }
+
+/**
+ * Return Related Posts in custom layout
+ */
+function jetpackme_custom_related( $atts ) {
+    $relatedPosts = '';
+ 
+    if ( class_exists( 'Jetpack_RelatedPosts' ) && method_exists( 'Jetpack_RelatedPosts', 'init_raw' ) ) {
+        $related = Jetpack_RelatedPosts::init_raw()
+            ->set_query_name( 'jetpackme-shortcode' ) // Optional, name can be anything
+            ->get_for_post_id(
+                get_the_ID(),
+                array( 'size' => 3 )
+            );
+ 
+        if ( $related ) {
+            wp_reset_postdata();
+            foreach ( $related as $result) {
+                global $post;
+                $result = get_post($result['id']);
+                $post = $result;
+
+                setup_postdata($post);
+
+                
+                $relatedPosts .= get_template_part( 'template-parts/relatedPosts-content', get_post_format() );
+
+            }
+        }
+    }
+ 
+    return "<div class='post-relatedPost'>".$relatedPosts."</div>";
+}
+// Create a [jprel] shortcode
+add_shortcode( 'jprel', 'jetpackme_custom_related' );

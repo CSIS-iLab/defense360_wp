@@ -8,6 +8,7 @@ header.site-header {
 	margin-bottom: 2rem;
 	width: 100%;
 	background-color: $white;
+	z-index:50;
 
 	@include breakpoint("medium") {
 		padding-bottom: initial;

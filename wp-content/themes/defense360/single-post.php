@@ -83,7 +83,11 @@ get_header();
 					</div>
 				<?php 
 					endforeach;
-					endif; 
+					endif;
+
+					echo "<div class='content-wrapper-narrow'>";
+					echo do_shortcode( '[jprel]' );
+					echo "</div>";
 				?>
 			</footer><!-- .entry-footer -->
 		</article><!-- #post-## -->
