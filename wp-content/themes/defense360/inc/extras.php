@@ -37,3 +37,38 @@ function defense360_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'defense360_pingback_header' );
+
+/**
+ * Change the_archive_title to use custom text before categories, tags, and other taxonomies.
+ */
+add_filter( 'get_the_archive_title', function ($title) {
+
+    if ( is_category() ) {
+
+		$title = single_cat_title( '<span class="archive-titleDescription">Topic:</span> ', false );
+
+    } elseif ( is_tag() ) {
+
+        $title = single_tag_title( '<span class="archive-titleDescription">Tag:</span> ', false );
+
+    } elseif ( is_author() ) {
+
+        $title = '<span class="vcard">' . get_the_author() . '</span>' ;
+
+    } elseif (is_tax('content-type')) {
+    	$title = str_replace('Content Type:','<span class="archive-titleDescription">Content Type:</span>',$title);
+    } elseif (is_tax('series')) {
+    	$title = str_replace('Series:','<span class="archive-titleDescription">Series:</span>',$title);
+    }
+
+
+    return $title;
+
+});
+
+// Replaces the excerpt "Read More" text by a link
+function new_excerpt_more($more) {
+       global $post;
+	return '<a class="moretag" href="'. get_permalink($post->ID) . '">...</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');

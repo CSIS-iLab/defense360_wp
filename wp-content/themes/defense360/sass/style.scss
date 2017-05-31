@@ -43,12 +43,19 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Lists
 	## Media
 	## Tables
+  ## Social Share
+  ## Pagination
 # Layout
+	## Header
+	## Footer
 	## Comments
-	## Menus
 	## Posts and Pages
 	## Widgets
 # Pages
+  ## Home
+  ## Posts
+  ## Archives
+  ## Series Archive
 # Vendors
 --------------------------------------------------------------*/
 
@@ -78,16 +85,26 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   'components/galleries',
   'components/lists',
   'components/media',
-  'components/tables';
+  'components/tables',
+  'components/social-share',
+  'components/pagination';
 
 /*----------  Layout  ----------*/
 @import
+  'layout/header',
+  'layout/footer',
   'layout/comments',
-  'layout/menus',
-  'layout/posts-and-pages',
   'layout/widgets';
 
 /*----------  Pages  ----------*/
+@import
+  'pages/home',
+  'pages/posts',
+  'pages/archives',
+  'pages/series-archive';
 
 /*----------  Vendors  ----------*/
-
+@import
+  'vendors/flexbox/flexbox-main',
+  'vendors/flexbox/flexbox-helpers',
+  'vendors/fontello/fontello';

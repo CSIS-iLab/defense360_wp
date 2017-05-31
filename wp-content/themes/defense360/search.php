@@ -10,7 +10,7 @@
 get_header(); ?>
 
 	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main content-wrapper" role="main">
 
 		<?php
 		if ( have_posts() ) : ?>
@@ -32,7 +32,7 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			echo "<div class='pagination-container'>".paginate_links()."</div>";
 
 		else :
 
@@ -44,5 +44,4 @@ get_header(); ?>
 	</section><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

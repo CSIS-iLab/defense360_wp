@@ -42,9 +42,10 @@ function defense360_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
+	// Theme Menus
 	register_nav_menus( array(
 		'menu-1' => esc_html__( 'Primary', 'defense360' ),
+		'categories-menu' => esc_html__( 'Secondary', 'defense360' ),
 	) );
 
 	/*
@@ -84,24 +85,6 @@ function defense360_content_width() {
 add_action( 'after_setup_theme', 'defense360_content_width', 0 );
 
 /**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function defense360_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'defense360' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'defense360' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'defense360_widgets_init' );
-
-/**
  * Enqueue scripts and styles.
  */
 function defense360_scripts() {
@@ -111,9 +94,13 @@ function defense360_scripts() {
 
 	wp_enqueue_script( 'defense360-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	wp_enqueue_script( 'defense360-mobile-menu', get_template_directory_uri() . '/js/mobile-menu.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'defense360-hide-header-mobile', get_template_directory_uri() . '/js/hide-header-mobile.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'defense360-archive-mobile', get_template_directory_uri() . '/js/archive-mobile.js', array(), '20151215', true );
+
+
 }
 add_action( 'wp_enqueue_scripts', 'defense360_scripts' );
 
@@ -141,3 +128,35 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load custom walker for main navigation
+ */
+require get_template_directory() . '/inc/nav-main-walker.php';
+
+/**
+ * Register custom taxonomies
+ */
+require get_template_directory() . '/inc/custom-taxonomies.php';
+
+/**
+ * Deletes the series_category_query transient if a series post is updated. This is for the home page.
+ */
+ 
+function series_save_post( $post_id, $post ) {
+
+	// If this is an auto save routine don't do anyting
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
+		return;
+		
+	if ( $post->post_type == 'post' && is_object_in_term( $post_id, 'series') ) {
+		delete_transient( 'series_category_query' );
+	}
+	
+}
+add_action( 'save_post', 'series_save_post', 10, 2 );
+
+/**
+ * Register custom short codes
+ */
+require get_template_directory() . '/inc/shortcodes.php';

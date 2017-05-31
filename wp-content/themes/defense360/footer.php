@@ -14,11 +14,35 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'defense360' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'defense360' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'defense360' ), 'defense360', '<a href="https://automattic.com/" rel="designer">CSIS iDeas Lab</a>' ); ?>
-		</div><!-- .site-info -->
+		<div class="content-wrapper">
+			<div class="footer-logoContainer">
+				<a href="https://www.csis.org/programs/international-security-program" target="_blank">
+					<img src="/wp-content/themes/defense360/img/ISP.svg" alt="Center for Strategic and International Studies" title="Center for Strategic and International Studies" />
+				</a>
+			</div>
+			<div class="footer-infoContainer row">
+				<div class="col-xs-12 col-md-6">
+					<p><?php echo get_theme_mod('footer-isp'); ?></p>
+				</div>
+				<div class="footer-contactInfo col-xs-12 col-md-6">
+					<h3><?php _e('Connect with Us', 'defense360'); ?></h3>
+					<?php if(get_theme_mod('contact-address')) {
+						echo '<address>'.get_theme_mod('contact-address').'</address>';
+					} ?>
+					<?php if(get_theme_mod('contact-email')) {
+						echo '<a href="mailto:'.get_theme_mod('contact-email').'"><i class="icon icon-mail"></i> '.get_theme_mod('contact-email').'</a><br />';
+					} ?>
+					<?php if(get_theme_mod('contact-twitter')) {
+						echo '<a href="https://twitter.com/'.get_theme_mod('contact-twitter').'" target="_blank"><i class="icon icon-twitter"></i> @'.get_theme_mod('contact-twitter').'</a>';
+					} ?>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="content-wrapper">
+				&copy; <?php echo date('Y'); ?> by the Center for Strategic and International Studies. All rights reserved.
+			</div> <!-- .content-wrapper -->
+		</div><!-- .footer-copyright -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

@@ -7,7 +7,6 @@
  */
 
 ( function( $ ) {
-
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
@@ -39,4 +38,21 @@
 			}
 		} );
 	} );
+
+	// Think Tank Description
+	wp.customize( 'header-ttIndex', function( value ) {
+		value.bind( function( to ) {
+			console.log(to);
+			$( '.header-ttIndex' ).text( to );
+		} );
+	} );
+
+	// ISP Description
+	wp.customize( 'footer-isp', function( value ) {
+		value.bind( function( to ) {
+			console.log("foobar");
+			$( '.footer-infoContainer p' ).text( to );
+		} );
+	} );
+
 } )( jQuery );

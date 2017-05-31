@@ -10,16 +10,28 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main content-wrapper" role="main">
 
 		<?php
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
+				<div class="content-wrapper-narrow">
 				<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
 					the_archive_description( '<div class="archive-description">', '</div>' );
+
+					if(is_tax('series')) {
+						$featuredSeriesImageURL = get_term_meta( get_queried_object()->term_id, 'series_feature_image', true );
+						echo "<img src='".$featuredSeriesImageURL."' alt='".$featuredSeries->name."' class='archive-featuredImage' />";
+					}
 				?>
+				</div>
+				<div class="archive-searchFilter">
+					<?php
+						echo do_shortcode( '[searchandfilter fields="search,content-type,category,post_tag,series" headings="Filter Results:" all_items_labels=",All Content,,,"]' );
+					?>
+				</div>
 			</header><!-- .page-header -->
 
 			<?php
@@ -35,7 +47,7 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			echo "<div class='pagination-container'>".paginate_links()."</div>";
 
 		else :
 
@@ -47,5 +59,4 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

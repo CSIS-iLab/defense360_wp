@@ -9,7 +9,6 @@
     ],
     "require": {
         "wpackagist-plugin/akismet":"dev-trunk",
-        "wpackagist-plugin/add-to-any": "*",
         "wpackagist-plugin/co-authors-plus": "*",
         "wpackagist-plugin/disable-comments": "*",
         "wpackagist-plugin/disable-emojis": "*",
@@ -18,6 +17,8 @@
         "wpackagist-plugin/tinymce-advanced": "*",
         "wpackagist-plugin/wp-user-avatar": "*",
         "wpackagist-plugin/wpfront-user-role-editor": "*",
-        "wpackagist-plugin/wordpress-seo": "*"
+        "wpackagist-plugin/wordpress-seo": "*",
+        "wpackagist-plugin/jetpack": "*",
+        "wpackagist-plugin/search-filter": "*"
     }
 }

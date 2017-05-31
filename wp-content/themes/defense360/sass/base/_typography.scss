@@ -5,7 +5,7 @@ select,
 textarea {
 	color: $color__text-main;
 	font-family: $font__main;
-	@include font-size(1);
+	@include fontSize(16px);
 	line-height: $font__line-height-body;
 }
 
@@ -17,11 +17,62 @@ h1, h2, h3, h4, h5, h6 {
 	clear: both;
 }
 
+%h1 {
+	font-family: $font__SourceSans;
+	@include fontSize(28px);
+	font-weight: 600;
+	line-height: 1.25;
+	color: $black;
+	margin: 0.25rem 0 0 0;
+}
+
+%h2 {
+	font-family: $font__OpenSans;
+	@include fontSize(24px);
+	font-weight: normal;
+	color: $bright-green;
+	margin: 2rem 0 1rem;
+}
+
+%h3 {
+	font-family: $font__OpenSans;
+	@include fontSize(20px);
+	font-weight: normal;
+	color: $gray;
+	margin: 1.5rem 0 1rem;
+}
+
+%h4 {
+	font-family: $font__OpenSans;
+	@include fontSize(18px);
+	font-style: italic;
+	font-weight: normal;
+	color: $dark-gray;
+	letter-spacing: 0.7px;
+	margin: 1rem 0;
+}
+
+body.single, body.page {
+
+	h1 { @extend %h1 }
+	h2 { @extend %h2 }
+	h3 { @extend %h3 }
+	h4 { @extend %h4 }
+}
+
 /*============================
 =            Copy            =
 ============================*/
 
 p {
+	margin: 0 0 1rem;
+	line-height: 1.5;
+}
+
+hr {
+	background-color: $color__background-hr;
+	border: 0;
+	height: 1px;
 	margin-bottom: 1.5em;
 }
 
@@ -33,6 +84,15 @@ blockquote {
 	margin: 0 1.5em;
 }
 
+blockquote, q {
+	quotes: "" "";
+
+	&:before,
+	&:after {
+		content: "";
+	}
+}
+
 address {
 	margin: 0 0 1.5em;
 }
@@ -40,7 +100,7 @@ address {
 pre {
 	background: $color__background-pre;
 	font-family: $font__pre;
-	@include font-size(0.9375);
+	@include fontSize(14px);
 	line-height: $font__line-height-pre;
 	margin-bottom: 1.6em;
 	max-width: 100%;
@@ -50,7 +110,7 @@ pre {
 
 code, kbd, tt, var {
 	font-family: $font__code;
-	@include font-size(0.9375);
+	@include fontSize(14px);
 }
 
 abbr, acronym {
@@ -72,6 +132,7 @@ big {
 =============================*/
 a {
 	color: $color__link;
+	text-decoration: none;
 
 	&:visited {
 		color: $color__link-visited;
@@ -88,5 +149,44 @@ a {
 	&:active {
 		outline: 0;
 	}
+}
+
+/*==================================
+=            Close Icon            =
+==================================*/
+
+.close-icon {
+	position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+
+    &::before, &::after {
+    	content: '';
+	    position: absolute;
+	    height: 2px;
+	    width: 100%;
+	    top: 50%;
+	    left: 0;
+	    margin-top: -1px;
+	    background: $black;
+    }
+
+    &::before {
+    	-webkit-transform: rotate(45deg);
+	    -moz-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	    -o-transform: rotate(45deg);
+	    transform: rotate(45deg);
+    }
+
+    &::after {
+    	-webkit-transform: rotate(-45deg);
+	    -moz-transform: rotate(-45deg);
+	    -ms-transform: rotate(-45deg);
+	    -o-transform: rotate(-45deg);
+	    transform: rotate(-45deg);
+    }
 }
 

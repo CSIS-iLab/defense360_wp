@@ -10,32 +10,31 @@
 if ( ! function_exists( 'defense360_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
+ *
+ * Updated to account for co-authors plugin. - JS
  */
+
 function defense360_posted_on() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-	}
+	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
+		esc_html( get_the_date() )
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'defense360' ),
+		esc_html_x( '%s', 'post date', 'defense360' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
-	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'defense360' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
+	echo '<span class="posted-on">' . $posted_on . ' &mdash; </span>';
 
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
-
+ 	if ( function_exists( 'coauthors_posts_links' ) ) {
+ 		coauthors_posts_links();
+ 	}
+ 	else {
+ 		the_author();
+ 	}
 }
 endif;
 
@@ -58,24 +57,81 @@ function defense360_entry_footer() {
 			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'defense360' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
+}
+endif;
 
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		/* translators: %s: post title */
-		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'defense360' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
-		echo '</span>';
+if ( ! function_exists( 'defense360_entry_contentType' ) ) :
+/**
+ * Prints HTML with meta information for the content type and categories.
+ */
+function defense360_entry_contentType() {
+	// Hide content type and categories for pages
+	if ( 'post' === get_post_type() ) {
+		print "<div class='post-contentCategoriesContainer'>";
+		// Get the post's content type
+		$taxonomy = 'content-type';
+		$terms = get_the_terms(get_the_ID(), $taxonomy);
+		if (! empty($terms)) {
+			print "<span class='post-contentType'>";
+			foreach ($terms as $term) {
+				$url = get_term_link($term->slug, $taxonomy);
+				print "<a href='$url'>{$term->name}</a>";
+			}
+			print " / </span>";
+		}
+
+		/* translators: used between list items, there is a space after the comma */
+		$categories_list = get_the_category_list( esc_html__( ', ', 'defense360' ) );
+		if ( $categories_list && defense360_categorized_blog() ) {
+			printf( '<span class="post-categories">' . esc_html__( '%1$s', 'defense360' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+		}
+		print "</div>";
+	}
+}
+endif;
+
+if ( ! function_exists( 'defense360_entry_series' ) ) :
+/**
+ * Prints HTML with series information
+ */
+function defense360_entry_series() {
+	// Hide content type and categories for pages
+	if ( 'post' === get_post_type() ) {
+		// Get the post's content type
+		$taxonomy = 'series';
+		$terms = get_the_terms(get_the_ID(), $taxonomy);
+		if (! empty($terms)) {
+			print "<h3 class='post-series'>";
+			foreach ($terms as $term) {
+				$url = get_term_link($term->slug, $taxonomy);
+				print "<a href='$url'>{$term->name} Series</a>";
+			}
+			print "</h3>";
+		}
+	}
+}
+endif;
+
+if ( ! function_exists( 'defense360_entry_tags' ) ) :
+/**
+ * Prints HTML with meta information for the categories, tags and comments.
+ */
+function defense360_entry_tags($content) {
+	// Hide category and tag text for pages.
+	if ( 'post' === get_post_type() ) {
+		/* translators: used between list items, there is a space after the comma */
+		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'defense360' ) );
+		if ( $tags_list && is_single() && !is_home() ) {
+			$output = sprintf( '<span class="tags-links">' . esc_html__( 'TAGS: %1$s', 'defense360' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			$content .= $output;
+		}
 	}
 
-	edit_post_link(
-		sprintf(
-			/* translators: %s: Name of current post */
-			esc_html__( 'Edit %s', 'defense360' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		),
-		'<span class="edit-link">',
-		'</span>'
-	);
+	return $content;
 }
+
+add_filter('the_content', 'defense360_entry_tags', 19);
+
 endif;
 
 /**
