@@ -113,10 +113,17 @@ function defense360_entry_series() {
 		$taxonomy = 'series';
 		$terms = get_the_terms(get_the_ID(), $taxonomy);
 		if (! empty($terms)) {
+			reset($terms);
+			$last = end($terms);
 			print "<h3 class='post-series'>";
 			foreach ($terms as $term) {
 				$url = get_term_link($term->slug, $taxonomy);
-				print "<a href='$url'>{$term->name} Series</a>";
+				if($term === $last) {
+					print "<a href='$url'>{$term->name} Series</a>";
+				}
+				else {
+					print "<a href='$url'>{$term->name} Series</a>, ";
+				}
 			}
 			print "</h3>";
 		}
