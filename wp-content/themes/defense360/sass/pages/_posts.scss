@@ -19,7 +19,7 @@
 }
 
 /*----------  Global Post Styles  ----------*/
-article.post {
+article.post, article.page {
 	margin-bottom: 3rem;
 
 	@include breakpoint("medium") {

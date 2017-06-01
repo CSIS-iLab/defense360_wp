@@ -1,0 +1,27 @@
+/*=============================
+=            Search           =
+=============================*/
+
+.search {
+	// Page Title
+	header.page-header {
+		margin-bottom: 2rem;
+		
+		.page-title {
+			font-family: $font__SourceSans;
+			@include fontSize(28px);
+			font-weight: 600;
+			line-height: 1.25;
+			color: $black;
+			margin: 0.25rem 0 0 0;
+		}
+	}
+
+	// Results
+	article.post, article.page {
+		header.entry-header .entry-title {
+			@include fontSize(24px);
+		}
+	}
+
+}
