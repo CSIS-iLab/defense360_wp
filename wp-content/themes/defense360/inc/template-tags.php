@@ -30,7 +30,7 @@ function defense360_posted_on() {
 	echo '<span class="posted-on">' . $posted_on . ' &mdash; </span>';
 
  	if ( function_exists( 'coauthors_posts_links' ) ) {
- 		coauthors_posts_links();
+ 		defense360_coauthors_urls();
  	}
  	else {
  		the_author();
@@ -188,3 +188,34 @@ function defense360_category_transient_flusher() {
 }
 add_action( 'edit_category', 'defense360_category_transient_flusher' );
 add_action( 'save_post',     'defense360_category_transient_flusher' );
+
+/**
+ * Display coauthors. Link to their websites if they have them, otherwise link to their post archive.
+ */
+
+if ( function_exists( 'coauthors_posts_links' ) ) {
+	function defense360_coauthors_urls( $between = null, $betweenLast = null, $before = null, $after = null, $echo = true ) {
+		return coauthors__echo('defense360_coauthors_urls_single', 'callback', array(
+			'between' => $between,
+			'betweenLast' => $betweenLast,
+			'before' => $before,
+			'after' => $after,
+		), null, $echo );
+	}
+
+	function defense360_coauthors_urls_single( $author ) {
+		if ( get_the_author_meta( 'website' ) ) {
+			return sprintf( '<a href="%s" title="%s" rel="external" target="_blank">%s</a>',
+				get_the_author_meta( 'website' ),
+				esc_attr( sprintf( __( 'Visit %s&#8217;s website' ), get_the_author() ) ),
+				get_the_author()
+			);
+		} else {
+			return sprintf( '<a href="%s" title="%s">%s</a>',
+				get_author_posts_url($author->ID, $author->user_nicename),
+				esc_attr( sprintf( __( 'View all of %s&#8217;s posts' ), get_the_author() ) ),
+				get_the_author()
+			);
+		}
+	}
+}
