@@ -57,7 +57,8 @@ get_header(); ?>
 								'post__in' => array(
 									get_theme_mod('hp_feature_2'),
 									get_theme_mod('hp_feature_3')
-									)
+									),
+								'orderby' => 'post__in'
 							);
 							$featured_posts = get_posts($featuredPostsArgs);
 
