@@ -330,10 +330,7 @@ header.site-header {
 				text-transform: uppercase;
 				@include fontSize(14px);
 				line-height: 1;
-
-				@include breakpoint("medium") {
-					line-height: 0;
-				}
+				-webkit-appearance: textfield;
 
 				&:focus {
 					box-shadow: none;
