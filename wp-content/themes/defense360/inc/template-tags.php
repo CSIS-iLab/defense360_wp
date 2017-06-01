@@ -30,7 +30,7 @@ function defense360_posted_on() {
 	echo '<span class="posted-on">' . $posted_on . ' &mdash; </span>';
 
  	if ( function_exists( 'coauthors_posts_links' ) ) {
- 		defense360_coauthors_urls();
+ 		defense360_coauthors_urls(', ',', ');
  	}
  	else {
  		the_author();
