@@ -40,8 +40,21 @@ function defense360_infinite_scroll_render() {
 	}
 }
 
+/*
+ * Removes the default Jetpack related posts plugin so we can call it with a shortcode instead
+ */
+
+function jetpackme_remove_rp() {
+    if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+        $jprp = Jetpack_RelatedPosts::init();
+        $callback = array( $jprp, 'filter_add_target_to_dom' );
+        remove_filter( 'the_content', $callback, 40 );
+    }
+}
+add_filter( 'wp', 'jetpackme_remove_rp', 20 );
+
 /**
- * Return Related Posts in custom layout
+ * Return Related Posts in custom layout witha  shortcode
  */
 function jetpackme_custom_related( $atts ) {
     $relatedPosts = '';
