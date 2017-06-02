@@ -19,6 +19,7 @@
         "wpackagist-plugin/wpfront-user-role-editor": "*",
         "wpackagist-plugin/wordpress-seo": "*",
         "wpackagist-plugin/jetpack": "*",
-        "wpackagist-plugin/search-filter": "*"
+        "wpackagist-plugin/search-filter": "*",
+        "wpackagist-plugin/search-by-algolia-instant-relevant-results": "*"
     }
 }

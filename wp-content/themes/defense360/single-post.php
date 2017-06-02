@@ -83,7 +83,12 @@ get_header();
 					</div>
 				<?php 
 					endforeach;
-					endif; 
+					endif;
+
+					echo "<div class='post-relatedPostsContainer content-wrapper-narrow'>";
+					echo '<h3 class="relatedPosts-title"><span>Related</span></h3>';
+					echo do_shortcode( '[jprel]' );
+					echo "</div>";
 				?>
 			</footer><!-- .entry-footer -->
 		</article><!-- #post-## -->
