@@ -31,6 +31,13 @@ article.post, article.page {
 		}
 	}
 
+	/*----------  Post Sidebar  ----------*/
+	@include breakpoint("medium") {
+		.post-sidebar {
+			padding-left:3rem;
+		}
+	}
+
 	/*----------  Post Header  ----------*/
 	header.entry-header {
 		margin-bottom: 0.5rem;
