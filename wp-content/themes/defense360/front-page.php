@@ -34,6 +34,7 @@ get_header(); ?>
 					<h3 class="latest-title"><span>The Latest</span></h3>
 					<?php
 						$latest_post_args = array(
+							'post_status' => 'publish',
 							'numberposts' => 4,
 							'exclude' => array(
 								get_theme_mod('hp_feature_1'),
