@@ -19,7 +19,7 @@
 }
 
 /*----------  Global Post Styles  ----------*/
-article.post {
+article.post, article.page {
 	margin-bottom: 3rem;
 
 	@include breakpoint("medium") {
@@ -28,6 +28,13 @@ article.post {
 		}
 		.post-content.isHomepage {
 			padding-left: 1rem;
+		}
+	}
+
+	/*----------  Post Sidebar  ----------*/
+	@include breakpoint("medium") {
+		.post-sidebar {
+			padding-left:3rem;
 		}
 	}
 
@@ -175,6 +182,10 @@ article.post {
 
 		.posted-on {
 			color: $bright-green;
+		}
+
+		.posted-redirectInfo {
+			color: $gray;
 		}
 	}
 

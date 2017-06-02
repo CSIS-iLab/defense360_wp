@@ -8,6 +8,7 @@ header.site-header {
 	margin-bottom: 2rem;
 	width: 100%;
 	background-color: $white;
+	z-index:50;
 
 	@include breakpoint("medium") {
 		padding-bottom: initial;
@@ -180,7 +181,7 @@ header.site-header {
 	nav.secondary-navigation {
 		background-color: $light-gray;
 		position: relative;
-		top: -115px;
+		top: -75px;
 
 		@include breakpoint("medium") {
 			top: 0;
@@ -298,7 +299,7 @@ header.site-header {
 	/*----------  Search Form  ----------*/
 	.header-searchFormContainer {
 		background-color: $black;
-		padding: 0.5rem;
+		padding: 1rem 0.5rem;
 		position: relative;
 		z-index: 10;
 		display: none;
@@ -328,7 +329,8 @@ header.site-header {
 				color: $search-gray;
 				text-transform: uppercase;
 				@include fontSize(14px);
-				line-height: 0;
+				line-height: 1;
+				-webkit-appearance: textfield;
 
 				&:focus {
 					box-shadow: none;

@@ -45,6 +45,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Tables
   ## Social Share
   ## Pagination
+  ## Related Posts
+  ## Autocomplete
 # Layout
 	## Header
 	## Footer
@@ -56,6 +58,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   ## Posts
   ## Archives
   ## Series Archive
+  ## Search
+  ## 404
+  ## About
 # Vendors
 --------------------------------------------------------------*/
 
@@ -87,7 +92,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   'components/media',
   'components/tables',
   'components/social-share',
-  'components/pagination';
+  'components/pagination',
+  'components/related-posts',
+  'components/autocomplete';
 
 /*----------  Layout  ----------*/
 @import
@@ -101,7 +108,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   'pages/home',
   'pages/posts',
   'pages/archives',
-  'pages/series-archive';
+  'pages/series-archive',
+  'pages/search',
+  'pages/404',
+  'pages/about';
 
 /*----------  Vendors  ----------*/
 @import

@@ -8,9 +8,21 @@ script:
 before_install:
 - gem install compass
 
+# deploy:
+#   provider: pages
+#   skip_cleanup: true
+#   github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+#   on:
+#     branch: master
+
+
+addons:
+  ssh_known_hosts: git.wpengine.com
+
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
-  on:
-    branch: master
+  # deploy develop to the staging environment
+  - provider: script
+    skip_cleanup: true
+    script: scripts/deploy.sh
+    on:
+      branch: development

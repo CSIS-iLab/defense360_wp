@@ -150,3 +150,51 @@ function defense360_customize_preview_js() {
 	wp_enqueue_script( 'defense360_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'defense360_customize_preview_js' );
+
+/**
+ * Remove links to unnecessary parts of the theme customizer
+ */
+
+function wpse_225164_remove_core_sections( $wp_customize ) {
+    $wp_customize->remove_section( 'title_tagline' );
+    $wp_customize->remove_section( 'colors' );
+    $wp_customize->remove_section( 'header_image' );
+    $wp_customize->remove_section( 'background_image' );
+}
+
+add_action( 'customize_register', 'wpse_225164_remove_core_sections' );
+
+/**
+ * Add links to customizer sections to appearance menu
+ */
+
+add_action( 'admin_menu', 'wpse_custom_submenu_page' );
+function wpse_custom_submenu_page() {
+	add_submenu_page(
+	    'themes.php',
+	        __( 'HP: Features', 'defense360' ),
+	        __( 'HP: Features', 'defense360' ),
+	        'manage_options',
+	        '/customize.php?autofocus[section]=defense360-hp-features'
+	    );
+	add_submenu_page(
+	    'themes.php',
+	        __( 'HP: Series', 'defense360' ),
+	        __( 'HP: Series', 'defense360' ),
+	        'manage_options',
+	        '/customize.php?autofocus[section]=defense360-hp-series'
+	    );
+}
+
+/**
+ * Remove unnecessary links to Header & Background in the Appearance Menu
+ */
+add_action('admin_menu', 'remove_unnecessary_wordpress_menus', 999);
+
+function remove_unnecessary_wordpress_menus(){
+    global $submenu;
+    foreach($submenu['themes.php'] as $menu_index => $theme_menu){
+        if($theme_menu[0] == 'Header' || $theme_menu[0] == 'Background')
+        unset($submenu['themes.php'][$menu_index]);
+    }
+}
