@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 %h1 {
-	font-family: $font__SourceSans;
+	font-family: $font__ExpoSerif;
 	@include fontSize(28px);
 	font-weight: 600;
 	line-height: 1.25;
@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 %h2 {
-	font-family: $font__OpenSans;
+	font-family: $font__SourceSans;
 	@include fontSize(24px);
 	font-weight: normal;
 	color: $bright-green;
@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 %h3 {
-	font-family: $font__OpenSans;
+	font-family: $font__SourceSans;
 	@include fontSize(20px);
 	font-weight: normal;
 	color: $gray;
@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 %h4 {
-	font-family: $font__OpenSans;
+	font-family: $font__SourceSans;
 	@include fontSize(18px);
 	font-style: italic;
 	font-weight: normal;
