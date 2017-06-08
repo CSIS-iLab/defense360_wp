@@ -165,3 +165,8 @@ require get_template_directory() . '/inc/shortcodes.php';
  * Register custom metaboxes
  */
 require get_template_directory() . '/inc/custom-metaboxes.php';
+
+/**
+ * Update Algolia Functionality
+ */
+require get_template_directory() . '/algolia/customize.php';

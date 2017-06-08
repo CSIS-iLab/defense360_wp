@@ -6,7 +6,11 @@
 </script>
 
 <script type="text/html" id="tmpl-autocomplete-post-suggestion">
+  <# if (data.author_url) { #>
+  <a class="suggestion-link" href="{{ data.author_url }}" title="{{ data.post_title }}">
+  <# } else { #>
   <a class="suggestion-link" href="{{ data.permalink }}" title="{{ data.post_title }}">
+  <# } #>
     <# if ( data.images.thumbnail ) { #>
       <img class="suggestion-post-thumbnail" src="{{ data.images.thumbnail.url }}" alt="{{ data.post_title }}">
       <# } #>
