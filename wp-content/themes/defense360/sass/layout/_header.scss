@@ -120,6 +120,7 @@ header.site-header {
 					width: auto !important;
 					border: 0 !important;
 					top: 0 !important;
+					@include fontSize(17px);
 				}
 
 				&.home {
@@ -186,7 +187,7 @@ header.site-header {
 	nav.secondary-navigation {
 		background-color: $light-gray;
 		position: relative;
-		top: -75px;
+		top: -65px;
 
 		@include breakpoint("medium") {
 			top: 0;
@@ -232,10 +233,6 @@ header.site-header {
 					text-transform: uppercase;
 					letter-spacing: 0.06em;
 					@include fontSize(16px);
-
-					@include breakpoint("medium") {
-						@include fontSize(14px);
-					}
 
 					&:hover {
 						color: $bright-green;
