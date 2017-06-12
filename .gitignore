@@ -92,6 +92,7 @@ Thumbs.db
 !composer.json
 !d360_travis.enc
 !scripts/deploy.sh
+!deploy.sh
 
 # track favicon files, if they exist
 !android-chrome-*.png
