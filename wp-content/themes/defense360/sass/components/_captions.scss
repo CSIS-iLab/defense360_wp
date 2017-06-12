@@ -6,11 +6,15 @@
 		@include center-block;
 	}
 
-	.wp-caption-text {
-		margin: 0.8075em 0;
+	p {
+		margin-bottom: 0 !important;
 	}
 }
 
 .wp-caption-text {
-	text-align: center;
+	text-align: left;
+	padding-left: 25px;
+	padding-right: 25px;
+	margin: 0.5rem 0 0 !important;
+	@include fontSize(14px);
 }

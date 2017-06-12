@@ -51,10 +51,10 @@ header.site-header {
 	.header-ttIndex {
 		align-self: flex-end;
 		text-align: right;
-		@include fontSize(12px);
+		@include fontSize(13px);
 		line-height: 1.5;
 		color: $gray;
-		padding-left: 10%;
+		padding-left: 17%;
 	}
 
 	.header-mobileContainer, .header-searchContainer {
@@ -78,8 +78,8 @@ header.site-header {
 	/*----------  Navigation: Main Menu  ----------*/
 	
 	nav.main-navigation {
-		padding-top: 2rem;
-		padding-bottom: 0.5rem;
+		padding-top: 1rem;
+		padding-bottom: 0;
 
 		.content-wrapper {
 			max-width: 100%;
@@ -120,7 +120,7 @@ header.site-header {
 					width: auto !important;
 					border: 0 !important;
 					top: 0 !important;
-					@include fontSize(14px);
+					@include fontSize(17px);
 				}
 
 				&.home {
@@ -159,14 +159,20 @@ header.site-header {
 					text-transform: uppercase;
 					color: $dark-gray;
 					letter-spacing: 0.5px;
+
+					a {
+						color: $dark-gray;
+						font-weight: normal;
+						letter-spacing: 0.5px;
+					}
 				}
 
 				a {
-					font-weight: bold;
+					font-weight: 600;
 					text-decoration: none;
 					color: $dark-gray;
 					text-transform: uppercase;
-					letter-spacing: 0.5px;
+					letter-spacing: 0.04em;
 
 					&:hover {
 						color: $bright-green;
@@ -181,7 +187,7 @@ header.site-header {
 	nav.secondary-navigation {
 		background-color: $light-gray;
 		position: relative;
-		top: -75px;
+		top: -65px;
 
 		@include breakpoint("medium") {
 			top: 0;
@@ -225,12 +231,8 @@ header.site-header {
 					font-weight: normal;
 					color: $dark-gray;
 					text-transform: uppercase;
-					letter-spacing: 0.4px;
+					letter-spacing: 0.06em;
 					@include fontSize(16px);
-
-					@include breakpoint("medium") {
-						@include fontSize(13px);
-					}
 
 					&:hover {
 						color: $bright-green;
@@ -250,6 +252,10 @@ header.site-header {
 		.nav-searchIconContainer {
 			text-align: right;
 			padding: 0;
+
+			.icon-search {
+				@include fontSize(14px);
+			}
 
 			.icon-search:hover {
 				cursor:pointer;

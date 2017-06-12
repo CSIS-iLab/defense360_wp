@@ -1,5 +1,5 @@
 // Rem output with px fallback
-$browser-context: 16px;
+$browser-context: 18px;
 @function calculateRem($size) {
   $remSize: $size / $browser-context;
   @return #{$remSize}rem;
@@ -57,4 +57,13 @@ $breakpoint-xsmall: 25em;
 		}
 	}
 
+}
+
+// Transitions
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
 }

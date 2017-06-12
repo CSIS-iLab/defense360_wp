@@ -63,9 +63,9 @@
 			}
 
 			header.entry-header .entry-title {
-				@include fontSize(18px);
+				@include fontSize(18.5px);
 				a {
-					color: $dark-gray;
+					color: $black;
 
 					&:hover {
 						color: $bright-green;
@@ -104,7 +104,7 @@
 			}
 
 			.series-featuredTitle {
-				font-family: $font__SourceSans;
+				font-family: $font__ExpoSerif;
 				@include fontSize(24px);
 				font-weight: 600;
 				margin: 0.25rem 0 1rem;
@@ -132,7 +132,7 @@
 			}
 
 			.series-additionalTitle {
-				font-family: $font__SourceSans;
+				font-family: $font__ExpoSerif;
 				@include fontSize(18px);
 				font-weight: 600;
 				margin: 0.5rem 0 0;
@@ -177,7 +177,7 @@
 
 		.series-sectionTitle, .series-learnMore {
 			color: $dark-green;
-			@include fontSize(14px);
+			@include fontSize(15px);
 			text-transform: uppercase;
 			font-weight: normal;
 			font-style: normal;

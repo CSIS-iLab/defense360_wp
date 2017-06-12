@@ -5,7 +5,7 @@
 .archive {
 	header.page-header {
 		.page-title {
-			font-family: $font__SourceSans;
+			font-family: $font__ExpoSerif;
 			@include fontSize(28px);
 			font-weight: 600;
 			color: $black;
@@ -22,7 +22,7 @@
 		}
 
 		.archive-description p {
-			@include fontSize(14px);
+			@include fontSize(15px);
 		}
 	}
 

@@ -22,7 +22,7 @@ class Nav_Main_Walker extends Walker_Nav_Menu {
 
 		// Item Description
 		if($item->type_label == "Series") {
-			$series_output = "<span class='menu-description'>Series:</span> ";
+			$series_output = "<span class='menu-description'><a href='/series'>Series:</a></span> ";
 		}
 		else {
 			$series_output = null;

@@ -58,31 +58,35 @@ get_header();
 			<footer class="entry-footer">
 				<?php
 				if ( 'post' === get_post_type() ) : 
-					foreach( get_coauthors() as $coauthor ):
-						if(!empty($coauthor->website)) {
-							$authorURL = $coauthor->website;
-							$authorRel = "rel='external'";
-							$authorTarget = "target='_blank'";
-						}
-						else {
-							$authorURL = get_author_posts_url( $coauthor->ID, $coauthor->user_nicename );
-							$authorRel = null;
-							$authorTarget = null;
-						}
-						?>
-					<div class="post-authorContainer">
-						<div class="content-wrapper-narrow row flex-center__y">
-							<div class="col-xs-2">
-								<a href="<?php echo $authorURL; ?>" <?php echo $authorRel." ".$authorTarget; ?>><?php echo coauthors_get_avatar($coauthor, 70); ?></a>
-							</div>
-							<div class="col-xs-10">
-								<p><a href="<?php echo $authorURL; ?>" <?php echo $authorRel." ".$authorTarget; ?>><strong><?php echo $coauthor->display_name; ?></strong></a> <?php echo $coauthor->description; ?></p>
+					if(get_coauthors()) {
+						echo "<div class='post-authorsContainer'>";
+						foreach( get_coauthors() as $coauthor ):
+							if(!empty($coauthor->website)) {
+								$authorURL = $coauthor->website;
+								$authorRel = "rel='external'";
+								$authorTarget = "target='_blank'";
+							}
+							else {
+								$authorURL = get_author_posts_url( $coauthor->ID, $coauthor->user_nicename );
+								$authorRel = null;
+								$authorTarget = null;
+							}
+							?>
+						<div class="post-authorContainer">
+							<div class="content-wrapper-narrow row">
+								<div class="col-xs-2">
+									<a href="<?php echo $authorURL; ?>" <?php echo $authorRel." ".$authorTarget; ?>><?php echo coauthors_get_avatar($coauthor, 70); ?></a>
+								</div>
+								<div class="col-xs-10">
+									<p><a href="<?php echo $authorURL; ?>" <?php echo $authorRel." ".$authorTarget; ?>><strong><?php echo $coauthor->display_name; ?></strong></a> <?php echo $coauthor->description; ?></p>
 
+								</div>
 							</div>
 						</div>
-					</div>
-				<?php 
-					endforeach;
+					<?php 
+						endforeach;
+						echo "</div>";
+					}
 					endif;
 
 					echo "<div class='post-relatedPostsContainer content-wrapper-narrow'>";

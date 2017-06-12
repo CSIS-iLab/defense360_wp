@@ -21,25 +21,30 @@
 		endif;
 		?>
 	</header><!-- .entry-header -->
-	<div class="entry-content">
-		<div class="post-thumbnailContainer home-secondaryFeature">
-			<?php
-				if (has_post_thumbnail()) :
-					the_post_thumbnail( 'medium' );
+	<div class="row">
+		<div class="post-thumbnail col-xs-12 col-md-4 last-md">
+			<div class="post-thumbnailContainer home-secondaryFeature">
+				<?php
+					if (has_post_thumbnail()) :
+						the_post_thumbnail( 'medium' );
+					endif;
+					?>
+			</div>
+		</div>
+		<div class="col-xs-12 col-md-8">
+			<div class="entry-content">
+				<?php the_excerpt(); ?>
+			</div><!-- .entry-content -->
+			<footer class="entry-footer">
+				<?php
+				if ( 'post' === get_post_type() ) : ?>
+				<div class="entry-meta">
+					<?php defense360_posted_on(); ?>
+				</div><!-- .entry-meta -->
+				<?php
 				endif;
 				?>
-		</div>
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-content -->
+			</footer><!-- .entry-footer -->
 
-	<footer class="entry-footer">
-		<?php
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php defense360_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif;
-		?>
-	</footer><!-- .entry-footer -->
+	</div>
 </article><!-- #post-## -->
