@@ -1,6 +1,9 @@
 language: ruby
 cache: bundler
 rvm: 2.3.1
+branches:
+  only:
+  -  development
 addons:
   ssh_known_hosts: git.wpengine.com
 script:
