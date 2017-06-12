@@ -16,6 +16,6 @@ before_install:
 deploy:
 - provider: script
   skip_cleanup: true
-  script: sh scripts/deploy.sh
+  script: chmod +x scripts/deploy.sh && sh scripts/deploy.sh
   on:
     branch: development
