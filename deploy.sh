@@ -5,6 +5,6 @@ git remote add defense360_wp git@git.wpengine.com:staging/defense360.git # add r
 git fetch --unshallow # fetch all repo history or wpengine complain
 git status
 git checkout development
-git add .
+git add wp-content/themes/defense360/*.css
 git commit -m "compiled assets"
 git push defense360_wp development:master #deploy to staging site from development to master
