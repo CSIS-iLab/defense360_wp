@@ -90,6 +90,9 @@ Thumbs.db
 !README.md
 !CHANGELOG.md
 !composer.json
+!d360_travis.enc
+!scripts/deploy.sh
+!deploy.sh
 
 # track favicon files, if they exist
 !android-chrome-*.png
@@ -106,7 +109,6 @@ Thumbs.db
 !wp-content/plugins/defense360-google-analytics.php
 !wp-content/themes/defense360
 !.travis.yml
-!test
 
 wp-content/themes/defense360/.sass-cache
 **/.DS_Store
