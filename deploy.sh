@@ -7,4 +7,4 @@ git status
 git checkout development
 git add wp-content/themes/defense360/*.css -f
 git commit -m "compiled assets"
-git push defense360_wp development:master #deploy to staging site from development to master
+git push -f defense360_wp development:master #deploy to staging site from development to master
