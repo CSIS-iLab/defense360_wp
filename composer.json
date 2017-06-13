@@ -15,8 +15,6 @@
         "wpackagist-plugin/google-authenticator": "*",
         "wpackagist-plugin/page-links-to": "*",
         "wpackagist-plugin/tinymce-advanced": "*",
-        "wpackagist-plugin/wp-user-avatar": "*",
-        "wpackagist-plugin/wpfront-user-role-editor": "*",
         "wpackagist-plugin/wordpress-seo": "*",
         "wpackagist-plugin/jetpack": "*",
         "wpackagist-plugin/search-filter": "*",
