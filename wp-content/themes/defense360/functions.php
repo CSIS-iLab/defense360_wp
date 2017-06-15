@@ -100,6 +100,9 @@ function defense360_scripts() {
 
 	wp_enqueue_script( 'defense360-archive-mobile', get_template_directory_uri() . '/js/archive-mobile.js', array(), '20151215', true );
 
+	wp_enqueue_script( 'defense360-iframe-resize', get_template_directory_uri() . '/js/iframeResizer.min.js', array(), '20170615', true );
+
+	wp_add_inline_script( 'defense360-iframe-resize', 'jQuery("iframe").iFrameResize({log:false});' );
 
 }
 add_action( 'wp_enqueue_scripts', 'defense360_scripts' );
