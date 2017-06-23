@@ -33,6 +33,7 @@
 		$(".header-searchFormContainer").slideToggle("fast");
 		$(".header-searchContainer .icon-search").toggle();
 		$(".header-searchContainer .close-icon").toggle();
+		$(".header-searchInputContainer .search-field").focus();
 	});
 
 	window.addEventListener('resize', function(event){
