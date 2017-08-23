@@ -173,3 +173,21 @@ require get_template_directory() . '/inc/custom-metaboxes.php';
  * Update Algolia Functionality
  */
 require get_template_directory() . '/algolia/customize.php';
+
+/**
+ * Custom page titles for Guest Authors with WordPress SEO
+ * Returns "[author name]&#39;s articles on [site name]"
+ * 
+ */
+add_filter('wpseo_title', 'my_co_author_wseo_title');
+function my_co_author_wseo_title( $title ) {
+	
+	// Only filter title output for author pages
+	if ( is_author() && function_exists( 'get_coauthors' ) ) {
+		$qo = get_queried_object();
+		$author_name = $qo->display_name;
+		return $author_name . '&#39;s articles on ' . get_bloginfo('name');
+	}
+	return $title;
+	
+}
