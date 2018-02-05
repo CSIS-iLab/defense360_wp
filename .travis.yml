@@ -1,9 +1,8 @@
 language: ruby
 cache: bundler
-rvm: 2.3.1
 branches:
   only:
-  -  development
+  -  master
 addons:
   ssh_known_hosts: git.wpengine.com
 script:
@@ -20,4 +19,4 @@ deploy:
   skip_cleanup: true
   script: chmod +x deploy.sh && sh deploy.sh
   on:
-    branch: development
+    branch: master
