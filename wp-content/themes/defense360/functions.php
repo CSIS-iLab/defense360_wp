@@ -165,6 +165,11 @@ add_action( 'save_post', 'series_save_post', 10, 2 );
 require get_template_directory() . '/inc/shortcodes.php';
 
 /**
+ * Register custom TinyMCE buttons
+ */
+require get_template_directory() . '/inc/custom-tinymce-buttons.php';
+
+/**
  * Register custom metaboxes
  */
 require get_template_directory() . '/inc/custom-metaboxes.php';
