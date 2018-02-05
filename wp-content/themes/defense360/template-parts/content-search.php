@@ -19,7 +19,9 @@ endif;
 	<?php if($showPostThumbnail) { ?>
 		<div class="post-thumbnail col-xs-12 col-md-3">
 			<div class="post-thumbnailContainer">
+				<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">
 				<?php the_post_thumbnail( 'medium' ); ?>
+				</a>
 			</div>
 		</div>
 	<?php } ?>

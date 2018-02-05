@@ -18,7 +18,9 @@ $thumbnailURL = get_term_meta( $post->term_id, 'series_feature_image', true );
 			<div class="post-thumbnailContainer">
 				<?php
 					if ($thumbnailURL) :
+						echo '<a href="' . esc_url( $seriesURL ) . '" rel="bookmark">';
 						echo "<img src='".$thumbnailURL."' alt='".$post->name."' title='".$post->name."' />";
+						echo '</a>';
 					endif;
 					?>
 			</div>

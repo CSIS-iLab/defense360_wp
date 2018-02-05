@@ -26,7 +26,9 @@
 			<div class="post-thumbnailContainer home-secondaryFeature">
 				<?php
 					if (has_post_thumbnail()) :
+						echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">';
 						the_post_thumbnail( 'medium' );
+						echo '</a>';
 					endif;
 					?>
 			</div>
