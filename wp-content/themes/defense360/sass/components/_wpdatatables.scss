@@ -106,6 +106,23 @@ h2 {
 	text-align: left;
 }
 
+.wpDataTablesFilter .wpDataTableFilterSection {
+	div {
+		display: inline-block;
+		vertical-align: top;
+		@include breakpoint("medium") {
+			display: block;
+		}
+	}
+	label {
+		width: 78px;
+		text-align: right;
+		@include breakpoint("medium"){
+			width: unset;
+		}
+	}
+}
+
 .wpDataTablesFilter .wpDataTableFilterSection .form-control {
   border: 2px solid #E7E7E7 !important;
 	padding-left: 7px !important;
