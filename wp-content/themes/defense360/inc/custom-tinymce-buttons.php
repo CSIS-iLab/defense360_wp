@@ -43,7 +43,7 @@ if ( ! function_exists( 'defense360_register_buttons' ) ) {
 	 * @return Array          Updated buttons array.
 	 */
 	function defense360_register_buttons( $buttons ) {
-        array_push( $buttons, 'fullWidth', 'highlightedContent' );
+        array_push( $buttons, 'fullWidth', 'highlightedContent', 'interactive' );
         return $buttons;
 	}
 }
