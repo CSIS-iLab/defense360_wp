@@ -128,6 +128,11 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * Register Custom Post Types
+ **/
+require get_template_directory() . '/inc/custom-post-types.php';
+
+/**
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
@@ -145,17 +150,17 @@ require get_template_directory() . '/inc/custom-taxonomies.php';
 /**
  * Deletes the series_category_query transient if a series post is updated. This is for the home page.
  */
- 
+
 function series_save_post( $post_id, $post ) {
 
 	// If this is an auto save routine don't do anyting
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
 		return;
-		
+
 	if ( $post->post_type == 'post' && is_object_in_term( $post_id, 'series') ) {
 		delete_transient( 'series_category_query' );
 	}
-	
+
 }
 add_action( 'save_post', 'series_save_post', 10, 2 );
 
@@ -182,11 +187,11 @@ require get_template_directory() . '/algolia/customize.php';
 /**
  * Custom page titles for Guest Authors with WordPress SEO
  * Returns "[author name]&#39;s articles on [site name]"
- * 
+ *
  */
 add_filter('wpseo_title', 'my_co_author_wseo_title');
 function my_co_author_wseo_title( $title ) {
-	
+
 	// Only filter title output for author pages
 	if ( is_author() && function_exists( 'get_coauthors' ) ) {
 		$qo = get_queried_object();
@@ -194,5 +199,5 @@ function my_co_author_wseo_title( $title ) {
 		return $author_name . '&#39;s articles on ' . get_bloginfo('name');
 	}
 	return $title;
-	
+
 }
