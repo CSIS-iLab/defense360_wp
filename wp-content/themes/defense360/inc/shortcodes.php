@@ -47,49 +47,49 @@ add_shortcode( 'highlightedContent', 'shortcode_highlightedContent' );
  * @return string          Embedded interactive
  */
 function defense360_shortcode_data( $atts ) {
-	// Attributes
-	$atts = shortcode_atts(
-		array(
-			'id' => '', // ID of Interactive Post
-			'width' => '', // Width of Interactive
-			'height' => '', // Height of Interactive,
-			'sharing' => true, // Include share component,
-			'align' => null // Whether to align the iframe to either the left or right.
-		),
-		$atts,
-		'data'
-	);
+		// Attributes
+		$atts = shortcode_atts(
+				array(
+						'id' => '', // ID of Interactive Post
+						'width' => '', // Width of Interactive
+						'height' => '', // Height of Interactive,
+						'sharing' => true, // Include share component,
+						'align' => null // Whether to align the iframe to either the left or right.
+				),
+				$atts,
+				'data'
+		);
 
-	$data_url = get_post_meta( $atts['id'], '_data_url', true );
-	$width = get_post_meta( $atts['id'], '_data_width', true );
-	$height = get_post_meta( $atts['id'], '_data_height', true );
-	$iframe_resize_disabled = get_post_meta( $atts['id'], '_data_iframeResizeDisabled', true );
-	$iframe_twitter_pic_url = get_post_meta( $atts['id'], '_data_twitter_pic_url', true );
-	$data_img_url = get_post_meta( $atts['id'], '_data_img_url', true );
-	$title = get_the_title($atts['id']);
-	$URL = get_permalink();
-	$data_post_url = get_permalink( $atts['id'] );
+		$data_url = get_post_meta( $atts['id'], '_data_url', true );
+		$width = get_post_meta( $atts['id'], '_data_width', true );
+		$height = get_post_meta( $atts['id'], '_data_height', true );
+		$iframe_resize_disabled = get_post_meta( $atts['id'], '_data_iframeResizeDisabled', true );
+		$iframe_twitter_pic_url = get_post_meta( $atts['id'], '_data_twitter_pic_url', true );
+		$data_img_url = get_post_meta( $atts['id'], '_data_img_url', true );
+		$title = get_the_title($atts['id']);
+		$URL = get_permalink();
+		$data_post_url = get_permalink( $atts['id'] );
 
-	// Fallback Image
-	$fallbackImgDisabled = get_post_meta( $atts['id'], '_data_fallback_img_disabled', true );
+		// Fallback Image
+		$fallbackImgDisabled = get_post_meta( $atts['id'], '_data_fallback_img_disabled', true );
 
-	if( $fallbackImgDisabled ) {
-		$fallback_img = null;
-	} elseif ( '' !== $data_img_url ) {
-		$fallback_img = '<img src="' . esc_attr( $data_img_url ) . '" alt="' . $title . '" title="' . $title . '" />';
-	} else {
-		$fallback_img = get_the_post_thumbnail($atts['id'], 'full');
-	}
+		if( $fallbackImgDisabled ) {
+				$fallback_img = null;
+		} elseif ( '' !== $data_img_url ) {
+				$fallback_img = '<img src="' . esc_attr( $data_img_url ) . '" alt="' . $title . '" title="' . $title . '" />';
+		} else {
+				$fallback_img = get_the_post_thumbnail($atts['id'], 'full');
+		}
 
-	if($atts['sharing'] === true || $atts['sharing'] == 'true') {
-		$sharing = defense360_social_share($title, $URL, $data_post_url, $iframe_twitter_pic_url);
-	}
-	if ( $atts['align'] ) {
-		$align = "align" . $atts['align'];
-	} else {
-		$align = null;
-	}
-	return defense360_data_display_iframe($data_url, $width, $height, $fallback_img, $iframe_resize_disabled, $align).$sharing;
+		if($atts['sharing'] === true || $atts['sharing'] == 'true') {
+				$sharing = defense360_social_share($title, $URL, $data_post_url, $iframe_twitter_pic_url);
+		}
+		if ( $atts['align'] ) {
+				$align = "align" . $atts['align'];
+		} else {
+				$align = null;
+		}
+		return defense360_data_display_iframe($data_url, $width, $height, $fallback_img, $iframe_resize_disabled, $align).$sharing;
 }
 add_shortcode( 'data', 'defense360_shortcode_data' );
 

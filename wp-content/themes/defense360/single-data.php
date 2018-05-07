@@ -13,7 +13,6 @@ if ( $full_width ) {
 	$interactive = do_shortcode( '[data id="' . $id . '"]' );
 }
 
-
 get_header();
 ?>
 
@@ -51,6 +50,11 @@ get_header();
 
 			</header><!-- .entry-header -->
 
+							<?php
+							if ( 'below' === $content_placement ) {
+								echo $interactive;
+							}
+							?>
 			<div class="content-wrapper-narrow entry-content">
 				<?php
 					the_content( sprintf(
@@ -63,6 +67,11 @@ get_header();
 						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'defense360' ),
 						'after'  => '</div>',
 					) );
+				?>
+				<?php
+				if ( 'above' === $content_placement ) {
+					echo $interactive;
+				}
 				?>
 			</div><!-- .entry-content -->
 
