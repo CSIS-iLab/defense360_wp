@@ -6,6 +6,8 @@
  *
  * @package defense360
  */
+
+
 $classes = 'row card-format';
 $thumbnail_size = 3;
 ?>

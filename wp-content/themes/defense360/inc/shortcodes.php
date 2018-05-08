@@ -84,6 +84,7 @@ function defense360_shortcode_data( $atts ) {
 		if($atts['sharing'] === true || $atts['sharing'] == 'true') {
 				$sharing = defense360_social_share($title, $URL, $data_post_url, $iframe_twitter_pic_url);
 		}
+
 		if ( $atts['align'] ) {
 				$align = "align" . $atts['align'];
 		} else {
@@ -112,4 +113,28 @@ function tgm_io_shortcode_empty_paragraph_fix( $content ) {
     );
     return strtr( $content, $array );
 
+}
+
+/**
+ * Adds inline social sharing component to podcasts, stats, and interactives embedded in posts via shortcode
+ * @param  string $title Title to be used by social media
+ * @param  string $post_url   URL to be used by social media
+ * @param  string $data_post_url URL to the data repo post.
+ * @return string        HTML of share button
+ */
+function defense360_social_share($title = "", $post_url = "", $data_post_url = "", $twitter_pic_url = null) {
+	$shareArgs = array(
+		'linkname' => $title . ' ' . $twitter_pic_url,
+		'linkurl' => $post_url
+	);
+	echo $URL;
+	$output = '<div class="sharing-inline">';
+	$output .= '<div class="col-xs-12 col-md-6 sharing-inline-share"><span class="meta-label">Share</span>';
+	ob_start();
+    ADDTOANY_SHARE_SAVE_KIT($shareArgs);
+    $output .= ob_get_contents();
+    ob_end_clean();
+    $output .= '</div><div class="col-xs-12 col-md-6 sharing-inline-view">View in the <a href="' . esc_url( $data_post_url ) . '">Data Repository</a></div>';
+    $output .= '</div>';
+    return $output;
 }

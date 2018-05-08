@@ -1,9 +1,14 @@
 <?php
 /**
- * Template: Single Data
+ * The template for displaying single defense360 data posts.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ *
+ * @package defense360
  */
 
 $id = get_the_id();
+
 $content_placement = get_post_meta( $id, '_data_content_placement', true );
 $full_width = get_post_meta( $id, '_data_full_width', true );
 
@@ -13,109 +18,73 @@ if ( $full_width ) {
 	$interactive = do_shortcode( '[data id="' . $id . '"]' );
 }
 
-get_header();
-?>
+
+
+get_header(); ?>
 
 <div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
+	<main id="main" class="site-main content-wrapper">
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<header class="content-wrapper-narrow entry-header">
-				<?php
-				// Post Content Type & Category
-				defense360_entry_contentType();
-
-				// Post Title
-				if ( is_single() ) :
-					the_title( '<h1 class="entry-title">', '</h1>' );
-				else :
-					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-				endif;
-
-				// Post Series
-				defense360_entry_series();
-
-				// Post Date & Author
-				if ( 'post' === get_post_type() ) : ?>
-				<div class="entry-meta">
-					<?php defense360_posted_on(); ?>
-				</div><!-- .entry-meta -->
-				<?php
-				endif;
-
-				// Feature Image
-				if (is_single() && has_post_thumbnail()) :
-					the_post_thumbnail( 'medium_large' );
-				endif;
-				?>
-
+			<header class="entry-header row">
+				<div class="entry-meta-top content-padding col-xs-12 row">
+					<div class="post-format-container">
+					</div>
+				</div>
+				<div class="title-container content-padding col-xs-12">
+					<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+				</div>
 			</header><!-- .entry-header -->
 
-							<?php
-							if ( 'below' === $content_placement ) {
-								echo $interactive;
-							}
-							?>
-			<div class="content-wrapper-narrow entry-content">
+			<div class="entry-content content-padding">
 				<?php
-					the_content( sprintf(
-						/* translators: %s: Name of current post. */
-						wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'defense360' ), array( 'span' => array( 'class' => array() ) ) ),
-						the_title( '<span class="screen-reader-text">"', '"</span>', false )
-					) );
-
-					wp_link_pages( array(
-						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'defense360' ),
-						'after'  => '</div>',
-					) );
-				?>
-				<?php
-				if ( 'above' === $content_placement ) {
+				if ( 'below' === $content_placement ) {
 					echo $interactive;
 				}
+				?>
+				<div class="entry-content-post-body">
+					<?php
+					the_content(
+						sprintf(
+							wp_kses(
+								/* translators: %s: Name of current post. Only visible to screen readers */
+								__('Continue reading<span class="screen-reader-text"> "%s"</span>', 'defense360'),
+								array(
+									'span' => array(
+										'class' => array(),
+									),
+								)
+							),
+							get_the_title()
+						)
+					);
+					?>
+				</div>
+				<?php
+					if ( 'above' === $content_placement ) {
+						echo $interactive;
+					}
 				?>
 			</div><!-- .entry-content -->
 
 			<footer class="entry-footer">
-				<?php
-				if ( 'post' === get_post_type() ) :
-					if(get_coauthors()) {
-						echo "<div class='post-authorsContainer'>";
-						foreach( get_coauthors() as $coauthor ):
-							if(!empty($coauthor->website)) {
-								$authorURL = $coauthor->website;
-								$authorRel = "rel='external'";
-								$authorTarget = "target='_blank'";
-							}
-							else {
-								$authorURL = get_author_posts_url( $coauthor->ID, $coauthor->user_nicename );
-								$authorRel = null;
-								$authorTarget = null;
-							}
-							?>
-						<div class="post-authorContainer">
-							<div class="content-wrapper-narrow row">
-								<div class="col-xs-2">
-									<a href="<?php echo $authorURL; ?>" <?php echo $authorRel." ".$authorTarget; ?>><?php echo coauthors_get_avatar($coauthor, 70); ?></a>
-								</div>
-								<div class="col-xs-10">
-									<p><a href="<?php echo $authorURL; ?>" <?php echo $authorRel." ".$authorTarget; ?>><strong><?php echo $coauthor->display_name; ?></strong></a> <?php echo $coauthor->description; ?></p>
-
-								</div>
-							</div>
-						</div>
-					<?php
-						endforeach;
-						echo "</div>";
-					}
-					endif;
-
-					echo "<div class='post-relatedPostsContainer content-wrapper-narrow'>";
-					echo '<h3 class="relatedPosts-title"><span>Related</span></h3>';
-					echo do_shortcode( '[jprel]' );
-					echo "</div>";
-				?>
+				<section class="footer-top content-padding row">
+					<div class="entry-citation col-xs-12 col-md-9">
+						<?php defense360_citation(); ?>
+					</div>
+					<div class="entry-share col-xs-12 col-md-3">
+						<?php get_template_part( 'components/share-inline' ); ?>
+					</div>
+				</section>
+				<section class="footer-middle content-padding row">
+					<?php defense360_post_footnotes(); ?>
+		    		<?php defense360_post_sources( $post->ID ); ?>
+		    	</section>
+				<?php defense360_return_to_archive(); ?>
+				<?php get_template_part( 'components/explore-more' ); ?>
 			</footer><!-- .entry-footer -->
-		</article><!-- #post-## -->
+		</article><!-- #post-<?php the_ID(); ?> -->
 	</main><!-- #main -->
 </div><!-- #primary -->
-<?php get_footer();
+
+<?php
+get_footer();
