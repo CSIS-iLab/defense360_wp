@@ -40,7 +40,7 @@ function defense360_posted_on() {
  		// Get Redirect Name & Link
 	    $redirectName = get_post_meta( get_the_ID(), 'defense360-redirectPageName', true );
 	    $redirectURL = get_post_meta( get_the_ID(), '_links_to', true );
-	 
+
 	    // Checks and displays the retrieved value
 	    if( !empty($redirectName) && !empty($redirectURL) ) {
 	    	$redirectTarget = get_post_meta( get_the_ID(), '_links_to_target', true );
