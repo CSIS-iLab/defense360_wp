@@ -153,6 +153,29 @@ add_filter('the_content', 'defense360_entry_tags', 19);
 
 endif;
 
+if ( ! function_exists( 'defense360_post_sources' ) ) :
+	/**
+	 * Returns HTML with source info if it exists.
+	 *
+	 * @param  int $id Post ID.
+	 */
+	function defense360_post_sources( $id ) {
+		$post_type = get_post_type();
+		if ( in_array( $post_type, array( 'data' ), true ) ) {
+			$sources = get_post_meta( $id, '_post_sources', true );
+
+			$colmd = 'col-md';
+			$icon = '';
+			$collapsible = '';
+
+			if ( '' !== $sources ) {
+				$sources = apply_filters('meta_content', $sources);
+				printf( '<div class="entry-sources col-xs-12 %2$s%4$s"><h4 class="subheading">%3$s' . esc_html( 'Sources', 'defense360') . '</h4><div class="collapsible-content">%1$s</div></div>', $sources, $colmd, $icon, $collapsible); // WPCS: XSS OK.
+			}
+		}
+	}
+endif;
+
 /**
  * Returns true if a blog has more than 1 category.
  *

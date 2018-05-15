@@ -69,17 +69,15 @@ get_header(); ?>
 			<footer class="entry-footer">
 				<section class="footer-top content-padding row">
 					<div class="entry-citation col-xs-12 col-md-9">
-						<?php defense360_citation(); ?>
+
 					</div>
 					<div class="entry-share col-xs-12 col-md-3">
 						<?php get_template_part( 'components/share-inline' ); ?>
 					</div>
 				</section>
 				<section class="footer-middle content-padding row">
-					<?php defense360_post_footnotes(); ?>
 		    		<?php defense360_post_sources( $post->ID ); ?>
 		    	</section>
-				<?php defense360_return_to_archive(); ?>
 				<?php get_template_part( 'components/explore-more' ); ?>
 			</footer><!-- .entry-footer -->
 		</article><!-- #post-<?php the_ID(); ?> -->
