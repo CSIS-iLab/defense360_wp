@@ -53,7 +53,7 @@ function defense360_shortcode_data( $atts ) {
 						'id' => '', // ID of Interactive Post
 						'width' => '', // Width of Interactive
 						'height' => '', // Height of Interactive,
-						'sharing' => true, // Include share component,
+						'sharing' => false, // Include share component,
 						'align' => null // Whether to align the iframe to either the left or right.
 				),
 				$atts,

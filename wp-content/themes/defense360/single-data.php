@@ -34,52 +34,56 @@ get_header(); ?>
 					<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
 				</div>
 			</header><!-- .entry-header -->
+			<div class="content-wrapper entry-content">
+				<?php
 
-			<div class="entry-content content-padding">
-				<?php
-				if ( 'below' === $content_placement ) {
-					echo $interactive;
-				}
-				?>
-				<div class="entry-content-post-body">
-					<?php
-					the_content(
-						sprintf(
-							wp_kses(
-								/* translators: %s: Name of current post. Only visible to screen readers */
-								__('Continue reading<span class="screen-reader-text"> "%s"</span>', 'defense360'),
-								array(
-									'span' => array(
-										'class' => array(),
-									),
-								)
-							),
-							get_the_title()
-						)
-					);
-					?>
-				</div>
-				<?php
+					the_content( sprintf(
+						/* translators: %s: Name of current post. */
+						wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'defense360' ), array( 'span' => array( 'class' => array() ) ) ),
+						the_title( '<span class="screen-reader-text">"', '"</span>', false )
+					) );
+
 					if ( 'above' === $content_placement ) {
 						echo $interactive;
 					}
+
+					wp_link_pages( array(
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'defense360' ),
+						'after'  => '</div>',
+					) );
 				?>
+				<div class='repository-view-container'>
+					<p><span class="repository-view"><a>View in Data Repository</a></span></p>
+					<div class="interactive-footer">
+						<?php
+							$thumbnail_id    = get_post_thumbnail_id($post->ID);
+							$alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+
+							if ($alt) {
+									echo '<span>Photo: '.$alt.'</span><br />';
+							}
+
+							the_tags('<h3>TAGS: ',',','</h3>');
+
+							if ( function_exists( 'sharing_display' ) ) {
+									sharing_display( '', true );
+							}
+						?>
+					</div>
+				</div>
+				<?php
+
+				?>
+
 			</div><!-- .entry-content -->
-
-			<footer class="entry-footer">
-				<section class="footer-top content-padding row">
-					<div class="entry-citation col-xs-12 col-md-9">
-
-					</div>
-					<div class="entry-share col-xs-12 col-md-3">
-						<?php get_template_part( 'components/share-inline' ); ?>
-					</div>
-				</section>
-				<section class="footer-middle content-padding row">
-		    		<?php defense360_post_sources( $post->ID ); ?>
-		    	</section>
-				<?php get_template_part( 'components/explore-more' ); ?>
-			</footer><!-- .entry-footer -->
+				<footer class="entry-footer">
+						<?php
+						echo "<div class='post-relatedPostsContainer content-wrapper-narrow'>";
+						echo '<h3 class="relatedPosts-title"><span>Related</span></h3>';
+						echo do_shortcode( '[jprel]' );
+						echo "</div>";
+					?>
+				</footer><!-- .entry-footer -->
 		</article><!-- #post-<?php the_ID(); ?> -->
 	</main><!-- #main -->
 </div><!-- #primary -->
