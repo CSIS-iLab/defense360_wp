@@ -36,6 +36,9 @@ get_header(); ?>
 			</header><!-- .entry-header -->
 			<div class="content-wrapper entry-content">
 				<?php
+					if ( 'above' === $content_placement ) {
+						echo $interactive;
+					}
 
 					the_content( sprintf(
 						/* translators: %s: Name of current post. */
@@ -43,7 +46,7 @@ get_header(); ?>
 						the_title( '<span class="screen-reader-text">"', '"</span>', false )
 					) );
 
-					if ( 'above' === $content_placement ) {
+					if ( 'below' === $content_placement ) {
 						echo $interactive;
 					}
 
@@ -60,10 +63,10 @@ get_header(); ?>
 							$alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
 
 							if ($alt) {
-									echo '<span>Photo: '.$alt.'</span><br />';
+									echo '<p>Photo: '.$alt.'</p>';
 							}
 
-							the_tags('<h3>TAGS: ',',','</h3>');
+							the_tags('<span class="tags-links">TAGS: ',',','</span>');
 
 							if ( function_exists( 'sharing_display' ) ) {
 									sharing_display( '', true );
