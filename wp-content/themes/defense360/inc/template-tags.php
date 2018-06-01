@@ -78,29 +78,44 @@ if ( ! function_exists( 'defense360_entry_contentType' ) ) :
  */
 function defense360_entry_contentType() {
 	// Hide content type and categories for pages
-	if ( 'post' === get_post_type() ) {
+	if ( in_array(get_post_type(), array( 'post', 'data' ) ) ) {
 		print "<div class='post-contentCategoriesContainer'>";
-		// Get the post's content type
-		$taxonomy = 'content-type';
-		$terms = get_the_terms(get_the_ID(), $taxonomy);
-		if (! empty($terms)) {
-			print "<span class='post-contentType'>";
-			foreach ($terms as $term) {
-				$url = get_term_link($term->slug, $taxonomy);
-				print "<a href='$url'>{$term->name}</a>";
+		if ( 'data' === get_post_type() ) {
+			print "<span class='post-contentType'><a href='" . get_post_type_archive_link( 'data' ) . "'>" . get_post_type() . "</a> / </span>";
+		} else {
+			// Get the post's content type
+			$taxonomy = 'content-type';
+			$terms = get_the_terms(get_the_ID(), $taxonomy);
+			if (! empty($terms)) {
+				print "<span class='post-contentType'>";
+				foreach ($terms as $term) {
+					$url = get_term_link($term->slug, $taxonomy);
+					print "<a href='$url'>{$term->name}</a>";
+				}
+				print " / </span>";
 			}
-			print " / </span>";
 		}
 
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', 'defense360' ) );
-		if ( $categories_list && defense360_categorized_blog() ) {
-			printf( '<span class="post-categories">' . esc_html__( '%1$s', 'defense360' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-		}
+		defense360_entry_categories();
 		print "</div>";
 	}
 }
 endif;
+
+if ( ! function_exists( 'defense360_entry_categories' ) ) :
+/**
+ * Prints HTML with categories.
+ */
+function defense360_entry_categories() {
+	/* translators: used between list items, there is a space after the comma */
+	$categories_list = get_the_category_list( esc_html__( ', ', 'defense360' ) );
+	if ( $categories_list && defense360_categorized_blog() ) {
+		printf( '<span class="post-categories">' . esc_html__( '%1$s', 'defense360' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+	}
+}
+endif;
+
+
 
 if ( ! function_exists( 'defense360_entry_series' ) ) :
 /**
@@ -249,3 +264,28 @@ if ( function_exists( 'coauthors_posts_links' ) ) {
 		}
 	}
 }
+
+if (! function_exists('defense360_last_updated') ) :
+	/**
+	 * Prints HTML with last updated information.
+	 */
+	function defense360_last_updated()
+	{
+		$time_string = '<span class="meta-label">Last Updated</span> <a href="' . esc_url( get_permalink() ) . '"><time class="entry-date updated" datetime="%1$s">%2$s</time></a>';
+		$time_string = sprintf( $time_string,
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date() )
+		);
+		echo '<div class="posted-on">' . $time_string . '</div>'; // WPCS: XSS OK.
+	}
+endif;
+
+function defense360_add_custom_types_to_category_archives( $query ) {
+    if ( ! is_admin() && is_category() && $query->is_main_query() ) {
+        $query->set( 'post_type', array(
+	         'post',
+	         'data',
+	    ) );
+    }
+}
+add_filter( 'pre_get_posts', 'defense360_add_custom_types_to_category_archives' );

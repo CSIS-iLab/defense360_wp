@@ -39,7 +39,7 @@ function defense360_cpt_data() {
 	);
 	$args = array(
 		'label'                 => __( 'Data', 'defense360' ),
-		'description'           => __( 'Data', 'defense360' ),
+		'description'           => __( 'Explore D360’s data analytics tools to gain a better understanding of U.S. force structure, acquisitions, and the defense budget.', 'defense360' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
 		'taxonomies'            => array( 'category', 'post_tag' ),

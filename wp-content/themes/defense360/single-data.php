@@ -18,14 +18,12 @@ if ( $full_width ) {
 	$interactive = do_shortcode( '[data id="' . $id . '"]' );
 }
 
-
-
 get_header(); ?>
 
 <div id="primary" class="content-area">
-	<main id="main" class="site-main content-wrapper">
+	<main id="main" class="site-main">
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<header class="entry-header row">
+			<header class="content-wrapper-narrow entry-header row">
 				<div class="entry-meta-top content-padding col-xs-12 row">
 					<div class="post-format-container">
 					</div>
@@ -34,7 +32,7 @@ get_header(); ?>
 					<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
 				</div>
 			</header><!-- .entry-header -->
-			<div class="content-wrapper entry-content">
+			<div class="content-wrapper-narrow entry-content">
 				<?php
 					if ( 'above' === $content_placement ) {
 						echo $interactive;
