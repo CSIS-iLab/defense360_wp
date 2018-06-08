@@ -94,7 +94,7 @@
             if (e.data.align) {
               align = ' align="' + e.data.align + '"';
             }
-            editor.insertContent('[data id="' + e.data.id + '"' + align + ']');
+            editor.insertContent('[interactive id="' + e.data.id + '"' + align + ']');
           }
         })
       }

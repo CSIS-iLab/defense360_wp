@@ -1,9 +1,9 @@
 /*=============================
-=            Data            =
+=            Interactives            =
 =============================*/
 
-/*----------  Single Data  ----------*/
-.single-data article.data {
+/*----------  Single Interactives  ----------*/
+.single-interactives article.interactives {
 	header.entry-header {
 		margin-bottom: 0;
 
@@ -27,7 +27,7 @@ article.page .entry-content p {
 }
 
 /*----------  Global Post Styles  ----------*/
-article.data, article.page {
+article.interactives, article.page {
 	margin-bottom: 3rem;
 
 	@include breakpoint("medium") {
@@ -141,7 +141,7 @@ article.data, article.page {
 			margin-bottom: 0.2rem;
 		}
 
-    .data-fallbackImg {
+    .interactives-fallbackImg {
       p {
         font-style: italic;
         text-align: center;

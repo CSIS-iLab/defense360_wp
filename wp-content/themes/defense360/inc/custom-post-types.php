@@ -6,4 +6,4 @@
 */
 
 /*----------  Data  ----------*/
-require get_template_directory() . '/inc/cpts/data.php';
+require get_template_directory() . '/inc/cpts/interactives.php';

@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying single defense360 data posts.
+ * The template for displaying single defense360 interactive posts.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
@@ -9,13 +9,13 @@
 
 $id = get_the_id();
 
-$content_placement = get_post_meta( $id, '_data_content_placement', true );
-$full_width = get_post_meta( $id, '_data_full_width', true );
+$content_placement = get_post_meta( $id, '_interactive_content_placement', true );
+$full_width = get_post_meta( $id, '_interactive_full_width', true );
 
 if ( $full_width ) {
-	$interactive = do_shortcode( '[fullWidth width="' . $full_width . '%"][data id="' . $id . '"][/fullWidth]');
+	$interactive = do_shortcode( '[fullWidth width="' . $full_width . '%"][interactive id="' . $id . '"][/fullWidth]');
 } else {
-	$interactive = do_shortcode( '[data id="' . $id . '"]' );
+	$interactive = do_shortcode( '[interactive id="' . $id . '"]' );
 }
 
 get_header(); ?>
@@ -54,7 +54,7 @@ get_header(); ?>
 					) );
 				?>
 				<div class='repository-view-container'>
-					<p><span class="repository-view"><a>View in Data Repository</a></span></p>
+					<p><span class="repository-view"><a>View in interactive Repository</a></span></p>
 					<div class="interactive-footer">
 						<?php
 							$thumbnail_id    = get_post_thumbnail_id($post->ID);
