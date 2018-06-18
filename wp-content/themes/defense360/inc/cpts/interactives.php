@@ -68,7 +68,7 @@ add_action( 'init', 'defense360_cpt_interactives', 0 );
  * @link https://codex.wordpress.org/Plugin_API/Action_Reference/add_meta_boxes
  */
 function interactive_add_meta_boxes( $post ) {
-	add_meta_box( 'interactive_meta_box', __( 'interactive Information', 'defense360' ), 'interactive_build_meta_box', 'interactives', 'normal', 'high' );
+	add_meta_box( 'interactive_meta_box', __( 'Interactive Information', 'defense360' ), 'interactive_build_meta_box', 'interactives', 'normal', 'high' );
 }
 add_action( 'add_meta_boxes_interactives', 'interactive_add_meta_boxes' );
 /**
@@ -85,7 +85,6 @@ function interactive_build_meta_box( $post ) {
 	$current_height = get_post_meta( $post->ID, '_interactive_height', true );
 	$current_iframe_resize_disabled = get_post_meta( $post->ID, '_interactive_iframe_resize_disabled', true );
 	$current_fallback_img_disabled = get_post_meta( $post->ID, '_interactive_fallback_img_disabled', true );
-	$current_img_url = get_post_meta( $post->ID, '_interactive_img_url', true );
 	$current_content_placement = get_post_meta( $post->ID, '_interactive_content_placement', true );
 	$current_twitter_pic_url = get_post_meta( $post->ID, '_interactive_twitter_pic_url', true );
 	if ( ! $current_content_placement ) {
@@ -118,11 +117,6 @@ function interactive_build_meta_box( $post ) {
 		<p class="howto">If left blank, interactive will be automatically sized to fit its content. You must specify units (%, px, etc.)</p>
 		<p>
 			<input type="checkbox" name="iframe_resize_disabled" value="1" <?php checked( $current_iframe_resize_disabled, '1' ); ?> /> iFrame Resize Disabled
-		</p>
-
-		<h3><?php esc_html_e( 'Interactive Image URL', 'defense360' ); ?></h3>
-		<p>
-			<input type="text" class="large-text" name="img_url" value="<?php echo esc_url( $current_img_url ); ?>" />
 		</p>
 
 		<h3><?php esc_html_e( 'Interactive Fallback Image', 'defense360' ); ?></h3>
@@ -183,10 +177,6 @@ function interactive_save_meta_box_data( $post_id ){
 		update_post_meta( $post_id, '_interactive_fallback_img_disabled', intval( wp_unslash( $_POST['fallback_img_disabled'] ) ) ); // Input var okay.
 	} else {
 		update_post_meta( $post_id, '_interactive_fallback_img_disabled', '' );
-	}
-	// Image URL
-	if ( isset( $_REQUEST['img_url'] ) ) {
-		update_post_meta( $post_id, '_interactive_img_url', esc_url( $_POST['img_url'] ) );
 	}
 	// Content Placement
 	if ( isset( $_REQUEST['content_placement'] ) ) {

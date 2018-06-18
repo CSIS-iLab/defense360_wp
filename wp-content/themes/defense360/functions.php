@@ -201,13 +201,3 @@ function my_co_author_wseo_title( $title ) {
 	return $title;
 
 }
-
-add_filter( 'the_content', 'sv_move_jp_sharing' );
-function sv_move_jp_sharing( $content ) {
-
-	if ( in_array( get_post()->post_type, [ 'data' ] ) && is_singular( 'data' ) && function_exists( 'sharing_display' ) ) {
-		remove_filter( 'the_content', 'sharing_display', 19 );
-	}
-
-	return $content;
-}
