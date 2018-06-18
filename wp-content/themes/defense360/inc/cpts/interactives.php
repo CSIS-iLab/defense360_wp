@@ -80,10 +80,8 @@ function interactive_build_meta_box( $post ) {
 	// Make sure the form request comes from WordPress.
 	wp_nonce_field( basename( __FILE__ ), 'interactive_meta_box_nonce' );
 	// Retrieve current value of fields.
-	$current_sources = get_post_meta( $post->ID, '_post_sources', true );
 	$current_url = get_post_meta( $post->ID, '_interactive_url', true );
 	$current_width = get_post_meta( $post->ID, '_interactive_width', true );
-	$current_full_width = get_post_meta( $post->ID, '_interactive_full_width', true );
 	$current_height = get_post_meta( $post->ID, '_interactive_height', true );
 	$current_iframe_resize_disabled = get_post_meta( $post->ID, '_interactive_iframe_resize_disabled', true );
 	$current_fallback_img_disabled = get_post_meta( $post->ID, '_interactive_fallback_img_disabled', true );
@@ -107,17 +105,11 @@ function interactive_build_meta_box( $post ) {
 			<input type="text" class="large-text" name="url" value="<?php echo esc_url( $current_url ); ?>" />
 		</p>
 
-		<h3><?php esc_html_e( 'Interactive Width (% of Content)', 'defense360' ); ?></h3>
+		<h3><?php esc_html_e( 'Interactive Width', 'defense360' ); ?></h3>
 		<p>
-			<input type="number" min="0" max="100" class="small-text" name="width" value="<?php echo esc_attr( $current_width ); ?>" />%
+			<input type="text" class="medium-text" name="width" value="<?php echo esc_attr( $current_width ); ?>" />
 		</p>
-		<p class="howto">If left blank, defaults to 100%</p>
-
-		<h3><?php esc_html_e( 'Interactive Width (% of Screen)', 'defense360' ); ?></h3>
-		<p>
-			<input type="number" min="0" max="100" class="small-text" name="full_width" value="<?php echo esc_attr( $current_full_width ); ?>" />%
-		</p>
-		<p class="howto">Only fill out if the interactive needs to be wider than the content area.</p>
+		<p class="howto">If left blank, interactive will be automatically sized to fit its content. You must specify units (%, px, etc.)</p>
 
 		<h3><?php esc_html_e( 'Interactive Height', 'defense360' ); ?></h3>
 		<p>
@@ -136,26 +128,6 @@ function interactive_build_meta_box( $post ) {
 		<h3><?php esc_html_e( 'Interactive Fallback Image', 'defense360' ); ?></h3>
 		<p>
 			<input type="checkbox" name="fallback_img_disabled" value="1" <?php checked( $current_fallback_img_disabled, '1' ); ?> /> Fallback Image Disabled
-		</p>
-
-		<h3><?php esc_html_e( 'Sources', 'defense360' ); ?></h3>
-		<p>
-			<?php
-				wp_editor(
-					$current_sources,
-					'post_sources',
-					array(
-						'media_buttons' => false,
-						'textarea_name' => 'sources',
-						'teeny' => false,
-						'tinymce' => array(
-							'menubar' => false,
-							'toolbar1' => 'bold,italic,underline,strikethrough,subscript,superscript,bullist,numlist,alignleft,aligncenter,alignright,undo,redo,link,unlink',
-							'toolbar2' => false,
-						),
-					)
-				);
-			?>
 		</p>
 
 		<h3><?php esc_html_e( 'Twitter Pic URL', 'defense360' ); ?></h3>
@@ -223,10 +195,6 @@ function interactive_save_meta_box_data( $post_id ){
 	// Twitter Pic
 	if ( isset( $_REQUEST['twitter_pic_url'] ) ) {
 		update_post_meta( $post_id, '_interactive_twitter_pic_url', esc_url( $_POST['twitter_pic_url'] ) );
-	}
-	// Sources.
-	if ( isset( $_REQUEST['sources'] ) ) { // Input var okay.
-		update_post_meta( $post_id, '_post_sources', wp_kses_post( wp_unslash( $_POST['sources'] ) ) ); // Input var okay.
 	}
 }
 add_action( 'save_post_interactives', 'interactive_save_meta_box_data' );
