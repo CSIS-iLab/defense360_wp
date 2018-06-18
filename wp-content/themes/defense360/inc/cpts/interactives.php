@@ -41,7 +41,8 @@ function defense360_cpt_interactives() {
 		'label'                 => __( 'Interactive', 'defense360' ),
 		'description'           => __( 'Explore D360’s interactives analytics tools to gain a better understanding of U.S. force structure, acquisitions, and the defense budget.', 'defense360' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', 'thumbnail' ),
+		'supports'              => array( 'title', 'thumbnail' ),
+		'taxonomies'						=> array(),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -86,7 +87,6 @@ function interactive_build_meta_box( $post ) {
 	$current_height = get_post_meta( $post->ID, '_interactive_height', true );
 	$current_iframe_resize_disabled = get_post_meta( $post->ID, '_interactive_iframe_resize_disabled', true );
 	$current_fallback_img_disabled = get_post_meta( $post->ID, '_interactive_fallback_img_disabled', true );
-	$current_title = get_post_meta( $post->ID, '_interactive_title', true );
 	$current_img_url = get_post_meta( $post->ID, '_interactive_img_url', true );
 	$current_content_placement = get_post_meta( $post->ID, '_interactive_content_placement', true );
 	$current_twitter_pic_url = get_post_meta( $post->ID, '_interactive_twitter_pic_url', true );
@@ -100,11 +100,6 @@ function interactive_build_meta_box( $post ) {
 		<p>
 			<input type="radio" name="content_placement" value="above" <?php checked( $current_content_placement, 'above' ); ?> /> Above <br>
 			<input type="radio" name="content_placement" value="below" <?php checked( $current_content_placement, 'below' ); ?> /> Below
-		</p>
-
-		<h3><?php esc_html_e( 'Interactive Title', 'defense360' ); ?></h3>
-		<p>
-			<input type="text" class="large-text" name="title" value="<?php echo esc_attr( $current_title ); ?>" />
 		</p>
 
 		<h3><?php esc_html_e( 'Interactive URL', 'defense360' ); ?></h3>
@@ -216,10 +211,6 @@ function interactive_save_meta_box_data( $post_id ){
 		update_post_meta( $post_id, '_interactive_fallback_img_disabled', intval( wp_unslash( $_POST['fallback_img_disabled'] ) ) ); // Input var okay.
 	} else {
 		update_post_meta( $post_id, '_interactive_fallback_img_disabled', '' );
-	}
-	// Title
-	if ( isset( $_REQUEST['title'] ) ) {
-		update_post_meta( $post_id, '_interactive_title', sanitize_text_field( $_POST['title'] ) );
 	}
 	// Image URL
 	if ( isset( $_REQUEST['img_url'] ) ) {
