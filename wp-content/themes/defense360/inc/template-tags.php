@@ -78,22 +78,18 @@ if ( ! function_exists( 'defense360_entry_contentType' ) ) :
  */
 function defense360_entry_contentType() {
 	// Hide content type and categories for pages
-	if ( in_array(get_post_type(), array( 'post', 'data' ) ) ) {
+	if ( in_array(get_post_type(), array( 'post' ) ) ) {
 		print "<div class='post-contentCategoriesContainer'>";
-		if ( 'data' === get_post_type() ) {
-			print "<span class='post-contentType'><a href='" . get_post_type_archive_link( 'data' ) . "'>" . get_post_type() . "</a> / </span>";
-		} else {
-			// Get the post's content type
-			$taxonomy = 'content-type';
-			$terms = get_the_terms(get_the_ID(), $taxonomy);
-			if (! empty($terms)) {
-				print "<span class='post-contentType'>";
-				foreach ($terms as $term) {
-					$url = get_term_link($term->slug, $taxonomy);
-					print "<a href='$url'>{$term->name}</a>";
-				}
-				print " / </span>";
+		// Get the post's content type
+		$taxonomy = 'content-type';
+		$terms = get_the_terms(get_the_ID(), $taxonomy);
+		if (! empty($terms)) {
+			print "<span class='post-contentType'>";
+			foreach ($terms as $term) {
+				$url = get_term_link($term->slug, $taxonomy);
+				print "<a href='$url'>{$term->name}</a>";
 			}
+			print " / </span>";
 		}
 
 		defense360_entry_categories();
@@ -166,29 +162,6 @@ function defense360_entry_tags($content) {
 
 add_filter('the_content', 'defense360_entry_tags', 19);
 
-endif;
-
-if ( ! function_exists( 'defense360_post_sources' ) ) :
-	/**
-	 * Returns HTML with source info if it exists.
-	 *
-	 * @param  int $id Post ID.
-	 */
-	function defense360_post_sources( $id ) {
-		$post_type = get_post_type();
-		if ( in_array( $post_type, array( 'data' ), true ) ) {
-			$sources = get_post_meta( $id, '_post_sources', true );
-
-			$colmd = 'col-md';
-			$icon = '';
-			$collapsible = '';
-
-			if ( '' !== $sources ) {
-				$sources = apply_filters('meta_content', $sources);
-				printf( '<div class="entry-sources col-xs-12 %2$s%4$s"><h4 class="subheading">%3$s' . esc_html( 'Sources', 'defense360') . '</h4><div class="collapsible-content">%1$s</div></div>', $sources, $colmd, $icon, $collapsible); // WPCS: XSS OK.
-			}
-		}
-	}
 endif;
 
 /**
@@ -279,13 +252,3 @@ if (! function_exists('defense360_last_updated') ) :
 		echo '<div class="posted-on">' . $time_string . '</div>'; // WPCS: XSS OK.
 	}
 endif;
-
-function defense360_add_custom_types_to_category_archives( $query ) {
-    if ( ! is_admin() && is_category() && $query->is_main_query() ) {
-        $query->set( 'post_type', array(
-	         'post',
-	         'data',
-	    ) );
-    }
-}
-add_filter( 'pre_get_posts', 'defense360_add_custom_types_to_category_archives' );

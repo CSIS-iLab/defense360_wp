@@ -54,7 +54,6 @@ function defense360_shortcode_interactive( $atts ) {
 						'width' => '', // Width of Interactive
 						'height' => '', // Height of Interactive,
 						'sharing' => false, // Include share component,
-						'align' => null // Whether to align the iframe to either the left or right.
 				),
 				$atts,
 				'interactive'
@@ -85,12 +84,7 @@ function defense360_shortcode_interactive( $atts ) {
 				$sharing = defense360_social_share($title, $URL, $interactive_post_url, $iframe_twitter_pic_url);
 		}
 
-		if ( $atts['align'] ) {
-				$align = "align" . $atts['align'];
-		} else {
-				$align = null;
-		}
-		return defense360_interactive_display_iframe($interactive_url, $width, $height, $fallback_img, $iframe_resize_disabled, $align).$sharing;
+		return defense360_interactive_display_iframe($interactive_url, $width, $height, $fallback_img, $iframe_resize_disabled).$sharing;
 }
 add_shortcode( 'interactive', 'defense360_shortcode_interactive' );
 
