@@ -54,5 +54,28 @@
       });
     }
   });
+
+  editor.addButton('interactive', {
+      text: 'Interactive',
+      tooltip: 'Insert Interactive Shortcode',
+      onclick: function() {
+        editor.windowManager.open({
+          title: 'Insert Full Width',
+          width: 400,
+          height: 60,
+          body: [{
+              type: 'textbox',
+              multiline: false,
+              name: 'id',
+              label: 'Interactive ID',
+              placeholder: 'Insert Interactive ID'
+            },
+          ],
+          onsubmit: function(e) {
+            editor.insertContent('[interactive id="' + e.data.id + '"]');
+          }
+        })
+      }
+    });
  });
 })();
