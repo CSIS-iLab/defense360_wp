@@ -27,7 +27,7 @@
 				<?php
 					if (has_post_thumbnail()) :
 						echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">';
-						the_post_thumbnail( 'medium' );
+						the_post_thumbnail( 'full' );
 						echo '</a>';
 					endif;
 					?>
@@ -47,6 +47,6 @@
 				endif;
 				?>
 			</footer><!-- .entry-footer -->
-
+		</div>
 	</div>
 </article><!-- #post-## -->

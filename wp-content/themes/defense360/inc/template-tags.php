@@ -85,9 +85,15 @@ function defense360_entry_contentType() {
 		$terms = get_the_terms(get_the_ID(), $taxonomy);
 		if (! empty($terms)) {
 			print "<span class='post-contentType'>";
+			$i = 0;
 			foreach ($terms as $term) {
+				$prefix = ', ';
+				if ( $i == 0 ) {
+					$prefix = '';
+				}
 				$url = get_term_link($term->slug, $taxonomy);
-				print "<a href='$url'>{$term->name}</a>";
+				print "{$prefix}<a href='$url'>{$term->name}</a>";
+				$i++;
 			}
 			print " / </span>";
 		}

@@ -220,7 +220,8 @@ article.post, article.page {
 		img {
 			width: 100%;
 			height: auto;
-			max-width: 70px;
+			max-width: 100px;
+			border-radius: 50%;
 		}
 
 		p {

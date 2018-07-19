@@ -9,11 +9,6 @@
  */
 
 function series_category_cache() {
-
-	/* Retrieves all the terms from the taxonomy portfolio_category
-	 *  http://codex.wordpress.org/Function_Reference/get_categories
-	 */
-	 
 	$args = array(
 		'taxonomy' => 'series',
 	    'hide_empty' => true,

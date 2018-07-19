@@ -18,7 +18,13 @@ get_header(); ?>
 			<header class="page-header">
 				<div class="content-wrapper-narrow">
 				<?php
+					if ( is_author() ) {
+						$author = get_queried_object();
+						echo coauthors_get_avatar($author, 100);
+					}
+
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
+
 					the_archive_description( '<div class="archive-description">', '</div>' );
 
 					if(is_tax('series')) {

@@ -24,6 +24,12 @@
 		.archive-description p {
 			@include fontSize(15px);
 		}
+
+		.avatar {
+			display: block;
+			margin: 0 auto 0.5rem;
+			border-radius: 50%;
+		}
 	}
 
 	/*----------  Posts  ----------*/
@@ -185,6 +191,7 @@
 		    	border: 0;
 		    	width: 100%;
 		    	height: 100%;
+		    	padding: 0 1.3rem 0 0.5rem;
 		    	text-transform: uppercase;
 		    	cursor: pointer;
 		    	@include fontSize(14px);

@@ -29,6 +29,25 @@ function defense360_customize_register( $wp_customize ) {
 	    'priority'   => 30,
 	) );
 
+	// # Recent Articles
+	$wp_customize->add_setting( 'hp-recent-posts-num' , array(
+	    'transport' => 'postMessage',
+	) );
+
+	$wp_customize->add_control(
+		'hp-recent-posts-num', 
+		array(
+			'label'    => __( '# of Recent Posts to Show', 'defense360' ),
+			'section'  => 'defense360-theme-settings',
+			'settings' => 'hp-recent-posts-num',
+			'type'     => 'number',
+			'input_attrs' => array(
+				'min' => 1,
+				'max' => 5,
+				'step' => 1
+			)
+		)
+	);
 
 	// Think Tank Description
 	$wp_customize->add_setting( 'header-ttIndex' , array(
@@ -135,6 +154,26 @@ function defense360_customize_register( $wp_customize ) {
 	foreach($terms as $term) {
 		$series_list[$term->term_id] = $term->name;
 	}
+
+	// # Recent Articles
+	$wp_customize->add_setting( 'hp-series-num' , array(
+	    'transport' => 'postMessage',
+	) );
+
+	$wp_customize->add_control(
+		'hp-series-num', 
+		array(
+			'label'    => __( '# of Additional Series to Show', 'defense360' ),
+			'section'  => 'defense360-hp-series',
+			'settings' => 'hp-series-num',
+			'type'     => 'number',
+			'input_attrs' => array(
+				'min' => 1,
+				'max' => 6,
+				'step' => 1
+			)
+		)
+	);
 
 	// Featured Series
 	$wp_customize->add_setting( 'hp_series_1', array('transport' => 'postMessage'));

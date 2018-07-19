@@ -35,7 +35,7 @@ get_header(); ?>
 					<?php
 						$latest_post_args = array(
 							'post_status' => 'publish',
-							'numberposts' => 4,
+							'numberposts' => get_theme_mod('hp-recent-posts-num'),
 							'exclude' => array(
 								get_theme_mod('hp_feature_1'),
 								get_theme_mod('hp_feature_2'),
@@ -100,6 +100,8 @@ get_header(); ?>
 						if ( !$series_category_query ){
 						   	$series_category_query = series_category_cache();
 						}
+
+						$series_category_query = array_slice($series_category_query, 0, get_theme_mod('hp-series-num'));
 
 					    foreach ( $series_category_query as $series_cat ) { ?>
 							<h3 class="series-additionalTitle"><a href="<?php echo $series_cat['term_link']; ?>" class="title-overlay"><?php echo $series_cat['name']; ?></a></h3>
