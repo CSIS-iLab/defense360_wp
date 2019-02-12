@@ -113,3 +113,6 @@ Thumbs.db
 wp-content/themes/defense360/.sass-cache
 **/.DS_Store
 wp-content/themes/defense360/*.css
+wp-content/themes/defense360/node_modules
+wp-content/themes/defense360/dist
+wp-content/themes/defense360/**/*.map

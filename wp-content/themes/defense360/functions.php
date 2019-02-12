@@ -88,19 +88,15 @@ add_action( 'after_setup_theme', 'defense360_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function defense360_scripts() {
-	wp_enqueue_style( 'defense360-style', get_stylesheet_uri() );
+	$manifest = get_object_vars(json_decode(file_get_contents(get_template_directory_uri() . '/dist/manifest.json', true)));
 
-	wp_enqueue_script( 'defense360-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	if ($manifest) {
+		wp_enqueue_style('defense36-style', get_template_directory_uri() . '/dist/' . $manifest['style.css'],  false, null);
 
-	wp_enqueue_script( 'defense360-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+		wp_enqueue_script( 'defense360-js', get_template_directory_uri() . '/dist/' . $manifest['bundle.js'], ['jquery'], null, true );
+	}
 
-	wp_enqueue_script( 'defense360-mobile-menu', get_template_directory_uri() . '/js/mobile-menu.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'defense360-hide-header-mobile', get_template_directory_uri() . '/js/hide-header-mobile.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'defense360-archive-mobile', get_template_directory_uri() . '/js/archive-mobile.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'defense360-iframe-resize', get_template_directory_uri() . '/js/iframeResizer.min.js', array(), '20170615', true );
+	wp_enqueue_script( 'defense360-iframe-resize', get_template_directory_uri() . '/src/js/iframeResizer.min.js', array(), '20170615', true );
 
 	wp_add_inline_script( 'defense360-iframe-resize', 'jQuery("iframe").iFrameResize({log:false});' );
 
