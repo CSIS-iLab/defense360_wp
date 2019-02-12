@@ -7,6 +7,7 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 
 module.exports = (env, argv) => {
   const devMode = 'production' !== argv.mode;
@@ -16,8 +17,8 @@ module.exports = (env, argv) => {
     entry: {
       bundle: './src/index.js',
       customizer: './src/js/customizer.js',
-      style: './src/style.js',
-      'editor-style': './src/editor-style.js'
+      style: './src/sass/style.scss',
+      'editor-style': './src/sass/editor-style.scss'
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -66,7 +67,10 @@ module.exports = (env, argv) => {
     },
     plugins: [
       // new StyleLintPlugin(),
-      new CleanWebpackPlugin('dist', {}),
+      new FixStyleOnlyEntriesPlugin(),
+      new CleanWebpackPlugin(['dist', '*.css', '*.map'], {
+        exclude: ['rtl.css']
+      }),
       new ManifestPlugin({
         fileName: 'manifest.json',
         filter: ({ name }) => !name.endsWith('.map')
