@@ -7,7 +7,7 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
+const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 
 module.exports = (env, argv) => {
   const devMode = 'production' !== argv.mode;
@@ -26,6 +26,9 @@ module.exports = (env, argv) => {
     },
     mode: argv.mode,
     devtool: 'source-map',
+    externals: {
+      jquery: 'jQuery'
+    },
     module: {
       rules: [
         {
@@ -59,8 +62,7 @@ module.exports = (env, argv) => {
                 outputPath: 'images/',
                 name: '[name].[ext]'
               }
-            },
-            'img-loader'
+            }
           ]
         }
       ]
@@ -102,5 +104,5 @@ module.exports = (env, argv) => {
         })
       ]
     }
-  }
+  };
 };
