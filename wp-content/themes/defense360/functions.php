@@ -104,6 +104,11 @@ function defense360_scripts() {
 add_action( 'wp_enqueue_scripts', 'defense360_scripts' );
 
 /**
+ * Allowed Blocks
+ */
+require get_template_directory() . '/inc/allowed-blocks.php';
+
+/**
  * Custom Post Types
  */
 require get_template_directory() . '/inc/custom-post-types.php';
