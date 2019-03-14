@@ -30,3 +30,4 @@ function defense360_allowed_block_types( $allowed_blocks) {
         'core-embed/vimeo',
     );
 }
+
