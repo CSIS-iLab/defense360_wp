@@ -18,7 +18,7 @@ function defense360_allowed_block_types( $allowed_blocks) {
         'core/image',
         'core/list',
         'core/paragraph',
-        'core/quote', // We may include either regular quotes or pull quotes 'core/pullquote',
+        'core/quote', // We may include either regular quotes or pull quotes 'core/pullquote'
         'core/shortcode',
         'core/table',
         'core/video',
@@ -28,6 +28,10 @@ function defense360_allowed_block_types( $allowed_blocks) {
         'core-embed/soundcloud',
         'core-embed/flickr',
         'core-embed/vimeo',
+        'jetpack/slideshow',
+        'jetpack/tiled-gallery',
+        'jetpack/carousel'
+
     );
 }
 
