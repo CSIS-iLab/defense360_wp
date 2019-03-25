@@ -37,7 +37,9 @@ function d360_contentType() {
 		'show_admin_column'          => true,
 		'show_in_nav_menus'          => true,
 		'show_tagcloud'              => true,
-		'rewrite'					 => true
+		'rewrite'					 => true,
+		'show_in_rest'    => true
+
 	);
 	register_taxonomy( 'content-type', array( 'post' ), $args );
 
@@ -47,19 +49,19 @@ add_action( 'init', 'd360_contentType', 0 );
 // Allow "content-type" in permalink structure
 add_filter('post_link', 'contentType_permalink', 10, 3);
 add_filter('post_type_link', 'contentType_permalink', 10, 3);
- 
+
 function contentType_permalink($permalink, $post_id, $leavename) {
     if (strpos($permalink, '%content-type%') === FALSE) return $permalink;
-     
+
         // Get post
         $post = get_post($post_id);
         if (!$post) return $permalink;
- 
+
         // Get taxonomy terms
-        $terms = wp_get_object_terms($post->ID, 'content-type');   
+        $terms = wp_get_object_terms($post->ID, 'content-type');
         if (!is_wp_error($terms) && !empty($terms) && is_object($terms[0])) $taxonomy_slug = $terms[0]->slug;
         else $taxonomy_slug = 'analysis';
- 
+
     return str_replace('%content-type%', $taxonomy_slug, $permalink);
 }
 
@@ -96,6 +98,7 @@ function d360_series() {
 		'show_admin_column'          => true,
 		'show_in_nav_menus'          => true,
 		'show_tagcloud'              => true,
+		'show_in_rest'    => true
 	);
 	register_taxonomy( 'series', array( 'post' ), $args );
 
