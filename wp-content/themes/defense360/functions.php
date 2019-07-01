@@ -68,6 +68,13 @@ function defense360_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Modify Staff Editor role permissions
+	//// get the the role object
+
+	$staff_editor = get_role('staff_editor');
+	//// add $cap capability to this role object
+	$staff_editor->add_cap('manage_options');
 }
 endif;
 add_action( 'after_setup_theme', 'defense360_setup' );
