@@ -7,7 +7,7 @@ get_header();
 ?>
 
 <div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
+	<main id="main" class="site-main <?php defense360_contentType_classList(); ?> " role="main">
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<header class="content-wrapper-narrow entry-header">
 				<?php
@@ -57,7 +57,7 @@ get_header();
 
 			<footer class="entry-footer">
 				<?php
-				if ( 'post' === get_post_type() ) : 
+				if ( 'post' === get_post_type() ) :
 					if(get_coauthors()) {
 						echo "<div class='post-authorsContainer'>";
 						foreach( get_coauthors() as $coauthor ):
@@ -83,7 +83,7 @@ get_header();
 								</div>
 							</div>
 						</div>
-					<?php 
+					<?php
 						endforeach;
 						echo "</div>";
 					}
@@ -98,4 +98,4 @@ get_header();
 		</article><!-- #post-## -->
 	</main><!-- #main -->
 </div><!-- #primary -->
-<?php get_footer(); 
+<?php get_footer();
