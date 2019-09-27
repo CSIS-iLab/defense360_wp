@@ -1,0 +1,22 @@
+.citation {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+
+  &__title {
+    margin: 0 0 0.5rem;
+    color: $black;
+    font-family: $font__SourceSans;
+    @include fontSize(24px);
+    font-weight: bold;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  button {
+    margin-top: 0;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}

@@ -273,3 +273,26 @@ if (! function_exists('defense360_last_updated') ) :
 		echo '<div class="posted-on">' . $time_string . '</div>'; // WPCS: XSS OK.
 	}
 endif;
+
+if (! function_exists('defense360_citation')) :
+    /**
+     * Returns HTML with post citation.
+     *
+     * @param int $id Post ID.
+     */
+    function defense360_citation()
+    {
+				$date = get_the_date();
+				$lastModified = get_the_date();
+
+				if ( has_term( 'Defense Acquisition Almanac', 'series' ) ) {
+					$authors = get_bloginfo('name');
+					$series = '<em>Defense Acquisition Almanac</em>, ';
+				} else {
+					$authors = coauthors(', ', null, null, null, false);
+					$series = '';
+				}
+
+        printf('<h2 class="citation__title">Cite this Page</h2><p class="citation__text">' . esc_html('%1$s,', 'defense360') . ' "%2$s," %3$s' . esc_html('Center for Strategic and International Studies, %4$s, last modified %5$s, %6$s.', 'defense360') . '</p><button id="btn-copy" class="btn btn-gray" data-clipboard-target=".citation__text" aria-label="Copied!">Copy Citation</button>', $authors, get_the_title(), $series, $date, $lastModified, get_the_permalink()); // WPCS: XSS OK.
+    }
+endif;

@@ -107,7 +107,18 @@ function defense360_scripts() {
 
 	wp_enqueue_script( 'defense360-archive-mobile', get_template_directory_uri() . '/js/archive-mobile.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'defense360-iframe-resize', get_template_directory_uri() . '/js/iframeResizer.min.js', array(), '20170615', true );
+	if ( is_single() ) {
+		wp_enqueue_script( 'defense360-iframe-resize', get_template_directory_uri() . '/js/iframeResizer.min.js', array(), '20170615', true );
+
+		wp_enqueue_script('aerospace-clipboard', 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js', array(), '20171129', true );
+		
+		wp_add_inline_script('aerospace-clipboard', "var clipboard = new Clipboard('#btn-copy');
+				clipboard.on('success', function(e) {
+						var d = document.getElementById('btn-copy');
+						d.className += ' tooltipped';
+				});
+		");
+	}
 
 	wp_add_inline_script( 'defense360-iframe-resize', 'jQuery(".js-iframeResizeEnabled").iFrameResize({log:false});' );
 

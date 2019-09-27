@@ -56,6 +56,9 @@ get_header();
 			</div><!-- .entry-content -->
 
 			<footer class="entry-footer">
+				<div class="citation content-wrapper-narrow">
+					<?php defense360_citation(); ?>
+				</div>
 				<?php
 				if ( 'post' === get_post_type() ) :
 					if(get_coauthors()) {
