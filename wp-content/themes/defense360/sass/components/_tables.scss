@@ -1,12 +1,23 @@
 table {
-	margin: 0 0 1.5em;
-	width: 100%;
+  margin: 0 0 2rem;
+  width: 100%;
 
-	thead {
-		border-bottom: 2px solid $light-gray;
-	}
+  thead {
+    border-bottom: 2px solid $light-gray;
+  }
 
-	th, td {
-		padding: 0.5em;
-	}
+  th,
+  td {
+    padding: 0.5em 0.75em;
+  }
+}
+
+.wp-block-table.is-style-stripes tr:nth-child(odd) {
+  background-color: $light-gray;
+}
+
+.series-defense-acquisition-almanac td:first-of-type {
+  @include breakpoint("medium") {
+    width: 25%;
+  }
 }
