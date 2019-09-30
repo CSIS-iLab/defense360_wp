@@ -16,8 +16,14 @@ table {
   background-color: $light-gray;
 }
 
-.series-defense-acquisition-almanac td:first-of-type {
-  @include breakpoint("medium") {
-    width: 25%;
+.series-defense-acquisition-almanac {
+  table {
+    margin-bottom: 4rem;
+  }
+
+  td:first-of-type {
+    @include breakpoint("medium") {
+      width: 25%;
+    }
   }
 }
