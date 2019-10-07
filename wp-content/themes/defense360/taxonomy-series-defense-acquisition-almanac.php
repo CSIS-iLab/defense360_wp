@@ -32,7 +32,8 @@ get_header(); ?>
 			<?php
       $taxonomies = array('category');
       $args = array(
-        'parent' => '207'
+        'parent' => '207',
+        'hide_empty' => true
       );
       $terms = get_terms($taxonomies, $args);
 
