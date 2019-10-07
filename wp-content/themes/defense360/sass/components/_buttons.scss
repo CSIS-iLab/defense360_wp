@@ -3,20 +3,22 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .link-btn {
-	background-color: $color__background-button;
-	color: $light-gray;
-	text-transform: uppercase;
-	@include fontSize(14px);
-	padding: 0.5rem 3rem;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
-	border: 0;
+  background-color: $color__background-button;
+  color: $light-gray;
+  text-transform: uppercase;
+  @include fontSize(14px);
+  padding: 0.5rem 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
 
-	&:visited {
-		color: $light-gray;
-	}
+  &:visited {
+    color: $light-gray;
+  }
 
-	&:hover {
-		color: $white;
-	}
+  &:hover {
+    color: $white;
+    background-color: darken($color__background-button, 10%);
+  }
 }

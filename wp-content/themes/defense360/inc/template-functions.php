@@ -72,3 +72,28 @@ function new_excerpt_more($more) {
 	return '<a class="moretag" href="'. get_permalink($post->ID) . '">...</a>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
+// Excludes the "Defense Acquisition Almanac" category from the category listing
+function the_category_filter($thelist, $separator=' ') {  
+    if(!defined('WP_ADMIN')) {  
+        //Category IDs to exclude  
+        $exclude = array(207);  
+          
+        $exclude2 = array();  
+        foreach($exclude as $c) {  
+            $exclude2[] = get_cat_name($c);  
+        }  
+          
+        $cats = explode($separator,$thelist);  
+        $newlist = array();  
+        foreach($cats as $cat) {  
+            $catname = trim(strip_tags($cat));  
+            if(!in_array($catname,$exclude2))  
+                $newlist[] = $cat;  
+        }  
+        return implode($separator,$newlist);  
+    } else {  
+        return $thelist;  
+    }  
+}  
+add_filter('the_category','the_category_filter', 10, 2);

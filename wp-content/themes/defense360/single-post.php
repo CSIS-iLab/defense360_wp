@@ -7,8 +7,8 @@ get_header();
 ?>
 
 <div id="primary" class="content-area">
-	<main id="main" class="site-main <?php defense360_contentType_classList(); ?> " role="main">
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<main id="main" class="site-main <?php defense360_contentType_classList(); ?> " role="main" data-post-title="<?php echo the_title(); ?>">
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>">
 			<header class="content-wrapper-narrow entry-header">
 				<?php
 				// Post Content Type & Category
@@ -56,6 +56,9 @@ get_header();
 			</div><!-- .entry-content -->
 
 			<footer class="entry-footer">
+				<div class="citation content-wrapper-narrow">
+					<?php defense360_citation(); ?>
+				</div>
 				<?php
 				if ( 'post' === get_post_type() ) :
 					if(get_coauthors()) {
