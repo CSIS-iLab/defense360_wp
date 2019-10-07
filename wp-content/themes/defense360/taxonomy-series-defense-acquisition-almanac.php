@@ -60,12 +60,12 @@ get_header(); ?>
     endif;
     
     $contributors = array(
-      "John Doe" => 'Director of Imaginary People',
-      "John Doe2" => 'Director of Imaginary People',
-      "John Doe3" => 'Director of Imaginary People',
-      "John Doe4" => 'Director of Imaginary People',
-      "John Doe5" => 'Director of Imaginary People',
-      "John Doe6" => 'Director of Imaginary People'
+      'Todd Harrison' => 'Director, Defense Budget Analysis',
+      'Seamus P. Daniels' => 'Research Associate & Program Manager, Defense Budget Analysis',
+      'Madison Creery' => 'Contributor',
+      'Aaron Dresslar' => 'Contributor',
+      'Tobin Hansen' => 'Contributor',
+      'Sheldon Ruby' => 'Contributor'
     );
     
     ?>
