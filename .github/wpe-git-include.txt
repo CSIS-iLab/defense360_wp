@@ -1,0 +1,2 @@
+wp-content/themes/defense360/*.css
+wp-content/themes/defense360/assets
