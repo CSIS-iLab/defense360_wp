@@ -1,9 +1,11 @@
 [![Build Status](https://travis-ci.org/CSIS-iLab/defense360_wp.svg?branch=development)](https://travis-ci.org/CSIS-iLab/defense360_wp)
 
 # defense360_wp
-WordPress theme for [Defense360](https://defense360.csis.org). Developed from the [_s starter theme](http://underscores.me).
+
+WordPress theme for [Defense360](https://defense360.csis.org). Developed from the [\_s starter theme](http://underscores.me).
 
 ## Contributing
+
 1. New features & updates should be created on individual branches. Branch from `master`
 2. When ready, submit pull request into `development`
 3. TravisCI will automatically deploy changes on `development` to the staging site
@@ -13,10 +15,12 @@ WordPress theme for [Defense360](https://defense360.csis.org). Developed from th
 ## Development
 
 ### Composer
+
 This project uses [Composer](https://getcomposer.org/) to manage WordPress plugin and theme dependencies.
 To update dependencies, run `composer update`.
 
 #### Required Plugins
+
 - Co Authors Plus
 - Disable Comments
 - Disable Emojis
@@ -29,12 +33,17 @@ To update dependencies, run `composer update`.
 - Yoast SEO
 
 ## Gulp
-Running Project Locally
+
 This project uses [Gulp](https://gulpjs.com/) to compile the SASS files. To run Gulp in the project:
+
+### Running Project Locally
+
 1. Navigate to your theme directory. `$ cd wp-content/themes/defense360`
 2. Run `$ npm run start`
 
-Building for Production
+### Building for Production
+
 To build theme for production:
+
 1. Navigate to your theme directory. `$ cd wp-content/themes/defense360`
 2. Run `$ npm run build`
