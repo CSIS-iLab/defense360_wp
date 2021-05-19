@@ -29,10 +29,12 @@ To update dependencies, run `composer update`.
 - Yoast SEO
 
 ## Gulp
+Running Project Locally
 This project uses [Gulp](https://gulpjs.com/) to compile the SASS files. To run Gulp in the project:
 1. Navigate to your theme directory. `$ cd wp-content/themes/defense360`
 2. Run `$ npm run start`
 
+Building for Production
 To build theme for production:
 1. Navigate to your theme directory. `$ cd wp-content/themes/defense360`
 2. Run `$ npm run build`
