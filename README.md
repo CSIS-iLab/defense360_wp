@@ -34,7 +34,7 @@ To update dependencies, run `composer update`.
 
 ## Gulp
 
-This project uses [Gulp](https://gulpjs.com/) to compile the SASS files. To run Gulp in the project:
+This project uses [Gulp](https://gulpjs.com/) to compile the SASS files.
 
 ### Running Project Locally
 
