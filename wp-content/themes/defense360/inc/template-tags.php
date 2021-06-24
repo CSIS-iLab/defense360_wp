@@ -104,22 +104,6 @@ function defense360_entry_contentType() {
 }
 endif;
 
-if ( ! function_exists( 'defense360_contentType_classList' ) ) :
-
-function defense360_contentType_classList() {
-
-	function term_names($t) {
-    return $t->name;
-	}
-
-	$term_objects = get_the_terms(get_the_ID(), 'content-type');
-
-	if (has_post_thumbnail()){
-		print join(" ", array_map("term_names", $term_objects));
-	}
-
-}
-endif;
 
 if ( ! function_exists( 'defense360_entry_categories' ) ) :
 /**

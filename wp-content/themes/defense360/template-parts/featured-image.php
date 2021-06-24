@@ -20,7 +20,6 @@ if ( has_post_thumbnail() ) {
 				echo '<a href="' . esc_url ( get_permalink() ) . '">';
 			}
 
-			// the_post_thumbnail();
       the_post_thumbnail( 'medium_large' );
 			if ( !$is_singular || $is_front_page ) {
 				echo '</a>';

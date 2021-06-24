@@ -14,7 +14,7 @@ get_header();
 ?>
 
 <div id="primary" class="content-area">
-	<main id="main" class="site-main <?php defense360_contentType_classList(); ?> " role="main" data-post-title="<?php echo the_title(); ?>">
+	<main id="main" class="site-main" role="main" data-post-title="<?php echo the_title(); ?>">
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>">
 			<header class="content-wrapper-narrow entry-header">
 				<?php
@@ -45,7 +45,6 @@ get_header();
 					if ( !$isNoImageTemplate ) {
 						get_template_part( 'template-parts/featured-image' );
 					}
-					// the_post_thumbnail( 'medium_large' );
 				endif;
 				?>
 
