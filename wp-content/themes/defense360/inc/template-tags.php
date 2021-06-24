@@ -114,7 +114,9 @@ function defense360_contentType_classList() {
 
 	$term_objects = get_the_terms(get_the_ID(), 'content-type');
 
-	print join(" ", array_map("term_names", $term_objects));
+	if (has_post_thumbnail()){
+		print join(" ", array_map("term_names", $term_objects));
+	}
 
 }
 endif;

@@ -3,6 +3,13 @@
  * Template: Single Posts
  */
 
+$template = get_page_template_slug( get_the_ID() );
+$isNoImageTemplate = false;
+
+if ( $template === 'templates/template-no-image.php' ){
+	$isNoImageTemplate = true;
+}
+
 get_header();
 ?>
 
@@ -15,11 +22,12 @@ get_header();
 				defense360_entry_contentType();
 
 				// Post Title
-				if ( is_single() ) :
+				if ( is_single() ){
 					the_title( '<h1 class="entry-title">', '</h1>' );
-				else :
+				} else {
 					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-				endif;
+				}
+				// endif;
 
 				// Post Series
 				defense360_entry_series();
@@ -34,7 +42,10 @@ get_header();
 
 				// Feature Image
 				if (is_single() && has_post_thumbnail()) :
-					the_post_thumbnail( 'medium_large' );
+					if ( !$isNoImageTemplate ) {
+						get_template_part( 'template-parts/featured-image' );
+					}
+					// the_post_thumbnail( 'medium_large' );
 				endif;
 				?>
 
