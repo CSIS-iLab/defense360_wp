@@ -27,7 +27,6 @@ get_header();
 				} else {
 					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 				}
-				// endif;
 
 				// Post Series
 				defense360_entry_series();
@@ -43,7 +42,7 @@ get_header();
 				// Feature Image
 				if (is_single() && has_post_thumbnail()) :
 					if ( !$isNoImageTemplate ) {
-						get_template_part( 'template-parts/featured-image' );
+						the_post_thumbnail( 'medium_large' );
 					}
 				endif;
 				?>
