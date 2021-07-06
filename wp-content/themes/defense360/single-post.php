@@ -3,11 +3,18 @@
  * Template: Single Posts
  */
 
+$template = get_page_template_slug( get_the_ID() );
+$isNoImageTemplate = false;
+
+if ( $template === 'templates/template-no-image.php' ){
+	$isNoImageTemplate = true;
+}
+
 get_header();
 ?>
 
 <div id="primary" class="content-area">
-	<main id="main" class="site-main <?php defense360_contentType_classList(); ?> " role="main" data-post-title="<?php echo the_title(); ?>">
+	<main id="main" class="site-main" role="main" data-post-title="<?php echo the_title(); ?>">
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>">
 			<header class="content-wrapper-narrow entry-header">
 				<?php
@@ -15,11 +22,11 @@ get_header();
 				defense360_entry_contentType();
 
 				// Post Title
-				if ( is_single() ) :
+				if ( is_single() ){
 					the_title( '<h1 class="entry-title">', '</h1>' );
-				else :
+				} else {
 					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-				endif;
+				}
 
 				// Post Series
 				defense360_entry_series();
@@ -34,7 +41,9 @@ get_header();
 
 				// Feature Image
 				if (is_single() && has_post_thumbnail()) :
-					the_post_thumbnail( 'medium_large' );
+					if ( !$isNoImageTemplate ) {
+						the_post_thumbnail( 'medium_large' );
+					}
 				endif;
 				?>
 
