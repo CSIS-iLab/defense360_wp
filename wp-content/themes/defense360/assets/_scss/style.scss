@@ -63,58 +63,51 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 
 /*----------  Abstracts: Configuration and Helpers  ----------*/
-@import
-  'abstracts/variables',
-  'abstracts/mixins';
+@use 'abstracts/variables' as *;
+@use'abstracts/mixins' as *;
 
 /*----------  Base  ----------*/
-@import
-  'base/normalize',
-  'base/base',
-  'base/typography';
+@use 'base/normalize' as *;
+@use 'base/base' as *;
+@use 'base/typography' as *;
 
 /*----------  Modules  ----------*/
-@import
-  'modules/accessibility',
-  'modules/alignments',
-  'modules/clearings',
-  'modules/infinite-scroll';
+@use 'modules/accessibility' as *;
+@use 'modules/alignments' as *;
+@use 'modules/clearings' as *;
+@use 'modules/infinite-scroll' as *;
 
 /*----------  Components  ----------*/
-@import
-  'components/buttons',
-  'components/citation',
-  'components/fields',
-  'components/lists',
-  'components/media',
-  'components/tables',
-  'components/toc',
-  'components/social-share',
-  'components/pagination',
-  'components/related-posts',
-  'components/autocomplete',
-  'components/wpdatatables';
+@use 'components/buttons' as *;
+@use 'components/citation' as *;
+@use 'components/fields' as *;
+@use 'components/lists' as *;
+@use 'components/media' as *;
+@use 'components/tables' as *;
+@use 'components/toc' as *;
+@use 'components/social-share' as *;
+@use 'components/pagination' as *;
+@use 'components/related-posts' as *;
+@use 'components/autocomplete' as *;
+@use 'components/wpdatatables' as *;
 
 /*----------  Layout  ----------*/
-@import
-  'layout/header',
-  'layout/footer',
-  'layout/comments',
-  'layout/widgets';
+@use 'layout/header' as *;
+@use 'layout/footer' as *;
+@use 'layout/comments' as *;
+@use 'layout/widgets' as *;
 
 /*----------  Pages  ----------*/
-@import
-  'pages/home',
-  'pages/posts',
-  'pages/archives',
-  'pages/series-archive',
-  'pages/search',
-  'pages/404',
-  'pages/about',
-  'pages/interactives';
+@use 'pages/home' as *;
+@use 'pages/posts' as *;
+@use 'pages/archives' as *;
+@use 'pages/series-archive' as *;
+@use 'pages/search' as *;
+@use 'pages/404' as *;
+@use 'pages/about' as *;
+@use 'pages/interactives' as *;
 
 /*----------  Vendors  ----------*/
-@import
-  'vendors/flexbox/flexbox-main',
-  'vendors/flexbox/flexbox-helpers',
-  'vendors/fontello/fontello';
+@use 'vendors/flexbox/flexbox-main' as *;
+@use 'vendors/flexbox/flexbox-helpers' as *;
+@use 'vendors/fontello/fontello' as *;

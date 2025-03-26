@@ -1,9 +1,15 @@
+@use 'abstracts/variables' as *;
+@use'abstracts/mixins' as *;
+@use 'base/typography' as *;
+
+@use 'sass:color';
+
 /*============================================
 =            Algolia Autocomplete            =
 ============================================*/
 .aa-dropdown-menu .aa-suggestion em {
     color: $bright-green !important;
-    background: transparentize($dark-green, .9) !important;
+    background: color.adjust($dark-green, $alpha: -0.9) !important;
     font-style: normal;
 }
 
