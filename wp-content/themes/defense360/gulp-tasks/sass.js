@@ -1,6 +1,5 @@
 const { dest, src } = require('gulp')
 const config = require('../gulp.config.js')
-const sassProcessor = require('gulp-sass')
 const autoprefixer = require('autoprefixer')
 const cssnano = require('cssnano');
 const postcss = require('gulp-postcss')
@@ -10,8 +9,9 @@ const sourcemaps = require('gulp-sourcemaps')
 const filter = require('gulp-filter')
 const rename = require('gulp-rename')
 
-// We want to be using canonical Sass, rather than node-sass
-sassProcessor.compiler = require('sass')
+// We want to be using Dart Sass, rather than node-sass
+const sassProcessor = require('gulp-sass')(require('sass'))
+
 
 /*----------  SASS  ----------*/
 
