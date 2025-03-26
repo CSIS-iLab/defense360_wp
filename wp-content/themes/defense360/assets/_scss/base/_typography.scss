@@ -1,12 +1,15 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
 body,
 button,
 input,
 select,
 textarea {
-  color: $color__text-main;
-  font-family: $font__main;
-  @include fontSize(18px);
-  line-height: $font__line-height-body;
+  color: variables.$color__text-main;
+  font-family: variables.$font__main;
+  @include mixins.fontSize(18px);
+  line-height: variables.$font__line-height-body;
 }
 
 /*================================
@@ -23,38 +26,38 @@ h6 {
 }
 
 %h1 {
-  font-family: $font__ExpoSerif;
-  @include fontSize(28px);
+  font-family: variables.$font__ExpoSerif;
+  @include mixins.fontSize(28px);
   font-weight: 600;
   line-height: 1.25;
-  color: $black;
+  color: variables.$black;
   margin: 0.25rem 0 0 0;
 }
 
 %h2 {
-  font-family: $font__ExpoSerif;
-  @include fontSize(24px);
+  font-family: variables.$font__ExpoSerif;
+  @include mixins.fontSize(24px);
   line-height: 1.3;
   font-weight: 600;
-  color: $black;
+  color: variables.$black;
   margin: 2rem 0 1rem;
 }
 
 %h3 {
-  font-family: $font__ExpoSerif;
-  @include fontSize(22px);
+  font-family: variables.$font__ExpoSerif;
+  @include mixins.fontSize(22px);
   line-height: 1.5;
   font-weight: normal;
-  color: $black;
+  color: variables.$black;
   margin: 1.5rem 0 0.5rem;
 }
 
 %h4 {
-  font-family: $font__SourceSans;
-  @include fontSize(18px);
+  font-family: variables.$font__SourceSans;
+  @include mixins.fontSize(18px);
   font-style: italic;
   font-weight: normal;
-  color: $dark-gray;
+  color: variables.$dark-gray;
   letter-spacing: 0.4px;
   margin: 1rem 0;
 }
@@ -84,7 +87,7 @@ p {
 }
 
 hr {
-  background-color: $color__background-hr;
+  background-color: variables.$color__background-hr;
   border: 0;
   height: 1px;
   margin-bottom: 1.5em;
@@ -121,10 +124,10 @@ address {
 }
 
 pre {
-  background: $color__background-pre;
-  font-family: $font__pre;
-  @include fontSize(14px);
-  line-height: $font__line-height-pre;
+  background: variables.$color__background-pre;
+  font-family: variables.$font__pre;
+  @include mixins.fontSize(14px);
+  line-height: variables.$font__line-height-pre;
   margin-bottom: 1.6em;
   max-width: 100%;
   overflow: auto;
@@ -135,19 +138,19 @@ code,
 kbd,
 tt,
 var {
-  font-family: $font__code;
-  @include fontSize(14px);
+  font-family: variables.$font__code;
+  @include mixins.fontSize(14px);
 }
 
 abbr,
 acronym {
-  border-bottom: 1px dotted $color__border-abbr;
+  border-bottom: 1px dotted variables.$color__border-abbr;
   cursor: help;
 }
 
 mark,
 ins {
-  background: $color__background-ins;
+  background: variables.$color__background-ins;
   text-decoration: none;
 }
 
@@ -159,17 +162,17 @@ big {
 =            Links            =
 =============================*/
 a {
-  color: $color__link;
+  color: variables.$color__link;
   text-decoration: none;
-  @include transition(all 0.3s ease-in-out);
+  @include mixins.transition(all 0.3s ease-in-out);
 
   &:visited {
-    color: $color__link-visited;
+    color: variables.$color__link-visited;
   }
   &:hover,
   &:focus,
   &:active {
-    color: $color__link-hover;
+    color: variables.$color__link-hover;
   }
   &:focus {
     outline: thin dotted;
@@ -200,7 +203,7 @@ a {
     top: 50%;
     left: 0;
     margin-top: -1px;
-    background: $black;
+    background: variables.$black;
   }
 
   &::before {

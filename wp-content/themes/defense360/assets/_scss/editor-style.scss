@@ -2,10 +2,10 @@
 Editor styles for TinyMCE editor
 */
 
-@import "abstracts/variables";
-@import "abstracts/mixins";
-@import "base/normalize";
-@import "base/typography";
+@use "abstracts/variables";
+@use "abstracts/mixins";
+@use "base/normalize";
+@use "base/typography";
 
 
 // Headings
@@ -16,16 +16,16 @@ h4 { @extend %h4 }
 
 // Download Button
 .download {
-	background-color: $dark-green;
-	color: $light-gray;
+	background-color: variables.$dark-green;
+	color: variables.$light-gray;
 	text-transform: uppercase;
-	@include fontSize(13px);
+	@include mixins.fontSize(13px);
 	padding: 0.5rem 3rem;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 	display: inline-block;
 
 	a {
-		color: $light-gray;
+		color: variables.$light-gray;
 	}
 }

@@ -1,3 +1,8 @@
+@use 'abstracts/variables' as *;
+@use'abstracts/mixins' as *;
+@use 'base/typography' as *;
+@use "sass:color";
+
 button,
 input[type="button"],
 input[type="reset"],
@@ -19,6 +24,6 @@ input[type="submit"],
 
   &:hover {
     color: $white;
-    background-color: darken($color__background-button, 10%);
+    background-color: color.adjust($color__background-button, $lightness: -10%);
   }
 }
