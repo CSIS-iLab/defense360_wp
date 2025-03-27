@@ -97,18 +97,18 @@ add_action( 'after_setup_theme', 'defense360_content_width', 0 );
 function defense360_scripts() {
 	wp_enqueue_style( 'defense360-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'defense360-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'defense360-navigation', get_template_directory_uri() . '/assets/js/navigation.min.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'defense360-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'defense360-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.min.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'defense360-mobile-menu', get_template_directory_uri() . '/js/mobile-menu.js', array(), '20151215', true );
+	wp_enqueue_script( 'defense360-mobile-menu', get_template_directory_uri() . '/assets/js/mobile-menu.min.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'defense360-hide-header-mobile', get_template_directory_uri() . '/js/hide-header-mobile.js', array(), '20151215', true );
+	wp_enqueue_script( 'defense360-hide-header-mobile', get_template_directory_uri() . '/assets/js/hide-header-mobile.min.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'defense360-archive-mobile', get_template_directory_uri() . '/js/archive-mobile.js', array(), '20151215', true );
+	wp_enqueue_script( 'defense360-archive-mobile', get_template_directory_uri() . '/assets/js/archive-mobile.min.js', array(), '20151215', true );
 
 	if ( is_single() ) {
-		wp_enqueue_script( 'defense360-iframe-resize', get_template_directory_uri() . '/js/iframeResizer.min.js', array(), '20170615', true );
+		wp_enqueue_script( 'defense360-iframe-resize', get_template_directory_uri() . '/assets/js/iframeResizer.min.js', array(), '20170615', true );
 
 		wp_add_inline_script( 'defense360-iframe-resize', 'jQuery(".js-iframeResizeEnabled").iFrameResize({log:false});' );
 

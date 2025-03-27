@@ -41,7 +41,7 @@ const watcher = () => {
     series(stylelint, sass, reload)
   )
 
-  watch(config.assets + config.js.src + '/**/*', series(webpack, reload))
+  watch(config.assets + config.js.src + '/*', series(webpack, reload))
 
   watch(config.php, reload) // Reload on PHP file changes.
 

@@ -16,7 +16,7 @@ get_header();
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<img src="/wp-content/themes/defense360/img/404-icon.svg" alt="404 Page Not Found" title="404 Page Not Found" />
+					<img src="/wp-content/themes/defense360/assets/img/404-icon.svg" alt="404 Page Not Found" title="404 Page Not Found" />
 				</header><!-- .page-header -->
 
 				<div class="page-content">

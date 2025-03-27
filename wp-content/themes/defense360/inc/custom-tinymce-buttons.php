@@ -31,7 +31,7 @@ if ( ! function_exists( 'defense360_add_buttons' ) ) {
 	 * @param Array $plugin_array Plugin array to update.
 	 */
 	function defense360_add_buttons( $plugin_array ) {
-		$plugin_array['defense360'] = get_template_directory_uri() . '/js/tinymce.js';
+		$plugin_array['defense360'] = get_template_directory_uri() . '/assets/js/tinymce.min.js';
 		return $plugin_array;
 	}
 }
