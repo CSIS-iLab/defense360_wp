@@ -13,9 +13,9 @@
 	.sd-title {
 		display: inline-block;
 		color: $gray;
-		@include fontSize(14px);
-		text-transform: uppercase !important;
 		font-weight: normal !important;
+		text-transform: uppercase !important;
+		@include fontSize(14px);
 
 		&::before {
 			border: 0 !important;
@@ -31,11 +31,11 @@
 		}
 
 		ul li[class*='share-'] a {
-			border-radius: 0 !important;
-			padding: 0 !important;
 			top: -8px !important;
+			padding: 0 !important;
+			border-radius: 0 !important;
 
-			&.sd-button:before {
+			&.sd-button::before {
 				@include fontSize(20px);
 			}
 
@@ -95,6 +95,7 @@
 		// Email
 		.share-email {
 			background-color: transparent !important;
+
 			a::before {
 				content: '\e800' !important;
 				top: 4px !important;
@@ -104,6 +105,7 @@
 		// Print
 		.share-print {
 			background-color: transparent !important;
+
 			a::before {
 				content: '\e803' !important;
 				top: 3px !important;

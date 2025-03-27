@@ -12,12 +12,12 @@
 		margin-bottom: 2rem;
 		
 		.page-title {
+			margin: 0.25rem 0 0;
+			color: $black;
 			font-family: $font__SourceSans;
-			@include fontSize(28px);
 			font-weight: 600;
 			line-height: 1.25;
-			color: $black;
-			margin: 0.25rem 0 0 0;
+			@include fontSize(28px);
 		}
 	}
 
@@ -26,9 +26,9 @@
 		margin-bottom: 3rem;
 
 		@include breakpoint("medium") {
-			border-bottom: 2px solid $archive-filter-gray;
-			padding-bottom: 2rem;
 			margin-bottom: 2rem;
+			padding-bottom: 2rem;
+			border-bottom: 2px solid $archive-filter-gray;
 		}
 
 		&:last-of-type {

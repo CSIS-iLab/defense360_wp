@@ -17,51 +17,51 @@
 		}
 
 		.latest-title {
-			color: $gray;
-			@include fontSize(20px);
 			margin: 0;
-			text-transform: uppercase;
-			font-weight: normal;
 			overflow: hidden;
+			color: $gray;
+			font-weight: normal;
+			text-transform: uppercase;
+			@include fontSize(20px);
 
 			span {
-				display: inline-block;
 				position: relative;
+				display: inline-block;
 				
-				&:after {
-				  content: "";
+				&::after {
 				  position: absolute;
-				  height: 5px;
-				  border-bottom: 1px solid $latest-decoration-gray;
-				  border-top: 1px solid $latest-decoration-gray;
 				  top: 50%;
-				  margin-top: math.floor(calc(-5px / 2));
-				  width: 800px;
 				  left: 100%;
+				  width: 800px;
+				  height: 5px;
+				  margin-top: math.floor(calc(-5px / 2));
 			  	  margin-left: 15px;
+				  border-top: 1px solid $latest-decoration-gray;
+				  border-bottom: 1px solid $latest-decoration-gray;
+				  content: "";
 				}
 			}
 		}
 
 		.latest-titleDecoration {
-			height: 5px;
-			border-top: 1px solid $latest-decoration-gray;
-			border-bottom: 1px solid $latest-decoration-gray;
 			display: inline-block;
 			width: 54%;
+			height: 5px;
 			margin-left: 4.5%;
 			vertical-align: middle;
+			border-top: 1px solid $latest-decoration-gray;
+			border-bottom: 1px solid $latest-decoration-gray;
 		}
 
 		article.post {
-			border-bottom: 2px solid $archive-filter-gray;
+			margin-top: 0.75rem;
 			margin-bottom: 0;
 			padding-bottom: 0.75rem;
-			margin-top: 0.75rem;
+			border-bottom: 2px solid $archive-filter-gray;
 
 			@include breakpoint("medium") {
-				padding-bottom: 1.5rem;
 				margin-top: 1.5rem;
+				padding-bottom: 1.5rem;
 			}
 
 			&:last-of-type {
@@ -70,6 +70,7 @@
 
 			header.entry-header .entry-title {
 				@include fontSize(18.5px);
+
 				a {
 					color: $black;
 
@@ -91,8 +92,8 @@
 
 	/*----------  Series  ----------*/
 	.home-seriesContainer {
-		background-color: $light-gray;
 		margin-top: 1rem;
+		background-color: $light-gray;
 
 		.content-wrapper.row {
 			padding: 0;
@@ -110,10 +111,10 @@
 			}
 
 			.series-featuredTitle {
-				font-family: $font__ExpoSerif;
-				@include fontSize(24px);
-				font-weight: 600;
 				margin: 0.25rem 0 1rem;
+				font-family: $font__ExpoSerif;
+				font-weight: 600;
+				@include fontSize(24px);
 
 				a {
 					color: $black;
@@ -130,18 +131,18 @@
 		}
 
 		.home-seriesAdditional {
-			padding: 1rem 1rem 2rem;
 			align-self: center;
+			padding: 1rem 1rem 2rem;
 
 			@include breakpoint("medium") {
 				padding: 2rem 1rem;
 			}
 
 			.series-additionalTitle {
-				font-family: $font__ExpoSerif;
-				@include fontSize(18px);
-				font-weight: 600;
 				margin: 0.5rem 0 0;
+				font-family: $font__ExpoSerif;
+				font-weight: 600;
+				@include fontSize(18px);
 
 				a {
 					color: $black;
@@ -153,18 +154,18 @@
 			}
 
 			p {
+				margin-bottom: 1rem;
 				color: $dark-gray;
 				@include fontSize(12px);
-				margin-bottom: 1rem;
 			}
 
 			.series-exploreMore {
-				background-color: $dark-green;
+				display: inline-block;
+				padding: 0.5rem 3rem;
 				color: $light-gray;
 				text-transform: uppercase;
+				background-color: $dark-green;
 				@include fontSize(13px);
-				padding: 0.5rem 3rem;
-				display: inline-block;
 
 				&:hover {
 					color: $white;
@@ -174,20 +175,20 @@
 		}
 
 		.home-seriesFeaturedImage {
+			min-height: 150px;
 			padding: 0;
 			background-repeat: no-repeat;
-			background-size: cover;
 			background-position: center center;
-			min-height: 150px;
+			background-size: cover;
 		}
 
 		.series-sectionTitle, .series-learnMore {
+			margin: 0;
 			color: $dark-green;
-			@include fontSize(15px);
-			text-transform: uppercase;
 			font-weight: normal;
 			font-style: normal;
-			margin: 0;
+			text-transform: uppercase;
+			@include fontSize(15px);
 		}
 
 		.series-learnMore:hover {

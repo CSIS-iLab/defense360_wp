@@ -10,11 +10,11 @@
 		margin-bottom: 2rem;
 
 		.page-title {
-			font-family: $font__ExpoSerif;
-			@include fontSize(28px);
-			font-weight: 600;
 			color: $black;
+			font-family: $font__ExpoSerif;
+			font-weight: 600;
 			text-align: center;
+			@include fontSize(28px);
 		}
 
 		p {
@@ -27,13 +27,14 @@
 		margin-bottom: 2rem;
 
 		@include breakpoint("medium") {
-			border-bottom: 2px solid $archive-filter-gray;
 			padding-bottom: 2rem;
+			border-bottom: 2px solid $archive-filter-gray;
 		}
 
 		&:last-of-type {
 			border-bottom: 0;
 		}
+
 		.entry-header .entry-title {
 			@include fontSize(24px);
 		}

@@ -10,9 +10,9 @@
     margin: 0 0 0.5rem;
     color: $black;
     font-family: $font__SourceSans;
-    @include fontSize(20px);
-    line-height: 1.6;
     font-weight: 600;
+    line-height: 1.6;
+    @include fontSize(20px);
   }
 
   p {

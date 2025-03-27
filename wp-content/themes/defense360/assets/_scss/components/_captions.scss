@@ -3,8 +3,8 @@
 @use 'base/typography' as *;
 
 .wp-caption {
-	margin-bottom: 1.5em;
 	max-width: 100%;
+	margin-bottom: 1.5em;
 
 	img[class*="wp-image-"] {
 		@include center-block;
@@ -16,9 +16,9 @@
 }
 
 .wp-caption-text {
-	text-align: left;
-	padding-left: 25px;
-	padding-right: 25px;
 	margin: 0.5rem 0 0 !important;
+	padding-right: 25px;
+	padding-left: 25px;
+	text-align: left;
 	@include fontSize(14px);
 }

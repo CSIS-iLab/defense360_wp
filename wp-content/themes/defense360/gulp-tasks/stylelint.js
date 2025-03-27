@@ -6,6 +6,11 @@ function stylelint(done) {
   const command = 'npx'
   const args = ['stylelint', glob]
 
+  // If --fix was passed to gulp, add it to the arguments
+  if (process.argv.includes('--fix')) {
+    args.push('--fix')
+  }
+
   console.log('Running stylelint command:', command, args.join(' '))
 
   // Use spawn so that output is streamed to the terminal
@@ -27,7 +32,6 @@ function stylelint(done) {
         '), continuing...'
       )
     }
-    // Always call done() without an error to continue the pipeline
     done()
   })
 }

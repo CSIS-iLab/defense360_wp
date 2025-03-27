@@ -8,8 +8,8 @@
 
 footer.site-footer {
 	margin-top: 3rem;
-	border-top: 2px solid $light-gray;
 	padding-top: 3rem;
+	border-top: 2px solid $light-gray;
 
 	.footer-logoContainer {
 		margin-bottom: 0.5rem;
@@ -32,14 +32,14 @@ footer.site-footer {
 		
 		h3 {
 			margin: 0;
-			text-transform: uppercase;
 			font-weight: bold;
+			text-transform: uppercase;
 			@include fontSize(14px);
 		}
 
 		address {
-			font-style: normal;
 			margin: 0;
+			font-style: normal;
 			@include fontSize(14px);
 		}
 
@@ -56,11 +56,12 @@ footer.site-footer {
 		}
 
 	}
+
 	.footer-copyright {
 		margin-top: 3rem;
-		background-color: $light-gray;
 		padding: 0.5rem;
 		color: $color__text-copyright;
+		background-color: $light-gray;
 		@include fontSize(12px);
 	}
 }

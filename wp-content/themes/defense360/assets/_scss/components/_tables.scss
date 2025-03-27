@@ -3,8 +3,8 @@
 @use 'base/typography' as *;
 
 table {
-  margin: 0 0 2rem;
   width: 100%;
+  margin: 0 0 2rem;
 
   thead {
     border-bottom: 2px solid $light-gray;

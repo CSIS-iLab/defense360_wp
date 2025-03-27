@@ -12,28 +12,28 @@
 	margin-top:3rem;
 
 	.relatedPosts-title {
-		color: $gray;
-		@include fontSize(20px);
-		margin: 0 0 1rem 0;
-		text-transform: uppercase;
-		font-weight: normal;
+		margin: 0 0 1rem;
 		overflow: hidden;
+		color: $gray;
+		font-weight: normal;
+		text-transform: uppercase;
+		@include fontSize(20px);
 
 		span {
-			display: inline-block;
 			position: relative;
+			display: inline-block;
 			
-			&:after {
-			  content: "";
+			&::after {
 			  position: absolute;
-			  height: 5px;
-			  border-bottom: 1px solid $latest-decoration-gray;
-			  border-top: 1px solid $latest-decoration-gray;
 			  top: 50%;
-			  margin-top: math.floor(calc(-5px / 2));
-			  width: 800px;
 			  left: 100%;
+			  width: 800px;
+			  height: 5px;
+			  margin-top: math.floor(calc(-5px / 2));
 		  	  margin-left: 15px;
+			  border-top: 1px solid $latest-decoration-gray;
+			  border-bottom: 1px solid $latest-decoration-gray;
+			  content: "";
 			}
 		}
 	}
@@ -42,8 +42,8 @@
 		margin-bottom: 2rem;
 
 		header.entry-header {
-			text-align: left !important;
 			margin-bottom: 0.5rem !important;
+			text-align: left !important;
 
 			.entry-title {
 				@include fontSize(24px);
