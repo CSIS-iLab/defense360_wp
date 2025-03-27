@@ -93,6 +93,7 @@ Thumbs.db
 !d360_travis.enc
 !scripts/deploy.sh
 !deploy.sh
+!.stylelintrc.json
 
 # track favicon files, if they exist
 !android-chrome-*.png
