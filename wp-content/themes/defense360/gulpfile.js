@@ -8,6 +8,7 @@ const images = require('./gulp-tasks/images.js')
 const sass = require('./gulp-tasks/sass.js')
 const webpack = require('./gulp-tasks/webpack.js')
 const eslint = require('./gulp-tasks/eslint.js')
+const stylelint = require('./gulp-tasks/stylelint.js')
 
 function serve(done) {
   browsersync.init({
@@ -37,8 +38,9 @@ const watcher = () => {
   watch(
     config.assets + config.sass.src + '/**/*.scss',
     { ignoreInitial: true },
-    series(sass, reload)
+    series(stylelint, sass, reload)
   )
+
   watch(config.assets + config.js.src + '/**/*', series(webpack, reload))
 
   watch(config.php, reload) // Reload on PHP file changes.
@@ -60,20 +62,18 @@ function clean() {
 // The default (if someone just runs `gulp`) is to run each task in parallel
 exports.default = series(
   clean,
-  parallel(images, sass, webpack),
+  parallel(images, series(stylelint, sass), webpack),
   parallel(serve, watcher)
 )
 
 // Build site for production
-exports.build = series(
-  clean,
-  parallel(images, sass, webpack)
-)
+exports.build = series(clean, parallel(images, sass, webpack))
 
 // This is our watcher task that instructs gulp to watch directories and
 // act accordingly
 exports.watch = watcher
 
 exports.sass = sass
+exports.stylelint = stylelint
 exports.webpack = webpack
 exports.eslint = eslint

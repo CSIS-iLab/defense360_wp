@@ -8,12 +8,12 @@
 ==============================*/
 
 header.site-header {
+	z-index:50;
+	width: 100%;
+	margin-bottom: 2rem;
 	padding-top: 2rem;
 	padding-bottom: 2rem;
-	margin-bottom: 2rem;
-	width: 100%;
 	background-color: $white;
-	z-index:50;
 
 	@include breakpoint("medium") {
 		padding-bottom: initial;
@@ -31,12 +31,12 @@ header.site-header {
 	}
 
 	&.nav-up {
-		top: -101px;
 		position: fixed;
+		top: -101px;
 
 		@include breakpoint("medium") {
-			top: initial;
 			position: relative;
+			top: initial;
 		}
 	}
 
@@ -55,11 +55,11 @@ header.site-header {
 
 	.header-ttIndex {
 		align-self: flex-end;
+		padding-left: 17%;
+		color: $gray;
+		line-height: 1.5;
 		text-align: right;
 		@include fontSize(13px);
-		line-height: 1.5;
-		color: $gray;
-		padding-left: 17%;
 	}
 
 	.header-mobileContainer, .header-searchContainer {
@@ -87,8 +87,8 @@ header.site-header {
 		padding-bottom: 0;
 
 		.content-wrapper {
-			max-width: 100%;
 			width: 100%;
+			max-width: 100%;
 			padding: 0;
 
 			@include breakpoint("medium") {
@@ -108,23 +108,23 @@ header.site-header {
 
 		ul#primary-menu {
 			display: block;
-			list-style: none;
 			margin: 0;
 			padding: 0;
+			list-style: none;
 
 			li {
+				margin-bottom: 0;
 				text-align: center;
 				@include fontSize(16px);
-				margin-bottom: 0;
 
 				// Apply styles to all list items at medium breakpoint
 				@include breakpoint("medium") {
-					text-align: left !important;
-					margin-right: 5% !important;
+					top: 0 !important;
 					display: inline-block !important;
 					width: auto !important;
+					margin-right: 5% !important;
+					text-align: left !important;
 					border: 0 !important;
-					top: 0 !important;
 					@include fontSize(17px);
 				}
 
@@ -132,8 +132,8 @@ header.site-header {
 					display: none;
 
 					@include breakpoint("medium") {
-						margin-right: 3%;
 						display: inline;
+						margin-right: 3%;
 					}
 				}
 
@@ -142,8 +142,8 @@ header.site-header {
 					display: inline-block;
 					width: 32%;
 					margin: 0;
-					border-left: 1px solid $color__navigation-border;
 					padding: 0.25rem 0;
+					border-left: 1px solid $color__navigation-border;
 				}
 
 				// Second Menu Item
@@ -153,17 +153,17 @@ header.site-header {
 
 				// All Other Menu Items
 				&:not(:nth-child(-n+4)) {
-					display: block;
-					border-bottom: 1px solid $color__navigation-border;
-					padding: 0.5rem 0;
 					position: relative;
 					top: 220px;
+					display: block;
+					padding: 0.5rem 0;
+					border-bottom: 1px solid $color__navigation-border;
 				}
 
 				.menu-description {
-					text-transform: uppercase;
 					color: $dark-gray;
 					letter-spacing: 0.5px;
+					text-transform: uppercase;
 
 					a {
 						color: $dark-gray;
@@ -173,11 +173,11 @@ header.site-header {
 				}
 
 				a {
-					font-weight: 600;
-					text-decoration: none;
 					color: $dark-gray;
-					text-transform: uppercase;
+					font-weight: 600;
 					letter-spacing: 0.04em;
+					text-transform: uppercase;
+					text-decoration: none;
 
 					&:hover {
 						color: $bright-green;
@@ -190,9 +190,9 @@ header.site-header {
 	/*----------  Navigation: Secondary Menu  ----------*/
 	
 	nav.secondary-navigation {
-		background-color: $light-gray;
 		position: relative;
 		top: -65px;
+		background-color: $light-gray;
 
 		@include breakpoint("medium") {
 			top: 0;
@@ -200,8 +200,8 @@ header.site-header {
 		}
 
 		.content-wrapper {
-			max-width: 100%;
 			width: 100%;
+			max-width: 100%;
 			padding: 0;
 
 			@include breakpoint("medium") {
@@ -220,23 +220,23 @@ header.site-header {
 
 		ul#secondary-menu {
 			display: block;
-			list-style: none;
 			margin: 0;
 			padding: 0;
+			list-style: none;
 
 			li {
 				display: block;
-				background-color: $light-gray;
-				border-bottom: 1px solid $color__navigation-border;
+				margin: 0;
 				padding: 0.5rem 0;
 				text-align: center;
-				margin: 0;
+				background-color: $light-gray;
+				border-bottom: 1px solid $color__navigation-border;
 
 				a {
-					font-weight: normal;
 					color: $dark-gray;
-					text-transform: uppercase;
+					font-weight: normal;
 					letter-spacing: 0.06em;
+					text-transform: uppercase;
 					@include fontSize(16px);
 
 					&:hover {
@@ -247,24 +247,24 @@ header.site-header {
 				@include breakpoint("medium") {
 					display: inline-block;
 					margin-right: 5%;
+					padding: 0;
 					text-align: left;
 					border: 0;
-					padding: 0;
 				}
 			}
 		}
 
 		.nav-searchIconContainer {
-			text-align: right;
 			padding: 0;
+			text-align: right;
 
 			.icon-search {
 				@include fontSize(14px);
 			}
 
 			.icon-search:hover {
-				cursor:pointer;
 				color: $bright-green;
+				cursor:pointer;
 			}
 		}
 	}
@@ -284,8 +284,8 @@ header.site-header {
 		text-align: center;
 
 		@include breakpoint("medium") {
-			text-align: right;
 			padding: 0;
+			text-align: right;
 		}
 
 		a {
@@ -309,21 +309,20 @@ header.site-header {
 
 	/*----------  Search Form  ----------*/
 	.header-searchFormContainer {
-		background-color: $black;
-		padding: 1rem 0.5rem;
 		position: relative;
 		z-index: 10;
 		display: none;
 		margin-top: 1rem;
+		padding: 1rem 0.5rem;
+		background-color: $black;
 
 		@include breakpoint("medium") {
 			top: -42px;
-			padding: 0.3rem 0.5rem 0.6rem;
 			margin-top: 0;
+			padding: 0.3rem 0.5rem 0.6rem;
 		}
 
 		.header-searchForm {
-
 			.header-searchInputContainer {
 				padding: 0;
 			}
@@ -334,45 +333,45 @@ header.site-header {
 
 			.search-field {
 				width: 94%;
-				border-radius: 0;
+				color: $search-gray;
+				line-height: 1;
+				text-transform: uppercase;
 				background-color: transparent;
 				border: 0;
-				color: $search-gray;
-				text-transform: uppercase;
+				border-radius: 0;
+				appearance: textfield;
 				@include fontSize(14px);
-				line-height: 1;
-				-webkit-appearance: textfield;
 
 				&:focus {
-					box-shadow: none;
-					outline: none;
 					color: $light-gray;
+					outline: none;
+					box-shadow: none;
 				}
 			}
 
 			.search-submit {
 				width: 4%;
-				border: 0;
-				background-color: transparent;
-				border-radius: 0;
-				color: $light-gray;
-				padding: 0;
-				@include fontSize(14px);
-				line-height: 1;
-				font-family: "fontello";
 				margin: 0;
+				padding: 0;
+				color: $light-gray;
+				font-family: "fontello";
+				line-height: 1;
 				text-align: right;
+				background-color: transparent;
+				border: 0;
+				border-radius: 0;
+				@include fontSize(14px);
 			}
 
 			.search-closeContainer {
-				text-align: right;
 				padding: 0;
+				text-align: right;
 
 				.close-icon {
+					top: 3px;
 					display: inline-block;
 					width: 15px;
 					height: 15px;
-					top: 3px;
 
 					&::before, &::after {
 						background-color: $light-gray;

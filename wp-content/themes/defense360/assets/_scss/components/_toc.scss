@@ -8,10 +8,10 @@
   &__title {
     margin: 0 0 0.25rem;
     color: $black;
-    @include fontSize(14px);
-    line-height: 1.1;
     font-weight: bold;
+    line-height: 1.1;
     text-transform: uppercase;
+    @include fontSize(14px);
 
     @include breakpoint($break) {
       text-align: center;

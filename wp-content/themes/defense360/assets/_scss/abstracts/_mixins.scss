@@ -1,6 +1,8 @@
 // Rem output with px fallback
 $browser-context: 18px;
+/* stylelint-disable-next-line */
 @function calculateRem($size) {
+	/* stylelint-disable-next-line */
   $remSize: calc($size / $browser-context);
   @return #{$remSize}rem;
 }
@@ -13,8 +15,8 @@ $browser-context: 18px;
 // Center block
 @mixin center-block {
 	display: block;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 }
 
 // Clearfix
@@ -61,9 +63,9 @@ $breakpoint-xsmall: 25em;
 
 // Transitions
 @mixin transition($args...) {
-  -webkit-transition: $args;
-  -moz-transition: $args;
-  -ms-transition: $args;
-  -o-transition: $args;
+  transition: $args;
+  transition: $args;
+  transition: $args;
+  transition: $args;
   transition: $args;
 }

@@ -13,8 +13,8 @@
 @use "galleries" as *;
 
 img {
-	height: auto; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
+	height: auto; /* Make sure images are scaled correctly. */
 }
 
 figure {
@@ -24,10 +24,10 @@ figure {
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
-	border: none;
-	margin-bottom: 0;
 	margin-top: 0;
+	margin-bottom: 0;
 	padding: 0;
+	border: 0;
 }
 
 /* Make sure embeds and iframes fit their containers. */
@@ -35,5 +35,5 @@ embed,
 iframe,
 object {
 	max-width: 100%;
-	border: none;
+	border: 0;
 }

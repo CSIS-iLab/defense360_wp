@@ -38,9 +38,10 @@ $color__border-abbr: #666;
 =            Typography            =
 ==================================*/
 
+/* stylelint-disable */
 $font__SourceSans: "source-sans-pro",sans-serif;
 $font__ExpoSerif: "expo-serif-pro",serif;
-
+/* stylelint-enable */
 
 $font__main: $font__SourceSans;
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;

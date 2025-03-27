@@ -9,9 +9,9 @@
 /*----------  Form Elements  ----------*/
 .wpDataTablesWrapper {
 	label {
+		margin-bottom: 0 !important;
 		font-weight: normal !important;
 		font-size: 14px;
-		margin-bottom: 0 !important;
 	}
 }
 
@@ -21,10 +21,10 @@
 
 .wpDataTableFilterBox {
 	@include breakpoint("medium") {
-		display: -webkit-box;
-		display: -ms-flexbox;
+		display: box;
+		display: flexbox;
 		display: flex;
-		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
 		    flex-wrap: wrap;
 		-webkit-box-pack: start;
 		-ms-flex-pack: start;
@@ -37,32 +37,32 @@
 }
 
 .wpdt-c::before {
-	content: "FILTER TABLE DATA";
-	font-size: 12px;
 	font-weight: 600;
+	font-size: 12px;
+	content: "FILTER TABLE DATA";
 }
 
 .wpdt-c .data-t {
-	border-top: 1px #E7E7E7 solid !important;
-	border-bottom: 1px #E7E7E7 solid !important;
 	margin-top: 5px;
 	padding-top: 10px;
-	padding-left: 10px;
 	padding-right: 10px;
+	padding-left: 10px;
+	border-top: 1px #E7E7E7 solid !important;
+	border-bottom: 1px #E7E7E7 solid !important;
 }
 
 .wpDataTablesFilter .wpDataTableFilterSection:not(#wdt-clear-filters-button-block):not(#wdt-cf-search-filters-button-block) {
 	float: none !important;
 	width: unset !important;
 	min-height: unset !important;
-	margin-bottom: 1rem !important;
 	margin-right: 0 !important;
+	margin-bottom: 1rem !important;
 	padding: 0 1rem !important;
 	text-align: left;
 
 	@include breakpoint("medium") {
 		-webkit-box-flex: 0;
-		-ms-flex: 0 1 auto;
+		flex: 0 1 auto;
 		flex: 0 1 auto;
 		-ms-flex-preferred-size: 25%;
 		    flex-basis: 25%;
@@ -74,9 +74,9 @@
 .wpDataTablesFilter .wpDataTableFilterSection {
 	div {
 		display: inline-block;
-		vertical-align: top;
 		width: calc(100% - 100px);
 		margin-left: 0.5rem;
+		vertical-align: top;
 
 		@include breakpoint("medium") {
 			display: block;
@@ -84,6 +84,7 @@
 			margin-left: 0;
 		}
 	}
+
 	label {
 		width: 78px;
 		text-align: right;
@@ -95,21 +96,24 @@
 }
 
 .wpDataTablesFilter .wpDataTableFilterSection .form-control {
-  	border: 2px solid #E7E7E7 !important;
 	padding-left: 7px !important;
+  	border: 2px solid #E7E7E7 !important;
+}
+/* stylelint-disable-next-line */
+::input-placeholder {
+	 font-weight: lighter;
+   font-style: italic;
 }
 
-::-webkit-input-placeholder {
-   font-style: italic;
-	 font-weight: lighter;
-}
-:-moz-placeholder {
+:placeholder {
    font-style: italic;
 }
-::-moz-placeholder {
+
+::placeholder {
    font-style: italic;
 }
-:-ms-input-placeholder {
+
+:input-placeholder {
    font-style: italic;
 }
 
@@ -118,16 +122,18 @@
 }
 
 /*----------  Info  ----------*/
+/* stylelint-disable-next-line */
 .wpDataTablesWrapper .dataTables_info {
 	margin-top: 0 !important;
 	font-size: 12px !important;
 }
 
 /*----------  Pagination  ----------*/
+/* stylelint-disable-next-line */
 .wpDataTablesWrapper .paging_full_numbers {
+	height: 12px !important;
 	margin-top: 5px !important;
 	line-height: 12px !important;
-	height: 12px !important;
 
 	a {
 		line-height: 1 !important;
@@ -136,8 +142,8 @@
 	span a {
 		font-size: 12px !important;
 	}
-
-	.paginate_button:before
+/* stylelint-disable-next-line */
+	.paginate_button::before
 	{
 		font-size: 10px !important;
 	}
