@@ -114,5 +114,7 @@ Thumbs.db
 wp-content/themes/defense360/.sass-cache
 **/.DS_Store
 wp-content/themes/defense360/*.css
+wp-content/themes/defense360/assets/img
+wp-content/themes/defense360/assets/js
 
 !.github

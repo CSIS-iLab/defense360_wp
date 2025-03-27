@@ -42,7 +42,7 @@
 				<span class="close-icon"></span>
 			</div>
 			<div class="site-branding col-xs-8 col-md-6">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="/wp-content/themes/defense360/img/defense360-logo.svg" title="<?php bloginfo( 'name' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="site-logo" /></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="/wp-content/themes/defense360/assets/img/defense360-logo.svg" title="<?php bloginfo( 'name' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="site-logo" /></a>
 			</div><!-- .site-branding -->
 			<div class="header-ttIndex hidden-xs col-md-6">
 				<?php echo get_theme_mod('header-ttIndex'); ?>

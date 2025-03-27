@@ -11,7 +11,7 @@ function __defense360_term_meta_scripts()  {
     //
     wp_enqueue_media();
     // add theme scripts
-    wp_enqueue_script( 'defense360-custom-taxonomy', get_template_directory_uri() . '/js/custom-taxonomy-meta.js', array( 'jquery' ), '', true );
+    wp_enqueue_script( 'defense360-custom-taxonomy', get_template_directory_uri() . '/assets/js/custom-taxonomy-meta.min.js', array( 'jquery' ), '', true );
 
 
 }
