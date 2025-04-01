@@ -14,7 +14,6 @@ header.site-header {
 	padding-top: 2rem;
 	padding-bottom: 2rem;
 	background-color: $dark-green;
-	color: $color__text-nav;
 
 	@include breakpoint("medium") {
 		padding-bottom: initial;
@@ -162,19 +161,19 @@ header.site-header {
 				}
 
 				.menu-description {
-					color: $color__text-nav;
+					color: $color__text-light;
 					letter-spacing: 0.5px;
 					text-transform: uppercase;
 
 					a {
-						color: $color__text-nav;
+						color: $color__text-light;
 						font-weight: normal;
 						letter-spacing: 0.5px;
 					}
 				}
 
 				a {
-					color: $color__text-nav;
+					color: $color__text-light;
 					font-weight: 600;
 					letter-spacing: 0.04em;
 					text-transform: uppercase;
@@ -290,7 +289,7 @@ header.site-header {
 		}
 
 		a {
-			color: $color__text-nav;
+			color: $color__text-light;
 
 			&:hover {
 				color: $bright-green;
