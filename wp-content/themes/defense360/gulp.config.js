@@ -36,7 +36,7 @@ module.exports = {
   js: {
     src: '_js',
     dest: 'js',
-    entry: ['archive-mobile.js', 'custom-taxonomy-meta.js', 'customizer.js', 'hide-header-mobile.js', 'iframeResizer.min.js', 'iframeSizer.contentWindow.min.js', 'mobile-menu.js', 'navigation.js', 'skip-link-focus-fix.js', 'tinymce.js'], // An array of entry files for the bundler. For example ['vendor/vendor.js', 'custom/bundle.js'] will create two bundled JS files, `vendor/vendor.min.js` and `custom/bundle.min.js`
+    entry: ['archive-mobile.js', 'custom-taxonomy-meta.js', 'customizer.js', 'header-scroll.js', 'hide-header-mobile.js', 'iframeResizer.min.js', 'iframeSizer.contentWindow.min.js', 'mobile-menu.js', 'navigation.js', 'skip-link-focus-fix.js', 'tinymce.js'], // An array of entry files for the bundler. For example ['vendor/vendor.js', 'custom/bundle.js'] will create two bundled JS files, `vendor/vendor.min.js` and `custom/bundle.min.js`
   },
 
   sass: {

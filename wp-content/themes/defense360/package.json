@@ -48,7 +48,7 @@
   },
   "scripts": {
     "start": "gulp",
-    "build": "NODE_ENV=production gulp build",
+    "build": "NODE_ENV=production npx gulp build",
     "sass": "gulp sass",
     "watch": "gulp watch",
     "stylelint": "gulp stylelint",
