@@ -7,12 +7,6 @@
   "ascent": 850,
   "glyphs": [
     {
-      "uid": "627abcdb627cb1789e009c08e2678ef9",
-      "css": "twitter",
-      "code": 61593,
-      "src": "fontawesome"
-    },
-    {
       "uid": "e335adbc2d898c7d85d40c507796e7b4",
       "css": "mail",
       "code": 59392,
@@ -77,6 +71,20 @@
       "css": "up-open",
       "code": 61445,
       "src": "mfglabs"
+    },
+    {
+      "uid": "a0f16ee1d1941d9a6dd290f8a8fc05d9",
+      "css": "x-twitter",
+      "code": 61593,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M787.5 48H940.9L605.9 431 1000 951.9H691.4L449.8 635.9 173.2 951.9H19.7L378.1 542.3 0 48.1H316.4L534.9 336.9ZM733.7 860.2H818.7L270.3 135H179.1Z",
+        "width": 1000
+      },
+      "search": [
+        "x-twitter"
+      ]
     }
   ]
 }
