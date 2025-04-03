@@ -17,7 +17,7 @@
 		<div class="content-wrapper">
 			<div class="footer-logoContainer">
 				<a href="https://www.csis.org/programs/international-security-program" target="_blank">
-					<img src="/wp-content/themes/defense360/assets/img/ISP.svg" alt="Center for Strategic and International Studies" title="Center for Strategic and International Studies" />
+					<img src="/wp-content/themes/defense360/assets/img/DSD_Full_White.svg" alt="Center for Strategic and International Studies" title="Center for Strategic and International Studies" />
 				</a>
 			</div>
 			<div class="footer-infoContainer row">
