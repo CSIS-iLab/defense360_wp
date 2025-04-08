@@ -8,6 +8,7 @@
 ==============================*/
 
 header.site-header {
+	position: relative;
 	z-index: 50;
 	width: 100%;
 	margin-bottom: 2rem;
@@ -131,10 +132,23 @@ header.site-header {
 
 	/*----------  Navigation  ----------*/
 	.navigation-container {
-		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		overflow: hidden;
+		transform: scaleY(0);
+		transform-origin: top;
+		transition: transform 0.3s ease;
 
 		@include breakpoint("medium") {
-			display: block;
+			position: initial;
+			transform: none;
+			transition: none;
+		}
+
+		&.active {
+			transform: scaleY(1);
 		}
 	}
 
@@ -340,6 +354,13 @@ header.site-header {
 	/*----------  Mobile Menu Styles  ----------*/
 	&.menu-mobile-active {
 		height: 100vh;
+
+		.navigation-container {
+			position: relative;
+			top: 0;
+			transform: none;
+			max-height: none;
+		}
 	}
 
 	.close-icon {
@@ -381,17 +402,25 @@ header.site-header {
 		top: 100%;
 		left: 0;
 		z-index: 10;
-		display: none;
 		width: 100%;
 		margin-top: 0;
 		padding: 1rem 0.5rem;
 		background-color: $black;
-		transition: all 0.3s ease-in-out;
+		transform: translateY(-10px);
+		visibility: hidden;
+		opacity: 0;
+		transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 
 		@include breakpoint("medium") {
 			position: absolute;
 			top: calc(100% - 42px);
 			padding: 0.3rem 0.5rem 0.6rem;
+		}
+
+		&.active {
+			transform: translateY(0);
+			visibility: visible;
+			opacity: 1;
 		}
 
 		.header-searchForm {
