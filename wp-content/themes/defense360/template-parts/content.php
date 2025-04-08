@@ -27,7 +27,7 @@ else {
 				<?php
 					if (has_post_thumbnail()) :
 						echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">';
-						the_post_thumbnail( 'full' );
+						the_post_thumbnail( 'medium_large' );
 						echo '</a>';
 					endif;
 					?>
