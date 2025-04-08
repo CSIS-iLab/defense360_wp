@@ -146,7 +146,7 @@ header.site-header {
 		padding-bottom: 0;
 		transform: translateX(0);
 		transition: all 0.3s ease-in-out;
-		
+
 		.content-wrapper {
 			width: 100%;
 			max-width: 100%;
@@ -377,16 +377,20 @@ header.site-header {
 
 	/*----------  Search Form  ----------*/
 	.header-searchFormContainer {
-		position: relative;
+		position: absolute;
+		top: 100%;
+		left: 0;
 		z-index: 10;
 		display: none;
-		margin-top: 1rem;
+		width: 100%;
+		margin-top: 0;
 		padding: 1rem 0.5rem;
 		background-color: $black;
+		transition: all 0.3s ease-in-out;
 
 		@include breakpoint("medium") {
-			top: -42px;
-			margin-top: 0;
+			position: absolute;
+			top: calc(100% - 42px);
 			padding: 0.3rem 0.5rem 0.6rem;
 		}
 
