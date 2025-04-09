@@ -70,7 +70,8 @@ header.site-header {
 				max-width: initial;
 			}
 
-			.secondary-navigation {
+			.secondary-navigation,
+			.header-ttIndex {
 				display: none;
 			}
 		}
@@ -493,6 +494,7 @@ header.site-header {
 	}
 
 	.header-searchContainer .close-icon {
+
 		&::before,
 		&::after {
 			background-color: $light-gray;
