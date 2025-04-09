@@ -111,7 +111,7 @@ header.site-header {
 	.header-ttIndex {
 		align-self: flex-end;
 		padding-left: 17%;
-		color: $gray;
+		color: $color__text-light;
 		line-height: 1.5;
 		text-align: right;
 		@include fontSize(13px);
