@@ -71,6 +71,26 @@ header.site-header {
 		}
 	}
 
+	@include breakpoint("large") {
+		&.scrolled {
+			nav.main-navigation {
+				ul#primary-menu {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+				}
+
+				ul#primary-menu li:nth-child(-n+4):not(.home) {
+					margin-right: 0;
+				}
+
+				ul#primary-menu li:last-child {
+					display: inline-block !important;
+				}
+			}
+		}
+	}
+
 	&.nav-down {
 		position: fixed;
 		top: 0;
