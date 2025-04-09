@@ -146,8 +146,15 @@ header.site-header {
 		justify-content: center;
 		align-self: center;
 		@include fontSize(25px);
+		color: $color__text-light;
 		cursor: pointer;
 
+		.close-icon {
+				&::before,
+				&::after {
+					background-color: $light-gray;
+				}
+			}
 	}
 
 	/*----------  Navigation  ----------*/
@@ -293,16 +300,13 @@ header.site-header {
 			// desktop only
 			.icon-search {
 				@include fontSize(14px);
+						color: $color__text-light;
+
+				&:hover {
+					color: $bright-green;
+					cursor: pointer;
+				}
 			}
-		}
-	}
-
-	.icon-search {
-		color: $color__text-light;
-
-		&:hover {
-			color: $bright-green;
-			cursor: pointer;
 		}
 	}
 
@@ -509,14 +513,6 @@ header.site-header {
 					}
 				}
 			}
-		}
-	}
-
-	.header-searchContainer .close-icon {
-
-		&::before,
-		&::after {
-			background-color: $light-gray;
 		}
 	}
 }
