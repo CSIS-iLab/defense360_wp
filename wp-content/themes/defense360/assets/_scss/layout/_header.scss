@@ -68,6 +68,11 @@ header.site-header {
 			.header-ttIndex {
 				display: none;
 			}
+
+			.header-searchFormContainer {
+				top: calc(100% - 54px);
+				padding: 0.9rem 0.5rem;
+			}
 		}
 	}
 
