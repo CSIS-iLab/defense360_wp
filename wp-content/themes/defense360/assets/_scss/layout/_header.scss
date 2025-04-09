@@ -27,14 +27,21 @@ header.site-header {
 		transition: all 0.3s ease-in-out;
 
 		&.scrolled {
-			display: flex;
-			align-items: center;
-			padding: 1rem 2rem;
+			padding: 0;
 
-			>.content-wrapper {
-				display: block;
-				flex: auto;
-				margin: 0;
+			.header-wrapper {
+				display: flex;
+				align-items: center;
+				width: 100%;
+				max-width: $size__container-max-width;
+				margin: 0 auto;
+				padding: .5rem 0;
+
+				>.content-wrapper {
+					display: block;
+					flex: auto;
+					margin: 0;
+				}
 			}
 
 			.site-branding {
@@ -45,19 +52,11 @@ header.site-header {
 				}
 			}
 
-			>.navigation-container {
-				flex: auto;
-			}
-
 			nav.main-navigation {
 				padding-top: 0;
 
 				.content-wrapper {
 					flex-wrap: nowrap;
-				}
-
-				ul#primary-menu li:nth-child(-n+4):not(.home) {
-					margin-right: 1%;
 				}
 
 				ul#primary-menu li:last-child {
