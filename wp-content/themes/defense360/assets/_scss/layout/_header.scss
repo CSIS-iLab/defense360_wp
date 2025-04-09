@@ -265,6 +265,25 @@ header.site-header {
 				}
 			}
 		}
+
+		.nav-searchIconContainer {
+			padding: 0;
+			text-align: right;
+
+			// desktop only
+			.icon-search {
+				@include fontSize(14px);
+			}
+		}
+	}
+
+	.icon-search {
+		color: $color__text-light;
+
+		&:hover {
+			color: $bright-green;
+			cursor: pointer;
+		}
 	}
 
 	/*----------  Navigation: Secondary Menu  ----------*/
@@ -335,20 +354,6 @@ header.site-header {
 				}
 			}
 		}
-
-		.nav-searchIconContainer {
-			padding: 0;
-			text-align: right;
-
-			.icon-search {
-				@include fontSize(14px);
-			}
-
-			.icon-search:hover {
-				color: $bright-green;
-				cursor: pointer;
-			}
-		}
 	}
 
 	/*----------  Mobile Menu Styles  ----------*/
@@ -383,6 +388,10 @@ header.site-header {
 			&:hover {
 				color: $bright-green;
 			}
+
+			@include breakpoint("medium") {
+				color: $dark-gray;
+			}
 		}
 
 		i.icon {
@@ -413,7 +422,7 @@ header.site-header {
 
 		@include breakpoint("medium") {
 			position: absolute;
-			top: calc(100% - 44px);
+			top: calc(100% - 85px);
 			padding: 0.3rem 0.5rem 0.6rem;
 		}
 
@@ -480,6 +489,13 @@ header.site-header {
 					}
 				}
 			}
+		}
+	}
+
+	.header-searchContainer .close-icon {
+		&::before,
+		&::after {
+			background-color: $light-gray;
 		}
 	}
 }
