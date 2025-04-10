@@ -27,7 +27,6 @@
     } else {
       content.style.marginTop = unscrolledHeaderHeight + 2 * remPixels + 'px'
     }
-    console.log(unscrolledHeaderHeight + 2 * remPixels + 'px')
   }
 
   // Handle scroll events to update header class and margin-top
