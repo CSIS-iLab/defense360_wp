@@ -7,12 +7,14 @@ html {
 
 *,
 *::before,
-*::after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*::after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 	box-sizing: inherit;
 }
 
 body {
-	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+	/* Fallback for when there is no custom background color defined. */
+	background: $color__background-body;
 
 	&.menu-mobile-active {
 		overflow-y: hidden;
@@ -21,10 +23,11 @@ body {
 
 #content {
 	margin-top: 100px;
-
-	// @include breakpoint("medium") {
-	// 	margin-top: 0;
-	// }
+	margin-bottom: 360px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	background: $color__background-body;
+	box-shadow: 0 5px 8px -1px rgba(54, 96, 90, 0.5);
 }
 
 .content-wrapper {

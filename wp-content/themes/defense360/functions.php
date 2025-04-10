@@ -103,6 +103,8 @@ function defense360_scripts() {
 
 	wp_enqueue_script( 'defense360-mobile-menu', get_template_directory_uri() . '/assets/js/mobile-menu.min.js', array(), '20151215', true );
 
+	wp_enqueue_script( 'defense360-footer', get_template_directory_uri() . '/assets/js/footer.min.js', array(), '20250410', true );
+
 	wp_enqueue_script( 'defense360-header-scroll', get_template_directory_uri() . '/assets/js/header-scroll.min.js', array(), '20250402', true );
 
 	wp_enqueue_script( 'defense360-hide-header-mobile', get_template_directory_uri() . '/assets/js/hide-header-mobile.min.js', array(), '20151215', true );
