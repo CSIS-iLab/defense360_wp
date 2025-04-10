@@ -31,7 +31,7 @@
 		}
 
 		ul li[class*='share-'] a {
-			top: -8px !important;
+			top: -5px !important;
 			padding: 0 !important;
 			border-radius: 0 !important;
 
@@ -54,7 +54,7 @@
 
 		}
 
-		// Twitter
+		// Facebook
 		.share-facebook {
 			background-color: transparent !important;
 
@@ -64,12 +64,13 @@
 		}
 
 		// Twitter
-		.share-twitter {
+		.share-x {
 			background-color: transparent !important;
 
 			a::before {
-				content: '\f099' !important;
-				top: 3px !important;
+				content: '\e805' !important;
+				font-size: 15px !important;
+				top: 1px !important;
 			}
 		}
 
@@ -98,7 +99,7 @@
 
 			a::before {
 				content: '\e800' !important;
-				top: 4px !important;
+				top: 2px !important;
 			}
 		}
 
@@ -108,7 +109,7 @@
 
 			a::before {
 				content: '\e803' !important;
-				top: 3px !important;
+				top: 1px !important;
 			}
 		}
 	}
