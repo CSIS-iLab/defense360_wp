@@ -12,7 +12,8 @@
 	text-align: center;
 	@include fontSize(14px);
 
-	span, a {
+	span,
+	a {
 		margin: 0 0.1rem;
 	}
 

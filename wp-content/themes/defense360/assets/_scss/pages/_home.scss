@@ -10,6 +10,24 @@
 
 .home-container {
 
+	/*----------  Featured Post  ----------*/
+	.content-wrapper article.post:first-of-type {
+		@include breakpoint("large") {
+			.post-thumbnailContainer img {
+				max-height: 300px;
+				object-fit: cover;
+			}
+
+			.entry-title {
+				font-size: 1.75rem;
+			}
+
+			.entry-content {
+				font-size: 1.2rem;
+			}
+		}
+	}
+
 	/*----------  The Latest  ----------*/
 	.home-latestContainer {
 		@include breakpoint("medium") {
@@ -27,18 +45,18 @@
 			span {
 				position: relative;
 				display: inline-block;
-				
+
 				&::after {
-				  position: absolute;
-				  top: 50%;
-				  left: 100%;
-				  width: 800px;
-				  height: 5px;
-				  margin-top: math.floor(calc(-5px / 2));
-			  	  margin-left: 15px;
-				  border-top: 1px solid $latest-decoration-gray;
-				  border-bottom: 1px solid $latest-decoration-gray;
-				  content: "";
+					position: absolute;
+					top: 50%;
+					left: 100%;
+					width: 800px;
+					height: 5px;
+					margin-top: math.floor(calc(-5px / 2));
+					margin-left: 15px;
+					border-top: 1px solid $latest-decoration-gray;
+					border-bottom: 1px solid $latest-decoration-gray;
+					content: "";
 				}
 			}
 		}
@@ -95,19 +113,11 @@
 		margin-top: 1rem;
 		background-color: $light-gray;
 
-		.content-wrapper.row {
-			padding: 0;
-
-			@include breakpoint("medium") {
-				padding: initial;
-			}
-		}
-
 		.home-seriesSpotlight {
-			padding:2rem 1rem;
+			padding: 2rem 1rem;
 
 			@include breakpoint("medium") {
-				padding:2rem 1rem 2rem 0;
+				padding: 2rem 1rem 2rem 0;
 			}
 
 			.series-featuredTitle {
@@ -182,7 +192,8 @@
 			background-size: cover;
 		}
 
-		.series-sectionTitle, .series-learnMore {
+		.series-sectionTitle,
+		.series-learnMore {
 			margin: 0;
 			color: $dark-green;
 			font-weight: normal;
