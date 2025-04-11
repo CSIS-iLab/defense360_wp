@@ -11,7 +11,7 @@
 .home-container {
 
 	/*----------  Featured Post  ----------*/
-	.content-wrapper article.post:first-of-type {
+	.content-wrapper > article.post:first-of-type {
 		@include breakpoint("large") {
 			.post-thumbnailContainer img {
 				max-height: 300px;
