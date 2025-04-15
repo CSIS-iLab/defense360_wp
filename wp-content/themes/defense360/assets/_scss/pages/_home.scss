@@ -13,10 +13,10 @@
 	/*----------  Featured Post  ----------*/
 	.content-wrapper > article.post:first-of-type {
 		@include breakpoint("large") {
-			.post-thumbnailContainer img {
-				max-height: 300px;
-				object-fit: cover;
-			}
+			// .post-thumbnailContainer img {
+			// 	max-height: 300px;
+			// 	object-fit: cover;
+			// }
 
 			.entry-title {
 				font-size: 1.75rem;
