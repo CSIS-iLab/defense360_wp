@@ -17,8 +17,7 @@ html {
 body {
 	height: 100%;
 	margin: 0;
-	/* Fallback for when there is no custom background color defined. */
-	background: $color__background-body;
+	background: $color__background-body;	/* Fallback for when there is no custom background color defined. */
 
 	&.menu-mobile-active {
 		overflow-y: hidden;
