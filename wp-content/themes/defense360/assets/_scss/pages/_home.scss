@@ -11,12 +11,17 @@
 .home-container {
 
 	/*----------  Featured Post  ----------*/
-	.content-wrapper > article.post:first-of-type {
+	.content-wrapper>article.post:first-of-type {
 		@include breakpoint("large") {
-			// .post-thumbnailContainer img {
-			// 	max-height: 300px;
-			// 	object-fit: cover;
-			// }
+			.post-thumbnail {
+				flex-basis: 45%;
+				max-width: 45%;
+			}
+
+			.post-content {
+				flex-basis: 55%;
+				max-width: 55%;
+			}
 
 			.entry-title {
 				font-size: 1.75rem;
