@@ -32,7 +32,6 @@
   // Handle scroll events to update header class and margin-top
   function handleScroll() {
     const currentHeaderHeight = header.offsetHeight
-    console.log(currentHeaderHeight)
     if (window.scrollY > currentHeaderHeight) {
       header.classList.add('scrolled')
     } else {
