@@ -1,4 +1,4 @@
-;(function () {
+(function () {
   const header = document.querySelector('#masthead')
   const content = document.querySelector('#content')
   let unscrolledHeaderHeight = header.offsetHeight // store initial header height
