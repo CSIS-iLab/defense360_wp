@@ -14,13 +14,13 @@
 	.content-wrapper>article.post:first-of-type {
 		@include breakpoint("large") {
 			.post-thumbnail {
-				flex-basis: 45%;
-				max-width: 45%;
+				flex-basis: 40%;
+				max-width: 40%;
 			}
 
 			.post-content {
-				flex-basis: 55%;
-				max-width: 55%;
+				flex-basis: 60%;
+				max-width: 60%;
 			}
 
 			.entry-title {
