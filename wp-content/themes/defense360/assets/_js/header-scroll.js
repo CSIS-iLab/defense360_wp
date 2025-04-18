@@ -21,8 +21,7 @@
     const remPixels = parseFloat(
       getComputedStyle(document.documentElement).fontSize
     )
-
-    if (window.innerWidth < 770) {
+    if (window.innerWidth < 768) {
       content.style.marginTop = header.offsetHeight + 'px'
     } else {
       content.style.marginTop = unscrolledHeaderHeight + 2 * remPixels + 'px'
@@ -47,9 +46,12 @@
     updateUnscrolledHeaderHeight()
     adjustContentMarginTop()
   })
-  window.addEventListener('resize', () => {
+
+  const ro = new ResizeObserver(() => {
     updateUnscrolledHeaderHeight()
     adjustContentMarginTop()
   })
+  ro.observe(header)
+
   window.addEventListener('scroll', handleScroll)
 })()
